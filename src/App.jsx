@@ -8,12 +8,14 @@ import {
 
 import MainLayout from "./layouts/MainLayout";
 import LoginPage from "./pages/LoginPage";
+import SelectDonorTypePage from "./pages/SelectDonorTypePage";
 
 const App = () => {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path="/" element={<MainLayout />}>
 				<Route index element={<LoginPage />} />
+				<Route path="/select-type" element={<SelectDonorTypePage />} />
 			</Route>
 		)
 	);

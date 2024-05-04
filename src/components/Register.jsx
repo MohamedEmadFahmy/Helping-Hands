@@ -1,17 +1,20 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Register = ({ setRegister }) => {
+	const navigate = useNavigate();
+
 	const submitForm = (e) => {
 		e.preventDefault();
-		console.log("Form Submitted");
+		navigate("/select-type");
 	};
 
 	return (
 		<div
 			id="register-container"
-			className="bg-gradient-to-tr from-primaryShades-300 to-primaryShades-500 rounded-lg flex flex-col items-center justify-center pt-8 pb-8 gap-5"
+			className="bg-gradient-to-tr from-primaryShades-300 to-primaryShades-500 rounded-lg flex flex-col items-center justify-center pt-8 pb-8 gap-5 w-1/2"
 			// relative overflow-hidden md:flex w-1/3 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden
 		>
 			<h1 className="text-white font-bold text-4xl font-sans">
@@ -195,15 +198,12 @@ const Register = ({ setRegister }) => {
 				<button className=" text-black">Register With Google</button>
 			</div>
 
-			<p className="text-lg text-black">
-				Already have an account? Sign in
-				<Link
-					onClick={() => setRegister((prevState) => !prevState)}
-					className="text-blue-500 underline mx-2 text-left"
-				>
-					here
-				</Link>
-			</p>
+			<Link
+				onClick={() => setRegister((prevState) => !prevState)}
+				className="text-black-500 underline mx-2 text-left"
+			>
+				Already have an account?
+			</Link>
 		</div>
 	);
 };
