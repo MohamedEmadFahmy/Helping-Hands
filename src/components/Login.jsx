@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-const Register = ({ setRegister }) => {
+const Login = ({ setRegister }) => {
 	const submitForm = (e) => {
 		e.preventDefault();
 		console.log("Form Submitted");
@@ -14,9 +14,7 @@ const Register = ({ setRegister }) => {
 			className="bg-gradient-to-tr from-primaryShades-300 to-primaryShades-500 rounded-lg flex flex-col items-center justify-center pt-8 pb-8 gap-5"
 			// relative overflow-hidden md:flex w-1/3 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden
 		>
-			<h1 className="text-white font-bold text-4xl font-sans">
-				Register
-			</h1>
+			<h1 className="text-white font-bold text-4xl font-sans">Login</h1>
 			<form
 				onSubmit={submitForm}
 				className="w-full flex flex-col items-start pr-10 pl-10 gap-5"
@@ -208,4 +206,4 @@ const Register = ({ setRegister }) => {
 	);
 };
 
-export default Register;
+export default Login;
