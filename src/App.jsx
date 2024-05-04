@@ -13,10 +13,20 @@ import SelectDonorTypePage from "./pages/SelectDonorTypePage";
 const App = () => {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
-			<Route path="/" element={<MainLayout />}>
-				<Route index element={<LoginPage />} />
-				<Route path="/select-type" element={<SelectDonorTypePage />} />
-			</Route>
+			// <Route path="/" element={<MainLayout />}>
+			<>
+				<Route path="/">
+					<Route index element={<LoginPage />} />
+					<Route
+						path="/select-type"
+						element={<SelectDonorTypePage />}
+					/>
+
+					<Route element={<MainLayout />}>
+						<Route path="/hi" element={<SelectDonorTypePage />} />
+					</Route>
+				</Route>
+			</>
 		)
 	);
 
