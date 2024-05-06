@@ -1,36 +1,35 @@
 /* eslint-disable no-unused-vars */
-import {
-	Route,
-	createBrowserRouter,
-	createRoutesFromElements,
-	RouterProvider,
-} from "react-router-dom";
 
-import MainLayout from "./layouts/MainLayout";
-import LoginPage from "./pages/LoginPage";
-import SelectDonorTypePage from "./pages/SelectDonorTypePage";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from 'react-router-dom';
+
+import DonorDetails from './pages/DonorDetails';
+import LoginPage from './pages/LoginPage';
+import MainLayout from './layouts/MainLayout';
+import SelectDonorTypePage from './pages/SelectDonorTypePage';
 
 const App = () => {
-	const router = createBrowserRouter(
-		createRoutesFromElements(
-			// <Route path="/" element={<MainLayout />}>
-			<>
-				<Route path="/">
-					<Route index element={<LoginPage />} />
-					<Route
-						path="/select-type"
-						element={<SelectDonorTypePage />}
-					/>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      // <Route path="/" element={<MainLayout />}>
+      <>
+        <Route path="/">
+          <Route index element={<DonorDetails />} />
+          <Route path="/select-type" element={<SelectDonorTypePage />} />
 
-					<Route element={<MainLayout />}>
-						<Route path="/hi" element={<SelectDonorTypePage />} />
-					</Route>
-				</Route>
-			</>
-		)
-	);
+          <Route element={<MainLayout />}>
+            <Route path="/hi" element={<SelectDonorTypePage />} />
+          </Route>
+        </Route>
+      </>
+    )
+  );
 
-	return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />;
 };
 
 export default App;
