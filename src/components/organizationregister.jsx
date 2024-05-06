@@ -8,7 +8,7 @@ const OrganizationRegister = () => {
   };
 
   return (
-    <div className="bg-gradient-to-tr from-primaryShades-300 to-primaryShades-500 rounded-lg flex flex-col items-center justify-center pt-8 pb-8 gap-5 w-1/2 m-8">
+    <div className="bg-gradient-to-tr from-primaryShades-300 to-primaryShades-500 rounded-lg flex flex-col items-center justify-center pt-8 pb-8 gap-5 w-1/2 ">
       <div className="flex justify-center m-9">
         <h1 className="text-3xl font-semibold text-white">
           Donor Registration
@@ -46,10 +46,10 @@ const OrganizationRegister = () => {
         <label htmlFor="terms" className="ml-2 text-white">
           I agree with terms and conditions
         </label>
-      </div>
-      <div className="flex ">
-        <button className="bg-white rounded-md">submit</button>
-      </div>
+      </div>{" "}
+      <button className="bg-white rounded-md pr-9 pl-9 pt-3 pb-3  w-auto ">
+        submit
+      </button>
       <div className="text-white">
         <button>Privacy Policy</button>
       </div>
