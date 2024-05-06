@@ -252,7 +252,7 @@ const DonorAccount = () => {
                             onClick={isPasswordEditing ? handlePasswordSave : togglePasswordEditing}
                             className="text-blue-600 hover:text-blue-700 focus:outline-none"
                         >
-                            {isPasswordEditing ? "Save" : "Edit"}
+                            {isPasswordEditing ? "Save" : "Edit/View"}
                         </button>
                     </div>
                 </div>
