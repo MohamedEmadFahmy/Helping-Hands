@@ -10,6 +10,7 @@ import MainLayout from "./layouts/MainLayout";
 import LoginPage from "./pages/LoginPage";
 import SelectDonorTypePage from "./pages/SelectDonorTypePage";
 import DonationCreationPage from "./pages/DonationCreationPage";
+import DonorAccountPage from "./pages/DonorAccountPage";
 
 const App = () => {
 	const router = createBrowserRouter(
@@ -23,6 +24,7 @@ const App = () => {
 						element={<SelectDonorTypePage />}
 					/>
 					<Route path="/donation-create" element={<DonationCreationPage />} />
+					<Route path="/donor-account" element={<DonorAccountPage />} />
 					<Route element={<MainLayout />}>
 						<Route path="/hi" element={<SelectDonorTypePage />} />
 					</Route>
