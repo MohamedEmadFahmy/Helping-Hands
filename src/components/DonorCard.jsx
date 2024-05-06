@@ -1,4 +1,4 @@
-// Component.js
+import placeHolder from '../assets/images/logo.png';
 
 const DonorCard = () => {
   return (
@@ -10,15 +10,33 @@ const DonorCard = () => {
         Contributor Information
       </div>
       <div className="flex pl-3 gap-10 pb-5 border-b-4 border-gray">
-        <div>image1</div>
+        <div>
+          <img
+            src={placeHolder}
+            alt="Profile Icon"
+            style={{ width: '25%', height: 'auto' }}
+          ></img>
+        </div>
         <div>Daddy Kr</div>
       </div>
       <div className="flex pl-3 gap-10 pb-5 border-b-4 border-gray">
-        <div>image2</div>
+        <div>
+          <img
+            src={placeHolder}
+            alt="Email Icon"
+            style={{ width: '25%', height: 'auto' }}
+          ></img>
+        </div>
         <div>Daddy Kr@gmail</div>
       </div>
       <div className="flex pl-3 gap-10 pb-5 border-b-4 border-gray">
-        <div>image3</div>
+        <div>
+          <img
+            src={placeHolder}
+            alt="Phone number Icon"
+            style={{ width: '25%', height: 'auto' }}
+          ></img>
+        </div>
         <div>01123232323</div>
       </div>
       <div className="flex justify-end mr-1">
