@@ -5,22 +5,21 @@ import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-} from 'react-router-dom';
+} from "react-router-dom";
 
-import DonorDetails from './pages/DonorDetails';
-import LoginPage from './pages/LoginPage';
-import MainLayout from './layouts/MainLayout';
-import SelectDonorTypePage from './pages/SelectDonorTypePage';
+// Import your components
+import Donorregisteration from "./pages/Donorregisteration";
+import MainLayout from "./layouts/MainLayout";
+import SelectDonorTypePage from "./pages/SelectDonorTypePage";
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      // <Route path="/" element={<MainLayout />}>
       <>
         <Route path="/">
-          <Route index element={<DonorDetails />} />
+          {/* Use Donorregisteration here instead of DonorDetails */}
+          <Route index element={<Donorregisteration />} />
           <Route path="/select-type" element={<SelectDonorTypePage />} />
-
           <Route element={<MainLayout />}>
             <Route path="/hi" element={<SelectDonorTypePage />} />
           </Route>
