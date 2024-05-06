@@ -29,11 +29,13 @@ const OrganizationRegister = () => {
         />
       </div>
       <div className="flex justify-center">
-        <input
-          type="text"
-          placeholder="Enter text..."
-          className="rounded-md p-2 w-60 h-30"
-        />
+        <label
+          htmlFor="file-upload"
+          className="bg-white text-blue-500 font-bold rounded-md cursor-pointer p-2 w-60 text-center"
+        >
+          <input id="file-upload" type="file" className="hidden" />
+          Upload Document
+        </label>
       </div>
       <div className="flex justify-center items-center">
         <input
