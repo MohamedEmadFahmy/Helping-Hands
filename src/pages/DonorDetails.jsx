@@ -8,7 +8,7 @@ const DonorDetails = () => {
   const [viewDetails, setView] = useState(false);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-secondaryShades-500">
       {viewDetails ? (
         <DonorCard />
       ) : (
