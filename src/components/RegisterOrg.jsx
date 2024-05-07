@@ -3,22 +3,22 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Register = ({ setRegister }) => {
+const RegisterOrg = ({ setRegister }) => {
 	const navigate = useNavigate();
 
 	const submitForm = (e) => {
 		e.preventDefault();
-		navigate("/select-type");
+		navigate("/organisation-home");
 	};
 
 	return (
 		<div
 			id="register-container"
-			className="bg-gradient-to-tr from-primaryShades-300 to-primaryShades-500 rounded-lg flex flex-col items-center justify-center pt-8 pb-8 gap-2 w-1/2"
+			className="bg-gradient-to-tr from-primaryShades-300 to-primaryShades-500 rounded-lg flex flex-col items-center justify-center pt-8 pb-4 gap-2 w-[60%]"
 			// relative overflow-hidden md:flex w-1/3 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden
 		>
 			<h1 className="text-white font-bold text-4xl font-sans">
-				Register
+				Register as an Organisation
 			</h1>
 			<form
 				onSubmit={submitForm}
@@ -35,7 +35,7 @@ const Register = ({ setRegister }) => {
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 						id="grid-username"
 						type="text"
-						placeholder="username"
+						placeholder="Username"
 					/>
 					{/* <p className="text-red-500 text-xs italic">
 								Please fill out this field.
@@ -90,6 +90,9 @@ const Register = ({ setRegister }) => {
 							type="text"
 							placeholder="Jane"
 						/>
+						{/* <p className="text-red-500 text-xs italic">
+								Please fill out this field.
+							</p> */}
 					</div>
 					<div className="">
 						<label
@@ -197,7 +200,6 @@ const Register = ({ setRegister }) => {
 						</label>
 					</div>
 				</div>
-
 				<div className="w-2/3">
 					<label
 						className="uppercase w-auto text-gray-700 text-xs font-bold mb-2"
@@ -213,80 +215,102 @@ const Register = ({ setRegister }) => {
 					/>
 				</div>
 
-				<div className="flex flex-wrap gap-6">
-					<div className="w-[30%]">
+				<div className="flex flex-wrap gap-[4rem] w-full">
+					<div className="">
 						<label
 							className="uppercase w-auto text-gray-700 text-xs font-bold mb-2"
-							htmlFor="grid-address"
+							htmlFor="grid-organisation-name"
 						>
-							Address
+							Organisation name
 						</label>
 						<input
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
-							id="grid-address"
+							id="grid-organisation-name"
 							type="text"
-							placeholder="Address"
+							placeholder="Organisation name"
+						/>
+					</div>
+					<div className="">
+						<label
+							className=" uppercase text-gray-700 text-xs font-bold mb-2"
+							htmlFor="grid-organisation-type"
+						>
+							Organisation Type
+						</label>
+						<input
+							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
+							id="grid-organisation-type"
+							type="text"
+							placeholder="Organisation type"
+						/>
+					</div>
+				</div>
+				<div className="flex flex-wrap gap-6 ">
+					<div className="w-[30%]">
+						<label
+							className="uppercase w-auto text-gray-700 text-xs font-bold mb-2"
+							htmlFor="grid-organisation-address"
+						>
+							Organisation Address
+						</label>
+						<input
+							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
+							id="grid-organisation-address"
+							type="text"
+							placeholder="Organisation Address"
 						/>
 					</div>
 					<div className="w-[30%]">
 						<label
 							className="uppercase w-auto text-gray-700 text-xs font-bold mb-2"
-							htmlFor="grid-area"
+							htmlFor="grid-organisation-area"
 						>
-							Area
+							Organisation Area
 						</label>
 						<input
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
-							id="grid-area"
+							id="grid-organisation-area"
 							type="text"
-							placeholder="Area"
+							placeholder="Organisation Area"
 						/>
 					</div>
 					<div className="w-[30%]">
 						<label
 							className=" uppercase text-gray-700 text-xs font-bold mb-2"
-							htmlFor="grid-governate"
+							htmlFor="grid-organisation-governate"
 						>
-							Governate
+							Organisation Governate
 						</label>
 						<input
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
-							id="grid-governate"
+							id="grid-organisation-governate"
 							type="text"
-							placeholder="Governate"
+							placeholder="Organisation Governate"
 						/>
 					</div>
 				</div>
 
-				<button className="bg-white w-1/4 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
+				<button className="bg-white w-1/4 h-10 mt-3 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
 					Register
 				</button>
 			</form>
-			<div className="w-2/3 flex flex-row items-center justify-center gap-x-2">
-				<div className="bg-slate-800 h-0.5 w-2/3"> </div>
-				<p className="bodia-kalam">or</p>
-				<div className="bg-slate-800 h-0.5 w-2/3"> </div>
-			</div>
 
-			<div className="bg-white w-2/4 h-10 mt-2 mb-2 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
-				<img src="/src/assets/google-icon.svg" />
-				<button className=" text-black">Register With Google</button>
+			<div className="flex flex-col gap-2 mt-2 items-center justify-center">
+				<Link
+					onClick={() => setRegister("login")}
+					className="text-black underline mx-2 text-left"
+				>
+					Already have an account?
+				</Link>
+				<Link
+					onClick={() => setRegister("register")}
+					className="text-black  stroke-red underline mx-2 text-left"
+				>
+					Register as an individual
+				</Link>
 			</div>
-
-			<Link
-				onClick={() => setRegister("login")}
-				className="text-black underline mx-2 text-left"
-			>
-				Already have an account?
-			</Link>
-			<Link
-				onClick={() => setRegister("registerOrg")}
-				className="text-black  stroke-red underline mx-2 text-left"
-			>
-				Register as an organization
-			</Link>
 		</div>
 	);
 };
 
-export default Register;
+export default RegisterOrg;
