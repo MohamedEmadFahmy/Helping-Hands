@@ -3,22 +3,26 @@
 
 import { useState } from "react";
 
-const DonorTypeCard = ({ imageLink }) => {
-	const [isHovered, setIsHovered] = useState(false);
-	const handleMouseEnter = () => setIsHovered(true);
-	const handleMouseLeave = () => setIsHovered(false);
-
+const DonorTypeCard = ({ imageLink, description, isClicked }) => {
 	return (
 		<div
-			className="w-[20vw] h-[30vh] rounded-lg bg-slate-600 flex items-center justify-center text-white text-xl hover:cursor-pointer hover:bg-purple-400 hover:drop-shadow-lg "
-			onMouseEnter={handleMouseEnter}
-			onMouseLeave={handleMouseLeave}
+			className={`w-[20vw] h-[30vh] rounded-lg bg-slate-600 flex items-center justify-center text-white text-xl hover:cursor-pointer hover:drop-shadow-lg hover:scale-105 relative transition-transform ease-in-out ${
+				isClicked && "scale-105"
+			}`}
 		>
-			{/* <p>Donor Type Card</p> */}
+			<div className="absolute inset-0 bg-[rgba(30,41,59,0)] transition-color ease-in-out hover:bg-[rgba(30,41,59,0.7)] rounded-lg">
+				<div className="w-full h-full flex items-center justify-center transition-opacity ease-in-out opacity-0 hover:opacity-100">
+					<p className="text-2xl">
+						{description
+							? description
+							: "This is a placeholder description"}
+					</p>
+				</div>
+			</div>
 
 			<img src={imageLink} alt="" className="h-5/6" />
 
-			{isHovered && <p>Hovered</p>}
+			{/* {isClicked && <p>Clicked</p>} */}
 		</div>
 	);
 };
