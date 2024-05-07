@@ -1,14 +1,25 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import DonorTypeCard from "../components/DonorTypeCard";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SelectDonorTypePage = () => {
 	const [clickedDiv, setClickedDiv] = useState(null);
+	const navigate = useNavigate();
 
 	const handleClick = (index) => {
 		// Set the clicked div to the clicked index
 		setClickedDiv(index);
-		alert(`Clicked div ${index}`); // Remove this line
+		// alert(`Clicked div ${index}`); // Remove this line
+	};
+
+	const handleSaveDonorType = () => {
+		if (!clickedDiv) {
+			alert("Please select a donor type");
+		} else {
+			navigate("/");
+		}
 	};
 
 	return (
@@ -51,7 +62,10 @@ const SelectDonorTypePage = () => {
 				/>
 			</div>
 
-			<button className="text-xl font-bold bg-slate-500 p-4 rounded-md text-white hover:shadow-lg hover:bg-slate-600">
+			<button
+				className="text-xl font-bold bg-slate-500 p-4 rounded-md text-white hover:shadow-lg hover:bg-slate-600"
+				onClick={handleSaveDonorType}
+			>
 				Continue
 			</button>
 		</div>

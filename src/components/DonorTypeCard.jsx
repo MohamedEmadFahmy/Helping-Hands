@@ -3,9 +3,10 @@
 
 import { useState } from "react";
 
-const DonorTypeCard = ({ imageLink, description, isClicked }) => {
+const DonorTypeCard = ({ imageLink, description, onClick, isClicked }) => {
 	return (
 		<div
+			onClick={onClick}
 			className={`w-[20vw] h-[30vh] rounded-lg bg-slate-600 flex items-center justify-center text-white text-xl hover:cursor-pointer hover:drop-shadow-lg hover:scale-105 relative transition-transform ease-in-out ${
 				isClicked && "scale-105"
 			}`}
