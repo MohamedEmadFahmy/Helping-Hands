@@ -5,7 +5,7 @@ import RegisterOrg from "../components/RegisterOrg";
 import { useState } from "react";
 
 const LoginPage = () => {
-	const [isRegister, setRegister] = useState("register");
+	const [isRegister, setRegister] = useState("login");
 
 	return (
 		<div className="h-screen w-screen md:flex">

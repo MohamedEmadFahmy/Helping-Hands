@@ -290,7 +290,7 @@ const RegisterOrg = ({ setRegister }) => {
 					</div>
 				</div>
 
-				<button className="bg-white w-1/4 h-10 mt-3 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
+				<button className="bg-white w-1/4 h-10 mt-3 rounded-xl self-center flex flex-row items-center justify-center gap-x-6 hover:bg-neutral-200 hover:drop-shadow-lg hover:scale-105">
 					Register
 				</button>
 			</form>

@@ -258,33 +258,35 @@ const Register = ({ setRegister }) => {
 					</div>
 				</div>
 
-				<button className="bg-white w-1/4 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
+				<button className="bg-white w-1/4 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6 hover:bg-neutral-200 hover:drop-shadow-lg hover:scale-105">
 					Register
 				</button>
 			</form>
-			<div className="w-2/3 flex flex-row items-center justify-center gap-x-2">
+			<div className="w-2/3 flex flex-row items-center justify-center gap-x-2 ">
 				<div className="bg-slate-800 h-0.5 w-2/3"> </div>
 				<p className="bodia-kalam">or</p>
 				<div className="bg-slate-800 h-0.5 w-2/3"> </div>
 			</div>
 
-			<div className="bg-white w-2/4 h-10 mt-2 mb-2 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
+			<div className="bg-white w-2/4 h-10 mt-2 mb-2 rounded-xl self-center flex flex-row items-center justify-center gap-x-6 hover:bg-neutral-200 hover:drop-shadow-lg hover:scale-105 cursor-pointer">
 				<img src="/src/assets/google-icon.svg" />
 				<button className=" text-black">Register With Google</button>
 			</div>
 
-			<Link
-				onClick={() => setRegister("login")}
-				className="text-black underline mx-2 text-left"
-			>
-				Already have an account?
-			</Link>
-			<Link
-				onClick={() => setRegister("registerOrg")}
-				className="text-black  stroke-red underline mx-2 text-left"
-			>
-				Register as an organization
-			</Link>
+			<div className="flex flex-col gap-2 mt-2 items-center justify-center">
+				<Link
+					onClick={() => setRegister("login")}
+					className="text-black underline mx-2 text-left"
+				>
+					Already have an account?
+				</Link>
+				<Link
+					onClick={() => setRegister("registerOrg")}
+					className="text-black  stroke-red underline mx-2 text-left"
+				>
+					Register as an organization
+				</Link>
+			</div>
 		</div>
 	);
 };

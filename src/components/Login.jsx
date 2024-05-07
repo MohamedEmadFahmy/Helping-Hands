@@ -62,23 +62,25 @@ const Login = ({ setRegister }) => {
 				<div className="bg-slate-800 h-0.5 w-2/3"> </div>
 			</div>
 
-			<div className="bg-white w-2/4 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
+			<div className="bg-white w-2/4 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6 hover:bg-neutral-200 hover:drop-shadow-lg hover:scale-105 cursor-pointer">
 				<img src="/src/assets/google-icon.svg" />
 				<button className=" text-black">Login With Google</button>
 			</div>
 
-			<Link
-				onClick={() => setRegister("register")}
-				className="text-black-500 underline mx-2 text-left"
-			>
-				Don{"'"}t have an account?
-			</Link>
-			<Link
-				onClick={() => setRegister("registerOrg")}
-				className="text-black  stroke-red underline mx-2 text-left"
-			>
-				Register as an organization
-			</Link>
+			<div className="flex flex-col gap-2 mt-2 items-center justify-center">
+				<Link
+					onClick={() => setRegister("register")}
+					className="text-black-500 underline mx-2 text-left"
+				>
+					Don{"'"}t have an account?
+				</Link>
+				<Link
+					onClick={() => setRegister("registerOrg")}
+					className="text-black  stroke-red underline mx-2 text-left"
+				>
+					Register as an organization
+				</Link>
+			</div>
 		</div>
 	);
 };
