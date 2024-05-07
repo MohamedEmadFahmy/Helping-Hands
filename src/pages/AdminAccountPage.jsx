@@ -2,7 +2,7 @@ import AdminAccount from "../components/AdminAccount";
 import AdminNavbar from "../components/AdminNavbar";
 import { useState } from "react";
 
-const DonorAccountPage = () => {
+const AdminAccountPage = () => {
     return (
         <>
 
@@ -14,4 +14,4 @@ const DonorAccountPage = () => {
     );
 };
 
-export default DonorAccountPage;
+export default AdminAccountPage;
