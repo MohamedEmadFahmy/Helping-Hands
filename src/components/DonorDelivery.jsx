@@ -47,9 +47,9 @@ const DonorDelivery = () => {
                             ></iframe>
                         </div>
                         <div className="p-4">
-                            <h2 className="font-bold mb-4 text-3xl">Driver Information</h2>
+                            <h2 className="font-bold mb-4 text-3xl">Pickup Information</h2>
                             <div className="mb-2">
-                                <p className="text-gray-600 font-semibold text-lg">Name: John Doe</p>
+                                <p className="text-gray-600 font-semibold text-lg">Driver Name: John Doe</p>
                             </div>
                             <div className="mb-2">
                                 <p className="text-gray-600 font-semibold text-lg">Phone Number: +1234567890</p>
@@ -60,7 +60,13 @@ const DonorDelivery = () => {
                             <div className="mb-2">
                                 <p className="text-gray-600 font-semibold text-lg">Vehicle model: Red Nissan Sunny</p>
                             </div>
-                            <div className="pt-9 mt-80">
+                            <div className="mb-2">
+                                <p className="text-gray-600 font-semibold text-lg">Donation Type: Medical Supplies</p>
+                            </div>
+                            <div className="mb-2">
+                                <p className="text-gray-600 font-semibold text-lg">Quantity: 10 Pcs</p>
+                            </div>
+                            <div className="mt-72">
                                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
                                     Contact Support
                                 </button>
