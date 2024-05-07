@@ -10,8 +10,18 @@ const DonorTypeCard = ({ imageLink, description, isClicked }) => {
 				isClicked && "scale-105"
 			}`}
 		>
-			<div className="absolute inset-0 bg-[rgba(30,41,59,0)] transition-color ease-in-out hover:bg-[rgba(30,41,59,0.7)] rounded-lg">
-				<div className="w-full h-full flex items-center justify-center transition-opacity ease-in-out opacity-0 hover:opacity-100">
+			<div
+				className={`absolute inset-0 ${
+					isClicked
+						? "bg-[rgba(30,41,59,0.7)]"
+						: "bg-[rgba(30,41,59,0)]"
+				} transition-color ease-in-out hover:bg-[rgba(30,41,59,0.7)] rounded-lg	`}
+			>
+				<div
+					className={`w-full h-full flex items-center justify-center transition-opacity ease-in-out ${
+						isClicked ? "opacity-1" : "opacity-0"
+					} hover:opacity-100`}
+				>
 					<p className="text-2xl">
 						{description
 							? description
