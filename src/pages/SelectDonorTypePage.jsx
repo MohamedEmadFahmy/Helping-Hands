@@ -18,7 +18,7 @@ const SelectDonorTypePage = () => {
 		if (!clickedDiv) {
 			alert("Please select a donor type");
 		} else {
-			navigate("/");
+			navigate("/donor/home");
 		}
 	};
 

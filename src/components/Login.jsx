@@ -74,12 +74,12 @@ const Login = ({ setRegister }) => {
 				>
 					Don{"'"}t have an account?
 				</Link>
-				<Link
+				{/* <Link
 					onClick={() => setRegister("registerOrg")}
 					className="text-black  stroke-red underline mx-2 text-left"
 				>
 					Register as an organization
-				</Link>
+				</Link> */}
 			</div>
 		</div>
 	);

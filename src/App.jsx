@@ -6,25 +6,51 @@ import {
 	RouterProvider,
 } from "react-router-dom";
 
-import MainLayout from "./layouts/MainLayout";
+import DonorPageLayout from "./layouts/DonorPageLayout";
 import LoginPage from "./pages/LoginPage";
 import SelectDonorTypePage from "./pages/SelectDonorTypePage";
+import DonorHomePage from "./pages/DonorHomePage";
+import DonorOrganizationsPage from "./pages/DonorOrganizationsPage";
+import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
+import DonorDonatePage from "./pages/DonorDonatePage";
+import DonorVolunteerPage from "./pages/DonorVolunteerPage";
 
 const App = () => {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
-			// <Route path="/" element={<MainLayout />}>
+			// <Route path="/" element={<DonorPageLayout />}>
 			<>
-				<Route path="/">
-					<Route index element={<LoginPage />} />
-					<Route
-						path="/select-type"
-						element={<SelectDonorTypePage />}
-					/>
+				<Route path="/" index element={<LoginPage />} />
 
-					<Route element={<MainLayout />}>
-						<Route path="/hi" element={<SelectDonorTypePage />} />
-					</Route>
+				<Route path="/select-type" element={<SelectDonorTypePage />} />
+
+				<Route element={<DonorPageLayout />}>
+					<Route
+						path="/donor/home"
+						element={<DonorHomePage />}
+					></Route>
+				</Route>
+
+				<Route element={<DonorPageLayout />}>
+					<Route
+						path="/donor/organizations"
+						element={<DonorOrganizationsPage />}
+					/>
+				</Route>
+				<Route element={<DonorPageLayout />}>
+					<Route
+						path="/donor/deliveries"
+						element={<DonorDeliveriesPage />}
+					/>
+				</Route>
+				<Route element={<DonorPageLayout />}>
+					<Route path="/donor/donate" element={<DonorDonatePage />} />
+				</Route>
+				<Route element={<DonorPageLayout />}>
+					<Route
+						path="/donor/volunteer"
+						element={<DonorVolunteerPage />}
+					/>
 				</Route>
 			</>
 		)
