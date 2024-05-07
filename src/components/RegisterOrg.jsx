@@ -17,7 +17,7 @@ const RegisterOrg = ({ setRegister }) => {
 			className="bg-gradient-to-tr from-primaryShades-300 to-primaryShades-500 rounded-lg flex flex-col items-center justify-center pt-8 pb-4 gap-2 w-[60%]"
 			// relative overflow-hidden md:flex w-1/3 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden
 		>
-			<h1 className="text-white font-bold text-4xl font-sans">
+			<h1 className="text-white font-bold text-4xl font-sans mb-5">
 				Register as an Organisation
 			</h1>
 			<form
