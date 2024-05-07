@@ -2,7 +2,11 @@ import { useState } from "react";
 
 const DonorAccount = () => {
     const [username, setUsername] = useState("Abso");
+    const [firstname, setFirstname] = useState("Youssof");
+    const [lastname, setLastname] = useState("Ahmed");
     const [isUsernameEditing, setIsUsernameEditing] = useState(false);
+    const [isFirstnameEditing, setIsFirstnameEditing] = useState(false);
+    const [isLastnameEditing, setIsLastnameEditing] = useState(false);
     const [dob, setDob] = useState("1990-01-01");
     const [isDobEditing, setIsDobEditing] = useState(false);
     const [loc, setLoc] = useState("6th October City, Giza, Egypt");
@@ -15,7 +19,7 @@ const DonorAccount = () => {
     const [isPasswordEditing, setIsPasswordEditing] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState("00000000000");
     const [isPhoneNumberEditing, setIsPhoneNumberEditing] = useState(false);
-    const [donorRole, setDonorRole] = useState("Teacher"); // Possible values: Regular, Doctor, Teacher
+    const [donorRole, setDonorRole] = useState("Regular"); // Possible values: Regular, Doctor, Teacher
 
     const [schedule, setSchedule] = useState("");
     const [isScheduleEditing, setIsScheduleEditing] = useState(false);
@@ -26,6 +30,12 @@ const DonorAccount = () => {
 
     const toggleUsernameEditing = () => {
         setIsUsernameEditing(!isUsernameEditing);
+    };
+    const toggleFirstnameEditing = () => {
+        setIsFirstnameEditing(!isFirstnameEditing);
+    };
+    const toggleLastnameEditing = () => {
+        setIsLastnameEditing(!isLastnameEditing);
     };
 
     const toggleDobEditing = () => {
@@ -66,6 +76,12 @@ const DonorAccount = () => {
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
+    };
+    const handleFirstnameChange = (e) => {
+        setFirstname(e.target.value);
+    };
+    const handleLastnameChange = (e) => {
+        setLastname(e.target.value);
     };
 
     const handleDobChange = (e) => {
@@ -296,6 +312,46 @@ const DonorAccount = () => {
                             className="text-blue-600 hover:text-blue-700 focus:outline-none"
                         >
                             {isUsernameEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+                <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">First Name:</p>
+                            {isFirstnameEditing ? (
+                                <input
+                                    type="text"
+                                    value={firstname}
+                                    onChange={handleFirstnameChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold ">{firstname}</p>
+                            )}
+                            <button
+                            onClick={toggleFirstnameEditing}
+                            className=" ml-60 text-blue-600 hover:text-blue-700 focus:outline-none"
+                            >
+                                {isFirstnameEditing ? "Save" : "Edit"}
+                            </button>
+                            <p className="text-gray-600 ml-10 mr-2">Last Name:</p>
+                            {isLastnameEditing ? (
+                                <input
+                                    type="text"
+                                    value={lastname}
+                                    onChange={handleLastnameChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">{lastname}</p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleLastnameEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isLastnameEditing ? "Save" : "Edit"}
                         </button>
                     </div>
                 </div>
