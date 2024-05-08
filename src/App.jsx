@@ -18,18 +18,19 @@ import DonorDonatePage from "./pages/DonorDonatePage";
 import DonorVolunteerPage from "./pages/DonorVolunteerPage";
 import LoginPage from "./pages/LoginPage";
 import OrganisationDonorDetailsPage from "./pages/OrganisationDonorDetailsPage";
-import AdminManagmentPage from "./pages/AdminManagmentPage";
+import OrganizationAccount from "./pages/OrganizationAccount";
 import DonationCreationPage from "./pages/DonationCreationPage";
 import DonorAccountPage from "./pages/DonorAccountPage";
 import DonorAccount from "./components/DonorAccount";
 import DonorDeliveryPage from "./pages/DonorDeliveryPage";
+;
 
 const App = () => {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			// <Route path="/" element={<DonorPageLayout />}>
 			<>
-				<Route path="/" index element={<LoginPage />} />
+				<Route path="/" index element={<OrganizationAccount />} />
 
 				<Route path="/select-type" element={<SelectDonorTypePage />} />
 
@@ -67,10 +68,7 @@ const App = () => {
 					element={<OrganisationDonorDetailsPage />}
 				/>
 
-				<Route
-					path="/admin/account-management"
-					element={<AdminManagmentPage />}
-				/>
+				
 			</>
 		)
 	);
