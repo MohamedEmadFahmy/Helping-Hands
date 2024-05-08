@@ -17,8 +17,8 @@ import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
 import DonorDonatePage from "./pages/DonorDonatePage";
 import DonorVolunteerPage from "./pages/DonorVolunteerPage";
 import LoginPage from "./pages/LoginPage";
-import DonorDetails from "./pages/DonorDetails";
-import AdminManagment from "./pages/AdminManagment";
+import OrganisationDonorDetailsPage from "./pages/OrganisationDonorDetailsPage";
+import AdminManagmentPage from "./pages/AdminManagmentPage";
 import DonationCreationPage from "./pages/DonationCreationPage";
 import DonorAccountPage from "./pages/DonorAccountPage";
 import DonorAccount from "./components/DonorAccount";
@@ -64,12 +64,12 @@ const App = () => {
 
 				<Route
 					path="/organisation/donor-details"
-					element={<DonorDetails />}
+					element={<OrganisationDonorDetailsPage />}
 				/>
 
 				<Route
 					path="/admin/account-management"
-					element={<AdminManagment />}
+					element={<AdminManagmentPage />}
 				/>
 			</>
 		)

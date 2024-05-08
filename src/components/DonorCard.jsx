@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import placeHolder from "../assets/images/logo.png";
+import reactLogo from "../assets/images/react.png";
 
 const DonorCard = ({ setView }) => {
 	return (
@@ -13,7 +13,7 @@ const DonorCard = ({ setView }) => {
 			<div className="flex pl-3 gap-10 pb-5 border-b-4 border-gray">
 				<div>
 					<img
-						src={placeHolder}
+						src={reactLogo}
 						alt="Profile Icon"
 						style={{ width: "25%", height: "auto" }}
 					></img>
@@ -23,7 +23,7 @@ const DonorCard = ({ setView }) => {
 			<div className="flex pl-3 gap-10 pb-5 border-b-4 border-gray">
 				<div>
 					<img
-						src={placeHolder}
+						src={reactLogo}
 						alt="Email Icon"
 						style={{ width: "25%", height: "auto" }}
 					></img>
@@ -33,7 +33,7 @@ const DonorCard = ({ setView }) => {
 			<div className="flex pl-3 gap-10 pb-5 border-b-4 border-gray">
 				<div>
 					<img
-						src={placeHolder}
+						src={reactLogo}
 						alt="Phone number Icon"
 						style={{ width: "25%", height: "auto" }}
 					></img>
