@@ -8,7 +8,8 @@ import {
 } from "react-router-dom";
 
 // Import your components
-import Donorregisteration from "./pages/Donorregisteration";
+
+import DoctorRegisteration from "./pages/DoctorRegisteration";
 import DonorPageLayout from "./layouts/DonorPageLayout";
 import SelectDonorTypePage from "./pages/SelectDonorTypePage";
 import DonorHomePage from "./pages/DonorHomePage";
@@ -17,6 +18,7 @@ import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
 import DonorDonatePage from "./pages/DonorDonatePage";
 import DonorVolunteerPage from "./pages/DonorVolunteerPage";
 import LoginPage from "./pages/LoginPage";
+import DonorDetails from "./pages/DonorDetails";
 
 const App = () => {
 	const router = createBrowserRouter(
@@ -55,6 +57,16 @@ const App = () => {
 						element={<DonorVolunteerPage />}
 					/>
 				</Route>
+
+				<Route element={<DonorPageLayout />}>
+					<Route
+						path="/doctor-register"
+						element={<DoctorRegisteration />}
+					/>
+				</Route>
+
+				<Route path="/donor-details" element={<DonorDetails />} />
+				{/* <Route element={<DonorPageLayout />}></Route> */}
 			</>
 		)
 	);
