@@ -19,6 +19,7 @@ import DonorDonatePage from "./pages/DonorDonatePage";
 import DonorVolunteerPage from "./pages/DonorVolunteerPage";
 import LoginPage from "./pages/LoginPage";
 import DonorDetails from "./pages/DonorDetails";
+import AdminManagment from "./pages/AdminManagment";
 
 const App = () => {
 	const router = createBrowserRouter(
@@ -67,6 +68,11 @@ const App = () => {
 
 				<Route path="/donor-details" element={<DonorDetails />} />
 				{/* <Route element={<DonorPageLayout />}></Route> */}
+
+				<Route
+					path="/admin/account-management"
+					element={<AdminManagment />}
+				/>
 			</>
 		)
 	);
