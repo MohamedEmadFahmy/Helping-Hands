@@ -9,8 +9,6 @@ import ahl from "../assets/organisation-images/ahl.jpeg";
 import cccpa1 from "../assets/organisation-images/cccpa1.jpeg";
 import cccpa from "../assets/organisation-images/cccpa.jpeg";
 
-import Register from "./Register";
-
 const Organization = () => {
 	return (
 		<div className="flex flex-col min-h-screen px-4 py-6 bg-blue-100">

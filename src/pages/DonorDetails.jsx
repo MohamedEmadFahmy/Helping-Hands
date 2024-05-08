@@ -2,7 +2,6 @@
 
 import DonorCard from "../components/DonorCard";
 import FulfilledDonationsCard from "../components/FulfilledDonationsCard";
-import NavBar from "../components/NavBar";
 import { useState } from "react";
 
 const DonorDetails = () => {
@@ -10,7 +9,6 @@ const DonorDetails = () => {
 
 	return (
 		<div className="flex-col justify-center items-center bg-secondaryShades-500 w-screen h-screen overflow-y-scroll">
-			<NavBar />
 			<div className="flex flex-col items-center w-full h-3/5 p-10 gap-5">
 				<FulfilledDonationsCard setView={setView} />
 				<FulfilledDonationsCard setView={setView} />
