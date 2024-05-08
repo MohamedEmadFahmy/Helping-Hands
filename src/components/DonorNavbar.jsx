@@ -1,7 +1,6 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
-import logo from "../assets/images/logo_white.png";
-import reactLogo from "../assets/images/react.png";
+import logo from "../assets/images/logo.png";
 
 const DonorNavbar = () => {
 	const navigate = useNavigate();
@@ -46,7 +45,7 @@ const DonorNavbar = () => {
 			</div>
 			<div className="flex items-center justify-center gap-3 w-1/7 h-full ">
 				<img
-					src={reactLogo}
+					src={logo}
 					alt=""
 					className="h-[50%] cursor-pointer"
 					onClick={() => navigate("/donor/account")}
