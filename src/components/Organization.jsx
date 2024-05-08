@@ -13,28 +13,30 @@ const Organization = () => {
   return (
     <div className="flex flex-col min-h-screen px-4 py-6 bg-blue-100">
       <div className="flex flex-col justify-center items-center mb-6">
-        <h1 className="text-xl font-bold text-center mr-4">Account Management</h1>
-        <h2 className="text-lg font-medium text-center">Organizations</h2>
-      </div>
-
-      <div className="flex mb-4">
-        <div className="w-full mr-4">
-          <input
-            type="text"
-            placeholder="Search by Organization Name"
-            className="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-1 focus:ring-blue-500"
-          />
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            Filter by Government
-          </button>
-          <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            Filter by Area
-          </button>
-          <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            Filter by Organization Type
-          </button>
+        <h1 className="text-xl font-bold text-center mr-4 bg-white"> Admin Account Managment</h1>
+        <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
+        <h3 className="text-xl font-bold text-center mr-4">Organisations</h3>
+        <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
+        
+        <div className="flex mb-4">
+          <div className="w-full mr-4">
+            <input
+              type="text"
+              placeholder="Search by Donor Name"
+              className="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+              Filter by Registered Donors
+            </button>
+            <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+             Filter by Doctors
+            </button>
+            <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            Filter by Teachers
+            </button>
+          </div>
         </div>
       </div>
 
@@ -75,8 +77,79 @@ const Organization = () => {
           <img src={cccpa} alt="Hospital Picture" className="w-full h-40 rounded-b-md" />
         </div>
       </div>
+
+      <div className="bg-gray-200 p-4 rounded-md mt-4">
+  
+        <h3 className="text-lg font-medium mb-2 text-center">Donor Accounts</h3>
+
+        <div className="flex flex-wrap gap-2">
+            <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            Filter by Registered Donors
+            </button>
+            <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            Filter by Doctors
+            </button>
+            <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            Filter by Teachers
+            </button>
+          </div>
+          <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
+          <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
+        <div className="flex items-center gap-2">
+          <img src={G157357} alt="Donor Logo" className="w-10 h-10 rounded-full" />
+          <div>
+            <p className="text-gray-800 font-medium">John Doe</p>
+            <p className="text-gray-600">john.doe@example.com</p>
+            <p className="text-gray-600">Area: Cairo</p>
+          </div>
+        </div>
+        <div className="mt-4 flex justify-between">
+          <button className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500">
+            Delete Account
+          </button>
+          <button className="px-4 py-2 rounded-md text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            View Details
+          </button>
+        </div>
+        <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
+        
+        <div className="flex items-center gap-2">
+          <img src={G157357} alt="Donor Logo" className="w-10 h-10 rounded-full" />
+          <div>
+            <p className="text-gray-800 font-medium">John Doe</p>
+            <p className="text-gray-600">john.doe@example.com</p>
+            <p className="text-gray-600">Area: Alex</p>
+          </div>
+        </div>
+        <div className="mt-4 flex justify-between">
+          <button className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500">
+            Delete Account
+          </button>
+          <button className="px-4 py-2 rounded-md text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            View Details
+          </button>
+        </div>
+        <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
+        <div className="flex items-center gap-2">
+          <img src={G157357} alt="Donor Logo" className="w-10 h-10 rounded-full" />
+          <div>
+            <p className="text-gray-800 font-medium">John Doe</p>
+            <p className="text-gray-600">john.doe@example.com</p>
+            <p className="text-gray-600">Area: Giza</p>
+          </div>
+        </div>
+        <div className="mt-4 flex justify-between">
+          <button className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500">
+            Delete Account
+          </button>
+          <button className="px-4 py-2 rounded-md text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            View Details
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default Organization;
+
