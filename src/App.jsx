@@ -1,19 +1,22 @@
 /* eslint-disable no-unused-vars */
+
 import {
 	Route,
+	RouterProvider,
 	createBrowserRouter,
 	createRoutesFromElements,
-	RouterProvider,
 } from "react-router-dom";
 
+// Import your components
+import Donorregisteration from "./pages/Donorregisteration";
 import DonorPageLayout from "./layouts/DonorPageLayout";
-import LoginPage from "./pages/LoginPage";
 import SelectDonorTypePage from "./pages/SelectDonorTypePage";
 import DonorHomePage from "./pages/DonorHomePage";
 import DonorOrganizationsPage from "./pages/DonorOrganizationsPage";
 import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
 import DonorDonatePage from "./pages/DonorDonatePage";
 import DonorVolunteerPage from "./pages/DonorVolunteerPage";
+import LoginPage from "./pages/LoginPage";
 
 const App = () => {
 	const router = createBrowserRouter(

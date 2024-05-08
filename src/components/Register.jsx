@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Register = ({ setRegister }) => {
-	const navigate = useNavigate();
+  const navigate = useNavigate();
 
-	const submitForm = (e) => {
-		e.preventDefault();
-		navigate("/select-type");
-	};
+  const submitForm = (e) => {
+    e.preventDefault();
+    navigate("/select-type");
+  };
 
 	return (
 		<div
@@ -59,22 +59,22 @@ const Register = ({ setRegister }) => {
 						{/* <p className="text-red-500 text-xs italic">
 								Please fill out this field.
 							</p> */}
-					</div>
-					<div className="">
-						<label
-							className=" uppercase text-gray-700 text-xs font-bold mb-2"
-							htmlFor="grid-retype-password"
-						>
-							Retype Password
-						</label>
-						<input
-							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
-							id="grid-retype-password"
-							type="password"
-							placeholder="********"
-						/>
-					</div>
-				</div>
+          </div>
+          <div className="">
+            <label
+              className=" uppercase text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-retype-password"
+            >
+              Retype Password
+            </label>
+            <input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
+              id="grid-retype-password"
+              type="password"
+              placeholder="********"
+            />
+          </div>
+        </div>
 
 				<div className="flex flex-wrap gap-[4rem] ">
 					<div className="">
@@ -122,81 +122,71 @@ const Register = ({ setRegister }) => {
 					{/* <p className="text-red-500 text-xs italic">
 								Please fill out this field.
 							</p> */}
-				</div>
+        </div>
 
-				<div className="flex items-center gap-10">
-					<h1 className="text-xl font-normal">Gender:</h1>
-					<div className="inline-flex items-center">
-						<label
-							className="relative flex items-center p-3 rounded-full cursor-pointer"
-							htmlFor="male"
-						>
-							<input
-								name="type"
-								type="radio"
-								className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
-								id="male"
-								checked
-								readOnly
-							/>
-							<span className="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									className="h-3.5 w-3.5"
-									viewBox="0 0 16 16"
-									fill="currentColor"
-								>
-									<circle
-										data-name="ellipse"
-										cx="8"
-										cy="8"
-										r="8"
-									></circle>
-								</svg>
-							</span>
-						</label>
-						<label
-							className="mt-px font-light text-gray-700 cursor-pointer select-none"
-							htmlFor="male"
-						>
-							Male
-						</label>
-					</div>
-					<div className="inline-flex items-center">
-						<label
-							className="relative flex items-center p-3 rounded-full cursor-pointer"
-							htmlFor="female"
-						>
-							<input
-								name="type"
-								type="radio"
-								className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
-								id="female"
-							/>
-							<span className="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									className="h-3.5 w-3.5"
-									viewBox="0 0 16 16"
-									fill="currentColor"
-								>
-									<circle
-										data-name="ellipse"
-										cx="8"
-										cy="8"
-										r="8"
-									></circle>
-								</svg>
-							</span>
-						</label>
-						<label
-							className="mt-px font-light text-gray-700 cursor-pointer select-none"
-							htmlFor="female"
-						>
-							Female
-						</label>
-					</div>
-				</div>
+        <div className="flex items-center gap-10">
+          <h1 className="text-xl font-normal">Gender:</h1>
+          <div className="inline-flex items-center">
+            <label
+              className="relative flex items-center p-3 rounded-full cursor-pointer"
+              htmlFor="male"
+            >
+              <input
+                name="type"
+                type="radio"
+                className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                id="male"
+                checked
+                readOnly
+              />
+              <span className="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-3.5 w-3.5"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                >
+                  <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+                </svg>
+              </span>
+            </label>
+            <label
+              className="mt-px font-light text-gray-700 cursor-pointer select-none"
+              htmlFor="male"
+            >
+              Male
+            </label>
+          </div>
+          <div className="inline-flex items-center">
+            <label
+              className="relative flex items-center p-3 rounded-full cursor-pointer"
+              htmlFor="female"
+            >
+              <input
+                name="type"
+                type="radio"
+                className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                id="female"
+              />
+              <span className="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-3.5 w-3.5"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                >
+                  <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+                </svg>
+              </span>
+            </label>
+            <label
+              className="mt-px font-light text-gray-700 cursor-pointer select-none"
+              htmlFor="female"
+            >
+              Female
+            </label>
+          </div>
+        </div>
 
 				<div className="w-2/3">
 					<label
