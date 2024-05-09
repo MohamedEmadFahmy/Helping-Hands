@@ -14,19 +14,7 @@ const DonorAccCard=()=>{
 
   <div className="bg-gray-200 p-4 rounded-md mt-4">
   
-        <h3 className="text-lg font-medium mb-2 text-center">Donor Accounts</h3>
-
-        <div className="flex flex-wrap gap-2">
-            <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            Filter by Registered Donors
-            </button>
-            <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            Filter by Doctors
-            </button>
-            <button className="px-3 py-2 rounded-md text-sm font-medium bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            Filter by Teachers
-            </button>
-          </div>
+        
           <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
           <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
         <div className="flex items-center gap-2">
@@ -45,41 +33,7 @@ const DonorAccCard=()=>{
             View Details
           </button>
         </div>
-        <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
-        
-        <div className="flex items-center gap-2">
-          <img src={G157357} alt="Donor Logo" className="w-10 h-10 rounded-full" />
-          <div>
-            <p className="text-gray-800 font-medium">John Doe</p>
-            <p className="text-gray-600">john.doe@example.com</p>
-            <p className="text-gray-600">Area: Alex</p>
-          </div>
-        </div>
-        <div className="mt-4 flex justify-between">
-          <button className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500">
-            Delete Account
-          </button>
-          <button className="px-4 py-2 rounded-md text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            View Details
-          </button>
-        </div>
-        <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
-        <div className="flex items-center gap-2">
-          <img src={G157357} alt="Donor Logo" className="w-10 h-10 rounded-full" />
-          <div>
-            <p className="text-gray-800 font-medium">John Doe</p>
-            <p className="text-gray-600">john.doe@example.com</p>
-            <p className="text-gray-600">Area: Giza</p>
-          </div>
-        </div>
-        <div className="mt-4 flex justify-between">
-          <button className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500">
-            Delete Account
-          </button>
-          <button className="px-4 py-2 rounded-md text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            View Details
-          </button>
-        </div>
+
       </div>
     
        
