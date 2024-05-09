@@ -1,33 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-const DonorDelivery = () => {
-    const [deliveryState, setDeliveryState] = useState("UpcomingDelivery");
+const OrganizationDelivery = () => {
+    const [hasOrderedDonations, setHasOrderedDonations] = useState(false);
+    const [deliveryDate, setDeliveryDate] = useState("");
+    const [deliveryTime, setDeliveryTime] = useState("");
     const [eta, setETA] = useState("");
 
-    const predefinedDeliveryTime = "2024-05-11T15:00";
-
-    useEffect(() => {
+    const handleOrderDonations = () => {
+        setHasOrderedDonations(true);
         calculateETA();
-    }, []);
+    };
 
-    const handleSwitchState = () => {
-        switch (deliveryState) {
-            case "NoDonation":
-                setDeliveryState("UpcomingDelivery");
-                break;
-            case "UpcomingDelivery":
-                setDeliveryState("DeliveryOnTheWay");
-                break;
-            case "DeliveryOnTheWay":
-                setDeliveryState("NoDonation");
-                break;
-            default:
-                break;
-        }
+    const handleDeliveryDateChange = (e) => {
+        setDeliveryDate(e.target.value);
+    };
+
+    const handleDeliveryTimeChange = (e) => {
+        setDeliveryTime(e.target.value);
     };
 
     const calculateETA = () => {
-        const deliveryDateTime = new Date(predefinedDeliveryTime);
+        const deliveryDateTime = new Date(`${deliveryDate}T${deliveryTime}`);
         const currentDateTime = new Date();
 
         // Calculate the difference in milliseconds between deliveryDateTime and currentDateTime
@@ -48,19 +41,36 @@ const DonorDelivery = () => {
 
     return (
         <div className="p-4 w-screen h-screen flex flex-col justify-center items-center">
-            {deliveryState === "NoDonation" && (
+            {!hasOrderedDonations ? (
                 <div className="flex shadow-md bg-gray-200 w-3/4 items-center justify-center">
-                    <h1 className="text-4xl font-bold m-8">You Have No Donations to Deliver!</h1>
+                    <form className="p-8">
+                        <h1 className="text-4xl font-bold mb-8">Order Donations Delivery</h1>
+                        <div className="mb-4">
+                            <p className="text-lg font-semibold">Donation Type: Medical Supplies</p>
+                        </div>
+                        <div className="mb-4">
+                            <p className="text-lg font-semibold">Quantity: 10 Pcs</p>
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="deliveryDate" className="text-lg font-semibold">
+                                Delivery Date:
+                            </label>
+                            <input type="date" id="deliveryDate" value={deliveryDate} onChange={handleDeliveryDateChange} className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none" />
+                        </div>
+                        <div className="mb-8">
+                            <label htmlFor="deliveryTime" className="text-lg font-semibold">
+                                Delivery Time:
+                            </label>
+                            <input type="time" id="deliveryTime" value={deliveryTime} onChange={handleDeliveryTimeChange} className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none" />
+                        </div>
+                        <button type="button" onClick={handleOrderDonations} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Order Delivery
+                        </button>
+                    </form>
                 </div>
-            )}
-            {deliveryState === "UpcomingDelivery" && (
-                <div className="flex shadow-md bg-gray-200 w-3/4 items-center justify-center">
-                    <h1 className="text-4xl font-bold m-8">A delivery driver will be dispatched to your location shortly</h1>
-                </div>
-            )}
-            {deliveryState === "DeliveryOnTheWay" && (
+            ) : (
                 <>
-                    <h1 className="text-4xl font-bold m-8">A delivery driver is on their way to pick up your donation</h1>
+                    <h1 className="text-4xl font-bold m-8">A delivery driver is on their way to Deliver your donation</h1>
                     <div className="flex shadow-md bg-gray-200 w-3/4">
                         <div className="p-4 mb-4">
                             <iframe
@@ -74,7 +84,7 @@ const DonorDelivery = () => {
                             ></iframe>
                         </div>
                         <div className="p-4">
-                            <h2 className="font-bold mb-4 text-3xl">Pickup Information</h2>
+                            <h2 className="font-bold mb-4 text-3xl">Delivery Information</h2>
                             <div className="mb-2">
                                 <p className="text-gray-600 font-semibold text-lg">Driver Name: John Doe</p>
                             </div>
@@ -105,14 +115,8 @@ const DonorDelivery = () => {
                     </div>
                 </>
             )}
-            <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-                onClick={handleSwitchState}
-            >
-                Switch State
-            </button>
         </div>
     );
 };
 
-export default DonorDelivery;
+export default OrganizationDelivery;
