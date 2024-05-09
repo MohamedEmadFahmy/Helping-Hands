@@ -72,11 +72,17 @@ const OrganizationAccount = () => {
           </div>
         </div>
 
-        {/* Organization Cards, one under the other */}
+        {/* Organization Cards, with increased vertical space */}
         <div>
-          <OrganizationCard />
-          <OrganizationCard />
-          <OrganizationCard />
+          <div className="mb-4">
+            <OrganizationCard />
+          </div>
+          <div className="mb-4">
+            <OrganizationCard />
+          </div>
+          <div className="mb-4">
+            <OrganizationCard />
+          </div>
         </div>
       </main>
     </div>
