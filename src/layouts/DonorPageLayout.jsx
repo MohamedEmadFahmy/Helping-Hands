@@ -1,15 +1,17 @@
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import DonorNavbar from "../components/DonorNavbar";
+
 import "react-toastify/dist/ReactToastify.css";
 
-const MainLayout = () => {
+const DonorPageLayout = () => {
 	return (
 		<>
-			<h1>in main layout</h1>
+			<DonorNavbar />
 			<Outlet />
 			<ToastContainer />
 		</>
 	);
 };
 
-export default MainLayout;
+export default DonorPageLayout;

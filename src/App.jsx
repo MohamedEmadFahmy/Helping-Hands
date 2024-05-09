@@ -1,40 +1,78 @@
 /* eslint-disable no-unused-vars */
+
 import {
 	Route,
+	RouterProvider,
 	createBrowserRouter,
 	createRoutesFromElements,
-	RouterProvider,
 } from "react-router-dom";
 
-import MainLayout from "./layouts/MainLayout";
-import LoginPage from "./pages/LoginPage";
+// Import your components
+
+import DonorPageLayout from "./layouts/DonorPageLayout";
 import SelectDonorTypePage from "./pages/SelectDonorTypePage";
+import DonorHomePage from "./pages/DonorHomePage";
+import DonorOrganizationsPage from "./pages/DonorOrganizationsPage";
+import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
+import DonorDonatePage from "./pages/DonorDonatePage";
+import DonorVolunteerPage from "./pages/DonorVolunteerPage";
+import LoginPage from "./pages/LoginPage";
+import OrganisationDonorDetailsPage from "./pages/OrganisationDonorDetailsPage";
+import AdminManagmentPage from "./pages/AdminManagmentPage";
 import DonationCreationPage from "./pages/DonationCreationPage";
 import AdminAccountPage from "./pages/AdminAccountPage";
 import OrganizationAccountPage from "./pages/OrganizationAccountPage";
 import DonorAccountPage from "./pages/DonorAccountPage";
+import DonorAccount from "./components/DonorAccount";
 import DonorDeliveryPage from "./pages/DonorDeliveryPage";
 
 const App = () => {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
-			// <Route path="/" element={<MainLayout />}>
+			// <Route path="/" element={<DonorPageLayout />}>
 			<>
-				<Route path="/">
-					<Route index element={<LoginPage />} />
+				<Route path="/" index element={<LoginPage />} />
+
+				<Route path="/select-type" element={<SelectDonorTypePage />} />
+
+				<Route element={<DonorPageLayout />}>
 					<Route
-						path="/select-type"
-						element={<SelectDonorTypePage />}
+						path="/donor/home"
+						element={<DonorHomePage />}
+					></Route>
+					<Route
+						path="/donor/organizations"
+						element={<DonorOrganizationsPage />}
 					/>
-					<Route path="/donation-create" element={<DonationCreationPage />} />
-					<Route path="/admin-account" element={<AdminAccountPage />} />
-					<Route path="/organization-account" element={<OrganizationAccountPage />} />
-					<Route path="/donor-account" element={<DonorAccountPage />} />
-					<Route path="/donor-delivery" element={<DonorDeliveryPage />} />
-					<Route element={<MainLayout />}>
-						<Route path="/hi" element={<SelectDonorTypePage />} />
-					</Route>
+					<Route
+						path="/donor/deliveries"
+						element={<DonorDeliveriesPage />}
+					/>
+					<Route path="/donor/donate" element={<DonorDonatePage />} />
+					<Route
+						path="/donor/volunteer"
+						element={<DonorVolunteerPage />}
+					/>
+					<Route
+						path="/donor/donation-create"
+						element={<DonationCreationPage />}
+					/>
+					<Route path="/donor/account" element={<DonorAccount />} />
+					<Route
+						path="/donor-delivery"
+						element={<DonorDeliveryPage />}
+					/>
 				</Route>
+
+				<Route
+					path="/organisation/donor-details"
+					element={<OrganisationDonorDetailsPage />}
+				/>
+
+				<Route
+					path="/admin/account-management"
+					element={<AdminManagmentPage />}
+				/>
 			</>
 		)
 	);

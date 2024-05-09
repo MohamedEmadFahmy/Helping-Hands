@@ -22,19 +22,16 @@ const Login = ({ setRegister }) => {
 				<div className="">
 					<label
 						className="uppercase w-auto text-gray-700 text-xs font-bold mb-2"
-						htmlFor="grid-email"
+						htmlFor="grid-username"
 					>
-						email
+						username
 					</label>
 					<input
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
-						id="grid-email"
-						type="email"
-						placeholder="example@test.com"
+						id="grid-username"
+						type="text"
+						placeholder="username"
 					/>
-					{/* <p className="text-red-500 text-xs italic">
-								Please fill out this field.
-							</p> */}
 				</div>
 
 				<div className="">
@@ -55,7 +52,7 @@ const Login = ({ setRegister }) => {
 							</p> */}
 				</div>
 
-				<button className="bg-white w-3/4 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
+				<button className="bg-white w-1/4 hover:bg-neutral-200 hover:drop-shadow-lg hover:scale-105 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
 					Login
 				</button>
 			</form>
@@ -65,17 +62,25 @@ const Login = ({ setRegister }) => {
 				<div className="bg-slate-800 h-0.5 w-2/3"> </div>
 			</div>
 
-			<div className="bg-white w-3/4 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
+			<div className="bg-white w-2/4 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6 hover:bg-neutral-200 hover:drop-shadow-lg hover:scale-105 cursor-pointer">
 				<img src="/src/assets/google-icon.svg" />
 				<button className=" text-black">Login With Google</button>
 			</div>
 
-			<Link
-				onClick={() => setRegister((prevState) => !prevState)}
-				className="text-black-500 underline mx-2 text-left"
-			>
-				Don{"'"}t have an account?
-			</Link>
+			<div className="flex flex-col gap-2 mt-2 items-center justify-center">
+				<Link
+					onClick={() => setRegister("register")}
+					className="text-black-500 underline mx-2 text-left"
+				>
+					Don{"'"}t have an account?
+				</Link>
+				{/* <Link
+					onClick={() => setRegister("registerOrg")}
+					className="text-black  stroke-red underline mx-2 text-left"
+				>
+					Register as an organization
+				</Link> */}
+			</div>
 		</div>
 	);
 };
