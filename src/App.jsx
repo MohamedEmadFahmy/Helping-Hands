@@ -5,22 +5,22 @@ import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-} from 'react-router-dom';
+} from "react-router-dom";
 
-import AdminManagmentPage from './pages/AdminManagmentPage';
-import DonationCreationPage from './pages/DonationCreationPage';
-import DonorAccount from './components/DonorAccount';
-import DonorDeliveriesPage from './pages/DonorDeliveriesPage';
-import DonorDeliveryPage from './pages/DonorDeliveryPage';
-import DonorDonatePage from './pages/DonorDonatePage';
-import DonorHomePage from './pages/DonorHomePage';
-import DonorOrganizationsPage from './pages/DonorOrganizationsPage';
-import DonorPageLayout from './layouts/DonorPageLayout';
-import DonorVolunteerPage from './pages/DonorVolunteerPage';
-import LoginPage from './pages/LoginPage';
-import OrganisationDonorDetailsPage from './pages/OrganisationDonorDetailsPage';
-import SelectDonorTypePage from './pages/SelectDonorTypePage';
-
+import AdminManagmentPage from "./pages/AdminManagmentPage";
+import DonationCreationPage from "./pages/DonationCreationPage";
+import DonorAccount from "./components/DonorAccount";
+import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
+import DonorDeliveryPage from "./pages/DonorDeliveryPage";
+import DonorDonatePage from "./pages/DonorDonatePage";
+import DonorHomePage from "./pages/DonorHomePage";
+import DonorOrganizationsPage from "./pages/DonorOrganizationsPage";
+import DonorPageLayout from "./layouts/DonorPageLayout";
+import DonorVolunteerPage from "./pages/DonorVolunteerPage";
+import LoginPage from "./pages/LoginPage";
+import OrganisationDonorDetailsPage from "./pages/OrganisationDonorDetailsPage";
+import SelectDonorTypePage from "./pages/SelectDonorTypePage";
+import FilterResultsButton from "./components/FilterOnebutt";
 // Import your components
 
 const App = () => {
@@ -53,7 +53,10 @@ const App = () => {
           path="/organisation/donor-details"
           element={<OrganisationDonorDetailsPage />}
         />
-
+        <Route
+          path="/organisation/donor-details"
+          element={<OrganisationDonorDetailsPage />}
+        />
         <Route
           path="/admin/account-management"
           element={<AdminManagmentPage />}
