@@ -3,8 +3,8 @@ import HospitalLogo from '../assets/DonationCardsImages/HospitalLogo.png';
 
 const OrganizationDonationCard = () => {
   return (
-    <div className="flex bg-white w-3/4 h-full shadow-md">
-      <div className="flex-col w-2/5">
+    <div className="flex bg-white w-90% h-full shadow-md">
+      <div className="flex flex-col w-2/5 gap-40">
         <div className="flex gap-7 mt-5 ml-5 w-full">
           <div>
             <img
@@ -23,8 +23,10 @@ const OrganizationDonationCard = () => {
           </div>
         </div>
 
-        <div className="flex justify-end mt-20">
-          <button className="bg-primaryShades-500">View Details</button>
+        <div className="flex justify-end mt-5 mr-1">
+          <button className="bg-primaryShades-500 round-sm px-8 ">
+            Donate
+          </button>
         </div>
       </div>
 
