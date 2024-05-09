@@ -66,6 +66,16 @@ const DonorAccount = () => {
 	const toggleScheduleEditing = () => {
 		setIsScheduleEditing(!isScheduleEditing);
 	};
+	const toggleDonorRole = () => {
+		if (donorRole === "Regular") {
+			setDonorRole("Teacher");
+		} else if (donorRole === "Teacher") {
+			setDonorRole("Doctor");
+		} else {
+			setDonorRole("Regular");
+		}
+	};
+	
 
 	const toggleSpecialtyEditing = () => {
 		setIsSpecialtyEditing(!isSpecialtyEditing);
@@ -563,6 +573,10 @@ const DonorAccount = () => {
 							{isPhoneNumberEditing ? "Save" : "Edit"}
 						</button>
 					</div>
+				</div>
+				<div className="">
+					<button onClick={toggleDonorRole}>
+					</button>
 				</div>
 			</div>
 
