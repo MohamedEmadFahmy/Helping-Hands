@@ -20,9 +20,12 @@ import LoginPage from "./pages/LoginPage";
 import OrganisationDonorDetailsPage from "./pages/OrganisationDonorDetailsPage";
 import AdminManagmentPage from "./pages/AdminManagmentPage";
 import DonationCreationPage from "./pages/DonationCreationPage";
+import AdminAccountPage from "./pages/AdminAccountPage";
+import OrganizationAccountPage from "./pages/OrganizationAccountPage";
 import DonorAccountPage from "./pages/DonorAccountPage";
 import DonorAccount from "./components/DonorAccount";
 import DonorDeliveryPage from "./pages/DonorDeliveryPage";
+import OrganizationDeliveryPage from "./pages/OrganizationDeliveryPage";
 
 const App = () => {
 	const router = createBrowserRouter(
@@ -55,13 +58,17 @@ const App = () => {
 						path="/donor/donation-create"
 						element={<DonationCreationPage />}
 					/>
-					<Route path="/donor/account" element={<DonorAccount />} />
+					<Route path="/donor/account" element={<DonorAccountPage />} />
 					<Route
 						path="/donor-delivery"
 						element={<DonorDeliveryPage />}
 					/>
 				</Route>
 
+					<Route
+						path="/organization/organization-delivery"
+						element={<OrganizationDeliveryPage />}
+					/>
 				<Route
 					path="/organisation/donor-details"
 					element={<OrganisationDonorDetailsPage />}

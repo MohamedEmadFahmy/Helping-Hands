@@ -171,9 +171,11 @@ const DonorAccount = () => {
 					<h2 className="text-lg font-bold mb-4">
 						Volunteer Information
 					</h2>
-					<button className="text-blue-600 hover:text-blue-700 focus:outline-none">
+                    <div className="flex justify-center">
+					<button className="border p-2 border-2 w-60 rounded-lg border-primary hover:border-primaryShades-600 text-primary hover:text-primaryShades-600 focus:outline-none">
 						Volunteer Now!
 					</button>
+                    </div>
 				</div>
 			);
 		} else {
