@@ -1,12 +1,51 @@
 import BloodDonationCard from '../components/BloodDonationCard';
 import OrganizationDonationCard from '../components/OrganizationDonationCard';
 import RegularDonationCard from '../components/RegularDonationCard';
+import { useState } from 'react';
 
 const DonorDonatePage = () => {
+  const [viewBlood, setBlood] = useState(false);
+  const [viewGeneral, setGeneral] = useState(true);
+  const [viewOrganization, setOrganization] = useState(false);
+
   return (
-    <div className="h-[90vh] w-screen bg-secondaryShades-500 flex flex-col justify-center items-center gap-10 overflow-y-scroll">
-      <div className="h-1/3 w-5/6 flex-col justify-center items-center overflow-y-scroll space-y-5">
-        <OrganizationDonationCard />
+    <div className="h-[90vh] w-screen bg-secondaryShades-500 flex flex-col  items-center gap-10 ">
+      <div className="flex justify-start gap-5 mt-5 ">
+        <button
+          className="bg-primaryShades-500 rounded-lg px-10 py-2"
+          onClick={() => {
+            setBlood(true);
+            setGeneral(false);
+            setOrganization(false);
+          }}
+        >
+          Blood Donations
+        </button>
+        <button
+          className="bg-primaryShades-500 rounded-lg px-5 py-2"
+          onClick={() => {
+            setBlood(false);
+            setGeneral(false);
+            setOrganization(true);
+          }}
+        >
+          Organization Donations
+        </button>
+        <button
+          className="bg-primaryShades-500 rounded-lg px-10 py-2"
+          onClick={() => {
+            setBlood(false);
+            setGeneral(true);
+            setOrganization(false);
+          }}
+        >
+          General Donations
+        </button>
+      </div>
+      <div className="h-1/3 w-5/6 flex flex-col justify-center items-center gap-5">
+        {viewOrganization && <OrganizationDonationCard />}
+        {viewBlood && <BloodDonationCard />}
+        {viewGeneral && <RegularDonationCard />}
       </div>
     </div>
   );

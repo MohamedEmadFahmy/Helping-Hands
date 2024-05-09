@@ -3,8 +3,8 @@ import HospitalLogo from '../assets/DonationCardsImages/HospitalLogo.png';
 
 const OrganizationDonationCard = () => {
   return (
-    <div className="flex bg-white w-90% h-full shadow-md">
-      <div className="flex flex-col w-2/5 gap-40">
+    <div className="flex bg-white w-5/6 h-full shadow-md">
+      <div className="flex flex-col w-2/5 gap-48">
         <div className="flex gap-7 mt-5 ml-5 w-full">
           <div>
             <img
