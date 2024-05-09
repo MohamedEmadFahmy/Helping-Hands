@@ -6,6 +6,7 @@ export default {
 			colors: {
 				primary: "#4fab9b",
 				secondary: "#d9d9d9",
+				seconadryGrey: "#ececec",
 
 				primaryShades: {
 					100: "#dceeeb",
