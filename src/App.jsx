@@ -31,7 +31,7 @@ const App = () => {
 		createRoutesFromElements(
 			// <Route path="/" element={<DonorPageLayout />}>
 			<>
-				<Route path="/" index element={<OrganizationAccount />} />
+				<Route path="/" index element={<DonorAccounts />} />
 
 				<Route path="/select-type" element={<SelectDonorTypePage />} />
 

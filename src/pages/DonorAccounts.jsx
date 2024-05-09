@@ -13,7 +13,9 @@ const DonorAccounts = () => {
 
   return (
     <div className="donor-accounts-container">
-     
+      <div className="flex bg-primary h-[10vh]"></div>
+      <div className='my-3'></div>
+
 
       <header className="flex justify-center items-center mb-4">
         {/* Title */}

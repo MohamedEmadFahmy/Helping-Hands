@@ -13,10 +13,6 @@ const DonorAccCard=()=>{
     return(
 
   <div className="bg-gray-200 p-4 rounded-md mt-4">
-  
-        
-          <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
-          <div className="mt-4"></div> {/* This adds a margin-top of 1rem (16px) */}
         <div className="flex items-center gap-2">
           <img src={G157357} alt="Donor Logo" className="w-10 h-10 rounded-full" />
           <div>
@@ -35,7 +31,6 @@ const DonorAccCard=()=>{
         </div>
 
       </div>
-    
        
     );
 };

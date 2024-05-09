@@ -26,6 +26,8 @@ const OrganizationAccount = () => {
 
   return (
     <div className="organization-account-container">
+      <div className="flex bg-primary h-[10vh]"></div>
+      <div className='my-3'></div>
       <main className="organization-account-content">
         <div className="flex flex-col justify-center items-center mb-6">
           <h1 className="text-xl font-bold text-center mr-4">Organization Account</h1>
