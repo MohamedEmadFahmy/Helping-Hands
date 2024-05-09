@@ -22,7 +22,6 @@ import AdminManagmentPage from "./pages/AdminManagmentPage";
 import DonationCreationPage from "./pages/DonationCreationPage";
 import DonorAccountPage from "./pages/DonorAccountPage";
 import DonorAccount from "./components/DonorAccount";
-import DonorDeliveryPage from "./pages/DonorDeliveryPage";
 
 const App = () => {
 	const router = createBrowserRouter(
@@ -56,10 +55,6 @@ const App = () => {
 						element={<DonationCreationPage />}
 					/>
 					<Route path="/donor/account" element={<DonorAccount />} />
-					<Route
-						path="/donor-delivery"
-						element={<DonorDeliveryPage />}
-					/>
 				</Route>
 
 				<Route

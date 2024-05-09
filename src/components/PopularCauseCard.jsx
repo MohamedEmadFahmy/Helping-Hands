@@ -19,11 +19,16 @@ const PopularCauseCard = ({ imageLink, description }) => {
 						"w-full h-full flex items-center justify-center transition-opacity ease-in-out opacity-0 hover:opacity-100"
 					}
 				>
-					<p className="text-2xl text-white">
-						{description
-							? description
-							: "This is a placeholder description"}
-					</p>
+					<div className="h-full flex flex-col justify-center items-center gap-2">
+						<p className="text-2xl text-white">
+							{description
+								? description
+								: "This is a placeholder description"}
+						</p>
+						<p className="text-lg text-white border-b">
+							{"This is a placeholder description"}
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

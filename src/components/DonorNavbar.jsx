@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import logo from "../assets/images/logo_white.png";
 import reactLogo from "../assets/images/react.png";
@@ -17,7 +17,7 @@ const DonorNavbar = () => {
 			: "text-2xl font-semibold text-white transition duration-200 ";
 
 	return (
-		<nav className="h-[10vh] bg-primary flex items-center pl-10 pr-10 gap-[10rem]">
+		<nav className=" fixed w-screen opacity-80 h-[10vh] bg-primary flex items-center pl-10 pr-10 gap-[10rem]">
 			<img
 				src={logo}
 				alt=""
@@ -51,12 +51,9 @@ const DonorNavbar = () => {
 					className="h-[50%] cursor-pointer"
 					onClick={() => navigate("/donor/account")}
 				/>
-				<Link
-					to="/donor/account"
-					className="text-white font-bold text-lg"
-				>
+				<NavLink to="/donor/account" className={navLinkStyling}>
 					Account
-				</Link>
+				</NavLink>
 			</div>
 		</nav>
 	);
