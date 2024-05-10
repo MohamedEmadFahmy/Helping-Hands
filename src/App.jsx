@@ -15,7 +15,6 @@ import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
 import DonorDonatePage from "./pages/DonorDonatePage";
 import DonorHomePage from "./pages/DonorHomePage";
 import DonorOrganizationsPage from "./pages/DonorOrganizationsPage";
-import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
 import DonorPageLayout from "./layouts/DonorPageLayout";
 import DonorVolunteerPage from "./pages/DonorVolunteerPage";
 import LoginPage from "./pages/LoginPage";
