@@ -1,39 +1,70 @@
-import React from 'react';
-import G57357 from '../assets/images/gand/57357.jpeg';
-import G157357 from '../assets/images/gand/G157357.jpeg';
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 
-const OrganizationCard = () => {
-  return (
-    <div className="flex flex-col w-full h-full px-4 py-6 bg-gray-100">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* First organization entry */}
-        <div className="flex flex-col bg-white rounded-md shadow-md p-4 relative w-full h-full">
-          {/* Small image positioned absolutely top-right */}
-          <img
-            src={G157357}
-            alt="Hospital Logo (small)"
-            className="absolute top-0 right-0 w-16 h-16 rounded-full"
-          />
+const OrganizationCard = ({
+	accountImage,
+	accountName,
+	OrganizationType,
+	OrganizationArea,
+}) => {
+	const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-          <h3 className="text-lg font-medium mb-1">57357 Hospital</h3>
-          <p className="text-gray-600 mb-1">Type: Research Cancer Hospital</p>
-          <p className="text-gray-600 mb-1">Area: Cairo</p>
+	const shortName =
+		accountName.split(" ")[0] + " " + accountName.split(" ")[1];
 
-          <img src={G57357} alt="Hospital Picture" className="w-full h-40 rounded-b-md" />
+	return (
+		<div className="bg-gray-200 p-4 rounded-md w-2/3 flex flex-col justify-center">
+			<div className="flex items-center gap-2">
+				<img
+					src={accountImage}
+					alt="Donor Logo"
+					className="w-14 h-14 rounded-full"
+				/>
+				<div>
+					<p className="text-gray-800 font-medium">{shortName}</p>
+					<p className="text-gray-600">{OrganizationType}</p>
+					<p className="text-gray-600">{OrganizationArea}</p>
+				</div>
+			</div>
+			<div className="mt-4 flex justify-between">
+				<button
+					className="px-4 py-2 rounded-md text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-500"
+					onClick={() => {
+						setIsPopupOpen(true);
+					}}
+				>
+					View Details
+				</button>
+				<button className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500">
+					Delete Account
+				</button>
+			</div>
 
-          {/* Button container positioned below the image */}
-          <div className="flex justify-end mt-2">
-            <button className="px-2 py-1 rounded-md bg-red-500 text-white hover:bg-red-700 focus:outline-none focus:ring-1 focus:ring-red-500">
-              Delete Account
-            </button>
-            <button className="px-2 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-500 ml-2">
-              View Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+			{isPopupOpen && (
+				<>
+					<div className="fixed top-0 left-0 h-full w-full bg-black opacity-40 z-[60]"></div>
+					<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-grey-800 bg-opacity-50 z-[70]">
+						<div className="bg-white rounded-3xl shadow-2xl p-6 w-1/3 h-3/12">
+							<h1 className="text-lg font-semibold mb-4 underline">
+								{accountName}
+							</h1>
+
+							<p className="mb-2">Type: {OrganizationType}</p>
+							<p className="mb-2">Area: {OrganizationArea}</p>
+							<button
+								className="block w-full mt-4 px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+								onClick={() => setIsPopupOpen(false)}
+							>
+								Close
+							</button>
+						</div>
+					</div>
+				</>
+			)}
+		</div>
+	);
 };
 
 export default OrganizationCard;
+
