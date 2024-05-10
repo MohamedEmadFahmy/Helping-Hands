@@ -1,13 +1,9 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-const DonorAccount = () => {
-	const navigate = useNavigate();
-	const [username, setUsername] = useState("Abso");
+const OrganizationAccount = () => {
+	const [username, setUsername] = useState("Org123");
 	const [firstname, setFirstname] = useState("Youssof");
 	const [lastname, setLastname] = useState("Ahmed");
-	const [isUsernameEditing, setIsUsernameEditing] = useState(false);
 	const [isFirstnameEditing, setIsFirstnameEditing] = useState(false);
 	const [isLastnameEditing, setIsLastnameEditing] = useState(false);
 	const [dob, setDob] = useState("1990-01-01");
@@ -16,24 +12,27 @@ const DonorAccount = () => {
 	const [isLocEditing, setIsLocEditing] = useState(false);
 	const [gender, setGender] = useState("Male");
 	const [isGenderEditing, setIsGenderEditing] = useState(false);
+	const [orgName, setOrgName] = useState("Example Organization");
+	const [googleMapsLink, setGoogleMapsLink] = useState(
+		"https://maps.google.com/example"
+	);
+	const [orgType, setOrgType] = useState("Non-Profit");
 	const [email, setEmail] = useState("example@example.com");
-	const [isEmailEditing, setIsEmailEditing] = useState(false);
 	const [password, setPassword] = useState("12345678");
-	const [isPasswordEditing, setIsPasswordEditing] = useState(false);
 	const [phoneNumber, setPhoneNumber] = useState("00000000000");
+	const [isUsernameEditing, setIsUsernameEditing] = useState(false);
+	const [isOrgNameEditing, setIsOrgNameEditing] = useState(false);
+	const [isGoogleMapsLinkEditing, setIsGoogleMapsLinkEditing] =
+		useState(false);
+	const [isOrgTypeEditing, setIsOrgTypeEditing] = useState(false);
+	const [isEmailEditing, setIsEmailEditing] = useState(false);
+	const [isPasswordEditing, setIsPasswordEditing] = useState(false);
 	const [isPhoneNumberEditing, setIsPhoneNumberEditing] = useState(false);
-	const [donorRole, setDonorRole] = useState("Doctor"); // Possible values: Regular, Doctor, Teacher
-
-	const [schedule, setSchedule] = useState("");
-	const [isScheduleEditing, setIsScheduleEditing] = useState(false);
-	const [specialty, setSpecialty] = useState("");
-	const [isSpecialtyEditing, setIsSpecialtyEditing] = useState(false);
-	const [subject, setSubject] = useState("");
-	const [isSubjectEditing, setIsSubjectEditing] = useState(false);
 
 	const toggleUsernameEditing = () => {
 		setIsUsernameEditing(!isUsernameEditing);
 	};
+
 	const toggleFirstnameEditing = () => {
 		setIsFirstnameEditing(!isFirstnameEditing);
 	};
@@ -53,6 +52,18 @@ const DonorAccount = () => {
 		setIsGenderEditing(!isGenderEditing);
 	};
 
+	const toggleOrgNameEditing = () => {
+		setIsOrgNameEditing(!isOrgNameEditing);
+	};
+
+	const toggleGoogleMapsLinkEditing = () => {
+		setIsGoogleMapsLinkEditing(!isGoogleMapsLinkEditing);
+	};
+
+	const toggleOrgTypeEditing = () => {
+		setIsOrgTypeEditing(!isOrgTypeEditing);
+	};
+
 	const toggleEmailEditing = () => {
 		setIsEmailEditing(!isEmailEditing);
 	};
@@ -65,30 +76,10 @@ const DonorAccount = () => {
 		setIsPhoneNumberEditing(!isPhoneNumberEditing);
 	};
 
-	const toggleScheduleEditing = () => {
-		setIsScheduleEditing(!isScheduleEditing);
-	};
-	const toggleDonorRole = () => {
-		if (donorRole === "Regular") {
-			setDonorRole("Teacher");
-		} else if (donorRole === "Teacher") {
-			setDonorRole("Doctor");
-		} else {
-			setDonorRole("Regular");
-		}
-	};
-
-	const toggleSpecialtyEditing = () => {
-		setIsSpecialtyEditing(!isSpecialtyEditing);
-	};
-
-	const toggleSubjectEditing = () => {
-		setIsSubjectEditing(!isSubjectEditing);
-	};
-
 	const handleUsernameChange = (e) => {
 		setUsername(e.target.value);
 	};
+
 	const handleFirstnameChange = (e) => {
 		setFirstname(e.target.value);
 	};
@@ -108,6 +99,18 @@ const DonorAccount = () => {
 		setGender(e.target.value);
 	};
 
+	const handleOrgNameChange = (e) => {
+		setOrgName(e.target.value);
+	};
+
+	const handleGoogleMapsLinkChange = (e) => {
+		setGoogleMapsLink(e.target.value);
+	};
+
+	const handleOrgTypeChange = (e) => {
+		setOrgType(e.target.value);
+	};
+
 	const handleEmailChange = (e) => {
 		setEmail(e.target.value);
 	};
@@ -120,26 +123,12 @@ const DonorAccount = () => {
 		setPhoneNumber(e.target.value);
 	};
 
-	const handleScheduleChange = (e) => {
-		setSchedule(e.target.value);
-	};
-
-	const handleSpecialtyChange = (e) => {
-		setSpecialty(e.target.value);
-	};
-
-	const handleSubjectChange = (e) => {
-		setSubject(e.target.value);
-	};
-
 	const isValidEmail = (email) => {
-		// Regular expression to validate email format
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		return emailRegex.test(email);
 	};
 
 	const isValidPhoneNumber = (phoneNumber) => {
-		// Check if phoneNumber contains 11 digits
 		return /^\d{11}$/.test(phoneNumber);
 	};
 
@@ -163,180 +152,8 @@ const DonorAccount = () => {
 		setIsPasswordEditing(false);
 	};
 
-	const handleSaveSchedule = () => {
-		setIsScheduleEditing(false);
-	};
-
-	const handleSaveSpecialty = () => {
-		setIsSpecialtyEditing(false);
-	};
-
-	const handleSaveSubject = () => {
-		setIsSubjectEditing(false);
-	};
-
-	const renderVolunteerInformation = () => {
-		if (donorRole === "Regular") {
-			return (
-				<div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
-					<h2 className="text-lg font-bold mb-4">
-						Volunteer Information
-					</h2>
-					<div className="flex justify-center">
-						<button
-							onClick={() => {
-								navigate("/donor/volunteer");
-							}}
-							className="p-2 border-2 w-60 rounded-lg border-primary hover:border-primaryShades-600 text-primary hover:text-primaryShades-600 focus:outline-none"
-						>
-							Volunteer Now!
-						</button>
-					</div>
-				</div>
-			);
-		} else {
-			return (
-				<div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
-					<h2 className="text-lg font-bold mb-4">
-						Volunteer Information
-					</h2>
-					<div className="border-b border-gray-400 mb-4 pb-4">
-						<div className="flex justify-between items-center">
-							<div className="flex items-center">
-								<p className="text-gray-600 mr-2">Role:</p>
-								<p className="text-gray-800 font-semibold">
-									{donorRole}
-								</p>
-							</div>
-						</div>
-					</div>
-					<div className="border-b border-gray-400 mb-4 pb-4">
-						<div className="flex justify-between items-center">
-							<div className="flex items-center">
-								<p className="text-gray-600 mr-2">Schedule:</p>
-								{isScheduleEditing ? (
-									<input
-										type="text"
-										value={schedule}
-										onChange={handleScheduleChange}
-										className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-									/>
-								) : (
-									<p className="text-gray-800 font-semibold">
-										{schedule}
-									</p>
-								)}
-							</div>
-							<button
-								onClick={toggleScheduleEditing}
-								className="text-blue-600 hover:text-blue-700 focus:outline-none"
-							>
-								{isScheduleEditing ? "Save" : "Edit"}
-							</button>
-						</div>
-					</div>
-					<div className="border-b border-gray-400 mb-4 pb-4">
-						<div className="flex justify-between items-center">
-							<div className="flex items-center">
-								<p className="text-gray-600 mr-2">Location:</p>
-								{isLocEditing ? (
-									<input
-										type="text"
-										value={loc}
-										onChange={handleLocChange}
-										className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-									/>
-								) : (
-									<p className="text-gray-800 font-semibold">
-										{loc}
-									</p>
-								)}
-							</div>
-							<button
-								onClick={toggleLocEditing}
-								className="text-blue-600 hover:text-blue-700 focus:outline-none"
-							>
-								{isLocEditing ? "Save" : "Edit"}
-							</button>
-						</div>
-					</div>
-					<div className="mb-4 pb-4">
-						<div className="flex justify-between items-center">
-							<div className="flex items-center">
-								<p className="text-gray-600 mr-2">
-									{donorRole === "Doctor"
-										? "Specialty:"
-										: "Subject(s):"}
-								</p>
-								{donorRole === "Doctor" ? (
-									<>
-										{isSpecialtyEditing ? (
-											<input
-												type="text"
-												value={specialty}
-												onChange={handleSpecialtyChange}
-												className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-											/>
-										) : (
-											<p className="text-gray-800 font-semibold">
-												{specialty}
-											</p>
-										)}
-									</>
-								) : (
-									<>
-										{isSubjectEditing ? (
-											<input
-												type="text"
-												value={subject}
-												onChange={handleSubjectChange}
-												className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-											/>
-										) : (
-											<p className="text-gray-800 font-semibold">
-												{subject}
-											</p>
-										)}
-									</>
-								)}
-							</div>
-							<div>
-								{donorRole === "Doctor" ? (
-									<button
-										onClick={
-											isSpecialtyEditing
-												? handleSaveSpecialty
-												: toggleSpecialtyEditing
-										}
-										className="text-blue-600 hover:text-blue-700 focus:outline-none"
-									>
-										{isSpecialtyEditing ? "Save" : "Edit"}
-									</button>
-								) : (
-									<button
-										onClick={
-											isSubjectEditing
-												? handleSaveSubject
-												: toggleSubjectEditing
-										}
-										className="text-blue-600 hover:text-blue-700 focus:outline-none"
-									>
-										{isSubjectEditing ? "Save" : "Edit"}
-									</button>
-								)}
-							</div>
-						</div>
-					</div>
-				</div>
-			);
-		}
-	};
-
-	return (
-		<div className="flex flex-col justify-center items-center w-screen bg-secondary p-10">
-			<h1 className="text-3xl mt-60 font-bold mb-10">
-				Welcome, {username}
-			</h1>
+	const renderPersonalInformation = () => {
+		return (
 			<div className="bg-gray-200 p-4 rounded-lg shadow-md w-1/2">
 				<h2 className="text-lg font-bold mb-4">Personal Information</h2>
 				<div className="border-b border-gray-400 mb-4 pb-4">
@@ -490,7 +307,11 @@ const DonorAccount = () => {
 					</div>
 				</div>
 			</div>
+		);
+	};
 
+	const renderSecurityInformation = () => {
+		return (
 			<div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
 				<h2 className="text-lg font-bold mb-4">Security Information</h2>
 				<div className="border-b border-gray-400 mb-4 pb-4">
@@ -528,7 +349,7 @@ const DonorAccount = () => {
 							<p className="text-gray-600 mr-2">Password:</p>
 							{isPasswordEditing ? (
 								<input
-									type="text"
+									type="password"
 									value={password}
 									onChange={handlePasswordChange}
 									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
@@ -580,14 +401,118 @@ const DonorAccount = () => {
 						</button>
 					</div>
 				</div>
-				<div className="">
-					<button onClick={toggleDonorRole}></button>
+			</div>
+		);
+	};
+	const renderOrganizationInformation = () => {
+		return (
+			<div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
+				<h2 className="text-lg font-bold mb-4">
+					Organization Information
+				</h2>
+				<div className="border-b border-gray-400 mb-4 pb-4">
+					<div className="flex justify-between items-center">
+						<div className="flex items-center">
+							<p className="text-gray-600 mr-2">
+								Organization Name:
+							</p>
+							{isOrgNameEditing ? (
+								<input
+									type="text"
+									value={orgName}
+									onChange={handleOrgNameChange}
+									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+								/>
+							) : (
+								<p className="text-gray-800 font-semibold">
+									{orgName}
+								</p>
+							)}
+						</div>
+						<button
+							onClick={toggleOrgNameEditing}
+							className="text-blue-600 hover:text-blue-700 focus:outline-none"
+						>
+							{isOrgNameEditing ? "Save" : "Edit"}
+						</button>
+					</div>
+				</div>
+				<div className="border-b border-gray-400 mb-4 pb-4">
+					<div className="flex justify-between items-center">
+						<div className="flex items-center">
+							<p className="text-gray-600 mr-2">
+								Google Maps Link:
+							</p>
+							{isGoogleMapsLinkEditing ? (
+								<input
+									type="text"
+									value={googleMapsLink}
+									onChange={handleGoogleMapsLinkChange}
+									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+								/>
+							) : (
+								<p className="text-gray-800 font-semibold">
+									{googleMapsLink}
+								</p>
+							)}
+						</div>
+						<button
+							onClick={toggleGoogleMapsLinkEditing}
+							className="text-blue-600 hover:text-blue-700 focus:outline-none"
+						>
+							{isGoogleMapsLinkEditing ? "Save" : "Edit"}
+						</button>
+					</div>
+				</div>
+				<div className="pb-4">
+					<div className="flex justify-between items-center">
+						<div className="flex items-center">
+							<p className="text-gray-600 mr-2">
+								Organization Type:
+							</p>
+							{isOrgTypeEditing ? (
+								<select
+									value={orgType}
+									onChange={handleOrgTypeChange}
+									className="rounded-md px-2 py-1 focus:outline-none"
+								>
+									<option value="School">School</option>
+									<option value="Hospital">Hospital</option>
+									<option value="Church">Church</option>
+									<option value="Mosque">Mosque</option>
+									<option value="Non-Profit">
+										Non-Profit
+									</option>
+								</select>
+							) : (
+								<p className="text-gray-800 font-semibold">
+									{orgType}
+								</p>
+							)}
+						</div>
+						<button
+							onClick={toggleOrgTypeEditing}
+							className="text-blue-600 hover:text-blue-700 focus:outline-none"
+						>
+							{isOrgTypeEditing ? "Save" : "Edit"}
+						</button>
+					</div>
 				</div>
 			</div>
+		);
+	};
 
-			{renderVolunteerInformation()}
+	return (
+		<div className="flex flex-col justify-center items-center w-screen bg-secondary p-10">
+			<h1 className="text-3xl mt-60 font-bold mb-10">
+				Welcome, {username}
+			</h1>
+
+			{renderPersonalInformation()}
+			{renderSecurityInformation()}
+			{renderOrganizationInformation()}
 		</div>
 	);
 };
 
-export default DonorAccount;
+export default OrganizationAccount;

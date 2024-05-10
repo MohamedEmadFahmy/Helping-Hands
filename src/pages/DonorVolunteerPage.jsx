@@ -41,11 +41,7 @@ const DonorVolunteerPage = () => {
 			{viewDoctor && <MedicalCases />}
 			{viewTeacher && <TeachingCases />}
 
-			{!(viewDoctor && viewTeacher) && (
-				<p>You need to register to volunteer</p>
-			)}
-
-			<DonorVolunteerRegister />
+			{!viewDoctor && !viewTeacher && <DonorVolunteerRegister />}
 		</div>
 	);
 };

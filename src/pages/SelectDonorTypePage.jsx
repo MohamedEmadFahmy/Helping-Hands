@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import DonorTypeCard from "../components/DonorTypeCard";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const SelectDonorTypePage = () => {
