@@ -27,7 +27,7 @@ const App = () => {
 		createRoutesFromElements(
 			// <Route path="/" element={<DonorPageLayout />}>
 			<>
-				<Route path="/" index element={<AdminOrganizationAccounts />} />
+				<Route path="/" index element={<LoginPage />} />
 
 				<Route path="/select-type" element={<SelectDonorTypePage />} />
 
