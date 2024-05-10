@@ -1,5 +1,6 @@
 import { useState } from "react";
-import DonorAccCard from "../components/DonorAccCard";
+import DonorAccountCards from "../components/DonorAccountCards";
+
 import filterIcon from "../assets/images/gand/filterr.jpeg"; // Assuming the image path is correct
 
 const DonorAccounts = () => {
@@ -11,19 +12,13 @@ const DonorAccounts = () => {
 	};
 
 	return (
-		<div className="donor-accounts-container">
-			<div className="flex bg-primary h-[10vh]"></div>
-			<div className="my-3"></div>
-
-			<header className="flex justify-center items-center mb-4">
-				{/* Title */}
-				<h1 className="text-xl font-bold text-center">
-					Donor Accounts
-				</h1>
-			</header>
+		<div className=" bg-primaryShades-200 p-10 gap-10 w-full flex flex-col items-center justify-center">
+			<h1 className="text-5xl font-bold text-center font-mono text-white">
+				Donor Accounts
+			</h1>
 
 			{/* Filter button with options */}
-			<div className="relative">
+			<div className="">
 				<button
 					className="flex items-center px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
 					onClick={toggleFilterOptions}
@@ -50,7 +45,7 @@ const DonorAccounts = () => {
 						{filterOptions.map((filter) => (
 							<button
 								key={filter}
-								className="block px-4 py-2 text-sm text-left hover:bg-gray-100 focus:outline-none"
+								className="block w-full px-4 py-2 text-sm text-left hover:bg-gray-100 rounded-md"
 								onClick={() => {
 									// Handle filter option click
 									console.log(`Filter clicked: ${filter}`);
@@ -62,14 +57,7 @@ const DonorAccounts = () => {
 					</div>
 				)}
 			</div>
-
-			<div>
-				{/* Add your <DonorAccCard /> components here */}
-				<DonorAccCard />
-				<DonorAccCard />
-				<DonorAccCard />
-				<DonorAccCard />
-			</div>
+			<DonorAccountCards />
 		</div>
 	);
 };

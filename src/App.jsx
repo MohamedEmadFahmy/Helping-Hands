@@ -7,7 +7,8 @@ import {
 	createRoutesFromElements,
 } from "react-router-dom";
 
-import AdminManagmentPage from "./pages/AdminManagmentPage";
+import AdminDonorAccounts from "./pages/AdminDonorAccounts";
+import AdminOrganizationAccounts from "./pages/AdminOrganizationAccounts";
 import DonationCreationPage from "./pages/DonationCreationPage";
 import DonorAccount from "./components/DonorAccount";
 import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
@@ -53,6 +54,10 @@ const App = () => {
 						element={<DonationCreationPage />}
 					/>
 					<Route path="/donor/account" element={<DonorAccount />} />
+					<Route
+						path="/admin/donor-accounts"
+						element={<AdminDonorAccounts />}
+					/>
 				</Route>
 
 				<Route
@@ -63,9 +68,10 @@ const App = () => {
 					path="/organisation/donor-details"
 					element={<OrganisationDonorDetailsPage />}
 				/>
+
 				<Route
-					path="/admin/account-management"
-					element={<AdminManagmentPage />}
+					path="/admin/organization-accounts"
+					element={<AdminOrganizationAccounts />}
 				/>
 			</>
 		)

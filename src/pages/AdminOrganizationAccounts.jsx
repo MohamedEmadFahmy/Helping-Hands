@@ -36,7 +36,7 @@ const OrganizationAccount = () => {
 
 				<div className="flex mb-4 items-center">
 					{/* Search bar with optional hover effect */}
-					<div className="w-full mr-4 relative">
+					<div className="w-[80vw] mr-4 relative">
 						<input
 							type="text"
 							placeholder="Search by Organizations"
