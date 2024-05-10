@@ -34,7 +34,14 @@ const OrganizationDonationCard = ({ name, speciality, location }) => {
 				</div>
 			</div>
 
-			<img src={Hospital} alt="organization" className="w-2/5" />
+			<div
+				className="w-2/5"
+				style={{
+					backgroundImage: `url(${Hospital})`, // Example image path
+					backgroundSize: "cover", // Optional: Ensures the image covers the div
+					backgroundPosition: "center", // Optional: Centers the image
+				}}
+			></div>
 		</div>
 	);
 };
