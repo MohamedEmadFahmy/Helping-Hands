@@ -7,21 +7,19 @@ import {
 	createRoutesFromElements,
 } from "react-router-dom";
 
-// Import your components
-
-import DonorPageLayout from "./layouts/DonorPageLayout";
-import SelectDonorTypePage from "./pages/SelectDonorTypePage";
-import DonorHomePage from "./pages/DonorHomePage";
-import DonorOrganizationsPage from "./pages/DonorOrganizationsPage";
+import AdminManagmentPage from "./pages/AdminManagmentPage";
+import DonationCreationPage from "./pages/DonationCreationPage";
+import DonorAccount from "./components/DonorAccount";
 import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
 import DonorDonatePage from "./pages/DonorDonatePage";
+import DonorHomePage from "./pages/DonorHomePage";
+import DonorOrganizationsPage from "./pages/DonorOrganizationsPage";
+import DonorPageLayout from "./layouts/DonorPageLayout";
 import DonorVolunteerPage from "./pages/DonorVolunteerPage";
 import LoginPage from "./pages/LoginPage";
 import OrganisationDonorDetailsPage from "./pages/OrganisationDonorDetailsPage";
-import AdminManagmentPage from "./pages/AdminManagmentPage";
-import DonationCreationPage from "./pages/DonationCreationPage";
-import DonorAccountPage from "./pages/DonorAccountPage";
-import DonorAccount from "./components/DonorAccount";
+import SelectDonorTypePage from "./pages/SelectDonorTypePage";
+// Import your components
 
 const App = () => {
 	const router = createBrowserRouter(
@@ -61,7 +59,10 @@ const App = () => {
 					path="/organisation/donor-details"
 					element={<OrganisationDonorDetailsPage />}
 				/>
-
+				<Route
+					path="/organisation/donor-details"
+					element={<OrganisationDonorDetailsPage />}
+				/>
 				<Route
 					path="/admin/account-management"
 					element={<AdminManagmentPage />}
