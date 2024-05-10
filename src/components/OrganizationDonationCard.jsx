@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 
 const OrganizationDonationCard = ({ name, speciality, location }) => {
   return (
-    <div className="flex bg-white w-5/6 h-auto shadow-md">
+    <div className="flex bg-white w-1/2 h-auto shadow-md">
       <div className="flex flex-col w-2/5 gap-48">
         <div className="flex gap-7 mt-5 ml-5 w-full">
           <div>
             <img
+              className="rounded-full"
               src={HospitalLogo}
               alt="hospital logo"
               style={{

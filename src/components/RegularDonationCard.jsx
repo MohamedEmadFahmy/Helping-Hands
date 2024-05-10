@@ -7,6 +7,7 @@ const RegularDonationCard = ({ name, description, urgency, location }) => {
       <div className="flex gap-16 mt-5 ml-5 w-full">
         <div>
           <img
+            className="rounded-full"
             src={profileIcon}
             alt="profile icon"
             style={{

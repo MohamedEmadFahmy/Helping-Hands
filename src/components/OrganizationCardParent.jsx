@@ -2,7 +2,7 @@ import OrganizationDonationCard from './OrganizationDonationCard';
 
 const OrganizationCardParent = () => {
   return (
-    <div className="flex flex-col w-3/5 justify-center items-center gap-5">
+    <div className="flex flex-col w-3/5 justify-center items-center gap-5 mb-3">
       <OrganizationDonationCard
         name="Organization 1"
         speciality="Speciality 1"

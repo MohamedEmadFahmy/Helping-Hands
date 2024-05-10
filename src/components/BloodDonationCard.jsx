@@ -8,6 +8,7 @@ const BloodDonationCard = ({ hospitalName, name, bloodType, location }) => {
         <div>
           <img
             src={HospitalLogo}
+            className="rounded-full"
             alt="hospital logo"
             style={{
               width: '50px',
