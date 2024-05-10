@@ -17,7 +17,7 @@ const DonorNavbar = () => {
 			: "text-2xl font-semibold text-white transition duration-200 ";
 
 	return (
-		<nav className="fixed w-screen opacity-80 h-[10vh] bg-primary flex items-center pl-10 pr-10 gap-[10rem]">
+		<nav className="fixed sticky top-0 z-50 w-screen opacity-80 h-[10vh] bg-primary flex items-center pl-10 pr-10 gap-[10rem]">
 			<img
 				src={logo}
 				alt=""

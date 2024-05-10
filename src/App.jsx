@@ -13,7 +13,6 @@ import DonorPageLayout from "./layouts/DonorPageLayout";
 import SelectDonorTypePage from "./pages/SelectDonorTypePage";
 import DonorHomePage from "./pages/DonorHomePage";
 import DonorOrganizationsPage from "./pages/DonorOrganizationsPage";
-import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
 import DonorDonatePage from "./pages/DonorDonatePage";
 import DonorVolunteerPage from "./pages/DonorVolunteerPage";
 import LoginPage from "./pages/LoginPage";
@@ -45,33 +44,33 @@ const App = () => {
 						path="/donor/organizations"
 						element={<DonorOrganizationsPage />}
 					/>
-					<Route
-						path="/donor/deliveries"
-						element={<DonorDeliveriesPage />}
-					/>
 					<Route path="/donor/donate" element={<DonorDonatePage />} />
 					<Route
 						path="/donor/volunteer"
 						element={<DonorVolunteerPage />}
 					/>
 					<Route
-						path="/donor/donation-create"
+						path="/organization/donation-create"
 						element={<DonationCreationPage />}
 					/>
 					<Route path="/donor/account" element={<DonorAccountPage />} />
 					<Route
-						path="/donor-delivery"
+						path="/donor/deliveries"
 						element={<DonorDeliveryPage />}
 					/>
 				</Route>
 
 					<Route
-						path="/organization/organization-delivery"
+						path="/organization/deliveries"
 						element={<OrganizationDeliveryPage />}
 					/>
 				<Route
-					path="/organisation/donor-details"
+					path="/organization/donor-details"
 					element={<OrganisationDonorDetailsPage />}
+				/>
+				<Route
+					path="/organization/account"
+					element={<OrganizationAccountPage />}
 				/>
 
 				<Route
