@@ -58,20 +58,15 @@ const App = () => {
 						path="/admin/donor-accounts"
 						element={<AdminDonorAccounts />}
 					/>
+					<Route
+						path="/admin/organization-accounts"
+						element={<AdminOrganizationAccounts />}
+					/>
 				</Route>
 
 				<Route
 					path="/organisation/donor-details"
 					element={<OrganisationDonorDetailsPage />}
-				/>
-				<Route
-					path="/organisation/donor-details"
-					element={<OrganisationDonorDetailsPage />}
-				/>
-
-				<Route
-					path="/admin/organization-accounts"
-					element={<AdminOrganizationAccounts />}
 				/>
 			</>
 		)
