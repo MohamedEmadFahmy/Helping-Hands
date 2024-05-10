@@ -88,6 +88,11 @@ const DonorDelivery = () => {
 									Quantity: 10 Pcs
 								</p>
 							</div>
+							<div className="mb-2">
+								<p className="text-gray-600 font-semibold text-lg">
+									ETA: {eta}
+								</p>
+							</div>
 							<div className="mt-72">
 								<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
 									Contact Support
