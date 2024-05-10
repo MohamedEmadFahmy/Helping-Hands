@@ -1,4 +1,5 @@
 import PopularCauseCard from "../components/PopularCauseCard";
+import TestimonialCard from "../components/TestimonialCard";
 import poorChildrenPhoto from "../assets/images/poor-children.jpg";
 
 const DonorHomePage = () => {
@@ -48,9 +49,46 @@ const DonorHomePage = () => {
 						<PopularCauseCard
 							key={index}
 							imageLink={poorChildrenPhoto}
-							description={"Help Gaza"}
+							title={"Help Gaza"}
+							description={"This is a description"}
 						/>
 					))}
+				</div>
+			</div>
+
+			<div
+				className="h-[80vh] w-full bg-white flex flex-col items-center p-8
+			 gap-8"
+			>
+				<h1 className="text-black text-5xl font-semibold border-b-4 border-primaryShades-500">
+					Testimonials
+				</h1>
+
+				<div className="w-full h-full flex items-center justify-center gap-8">
+					<TestimonialCard
+						imageLink={poorChildrenPhoto}
+						rating={5}
+						description={
+							"This is a placeholder description. This app changed my life forever This is a placeholder description. This app changed my life forever. This app changed my life forever. This app changed my life forever"
+						}
+						title={"Mohamed"}
+					/>
+					<TestimonialCard
+						imageLink={poorChildrenPhoto}
+						rating={5}
+						description={
+							"This is a placeholder description. This app changed my life forever This is a placeholder description. This app changed my life forever. This app changed my life forever. This app changed my life forever"
+						}
+						title={"Mohamed"}
+					/>
+					<TestimonialCard
+						imageLink={poorChildrenPhoto}
+						rating={5}
+						description={
+							"This is a placeholder description. This app changed my life forever This is a placeholder description. This app changed my life forever. This app changed my life forever. This app changed my life forever"
+						}
+						title={"Mohamed"}
+					/>
 				</div>
 			</div>
 		</div>

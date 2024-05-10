@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { NavLink, useNavigate } from "react-router-dom";
 
 import logo from "../assets/images/logo_white.png";
 import reactLogo from "../assets/images/react.png";
 
-const DonorNavbar = () => {
+const DonorNavbar = ({ isOverlay }) => {
 	const navigate = useNavigate();
 
 	// const navLinkStyling = ({ isActive }) =>
@@ -17,7 +18,11 @@ const DonorNavbar = () => {
 			: "text-2xl font-semibold text-white transition duration-200 ";
 
 	return (
-		<nav className=" fixed w-screen opacity-80 h-[10vh] bg-primary flex items-center pl-10 pr-10 gap-[10rem]">
+		<nav
+			className={`${
+				isOverlay ? "fixed" : "sticky"
+			} top-0 z-50 w-screen opacity-100 h-[10vh] bg-primary flex items-center pl-10 pr-10 gap-[10rem]`}
+		>
 			<img
 				src={logo}
 				alt=""

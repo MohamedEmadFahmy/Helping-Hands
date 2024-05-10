@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const PopularCauseCard = ({ imageLink, description }) => {
+const PopularCauseCard = ({ imageLink, title, description }) => {
 	return (
 		<div className="bg-primary w-full h-full shadow-md border rounded-lg flex flex-col items-center justify-center p-2 hover:scale-105 cursor-pointer relative">
 			<div
@@ -21,12 +21,14 @@ const PopularCauseCard = ({ imageLink, description }) => {
 				>
 					<div className="h-full flex flex-col justify-center items-center gap-2">
 						<p className="text-2xl text-white">
-							{description
-								? description
+							{title
+								? title
 								: "This is a placeholder description"}
 						</p>
 						<p className="text-lg text-white border-b">
-							{"This is a placeholder description"}
+							{description
+								? description
+								: "This is a placeholder description"}
 						</p>
 					</div>
 				</div>
