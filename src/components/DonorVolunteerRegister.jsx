@@ -4,6 +4,7 @@ const OrganizationRegister = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [selectedType, setSelectedType] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [mapVisible, setMapVisible] = useState(false); // State to control the visibility of the map
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -16,6 +17,14 @@ const OrganizationRegister = () => {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
+  };
+
+  const toggleMapVisibility = () => {
+    setMapVisible(!mapVisible); // Toggle the visibility state of the map
+  };
+
+  const handleMapMouseDown = () => {
+    setMapVisible(false); // Turn off the map when the map is pressed
   };
 
   return (
@@ -48,7 +57,7 @@ const OrganizationRegister = () => {
       <div className="flex justify-center">
         <input
           type="text"
-          placeholder="Location..."
+          placeholder="Address, area, government..."
           className="rounded-md p-2 w-60"
         />
       </div>
@@ -59,6 +68,15 @@ const OrganizationRegister = () => {
           className="rounded-md p-2 w-60"
         />
       </div>
+      {selectedType === "teacher" && (
+        <div className="flex justify-center">
+          <input
+            type="text"
+            placeholder="Enter teaching subjects.."
+            className="rounded-md p-2 w-60"
+          />
+        </div>
+      )}
       <div className="flex justify-center">
         <label
           htmlFor="file-upload"
@@ -73,6 +91,22 @@ const OrganizationRegister = () => {
           {selectedFile ? selectedFile.name : "Upload Document"}
         </label>
       </div>
+      <div className="bg-white text-blue-500 font-bold rounded-md cursor-pointer p-2 w-60 text-center ">
+        <button onClick={toggleMapVisibility}>Toggle Map</button>
+      </div>
+      {mapVisible && (
+        <div className="flex justify-center w-full">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2823.150465912957!2d31.438874664226326!3d29.988423417037883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583d23fc96eed7%3A0x364e0a19bd725939!2sGUC%20gate%203!5e0!3m2!1sen!2seg!4v1715007489098!5m2!1sen!2seg"
+            width="800"
+            height="600"
+            loading="lazy"
+            title="Google Map"
+            style={{ border: "0px" }}
+            onMouseDown={handleMapMouseDown} // Add event listener to handle map mouse down
+          ></iframe>
+        </div>
+      )}
       <div className="flex justify-center items-center">
         <input
           type="checkbox"
