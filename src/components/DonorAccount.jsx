@@ -22,13 +22,13 @@ const DonorAccount = () => {
 	const [isPasswordEditing, setIsPasswordEditing] = useState(false);
 	const [phoneNumber, setPhoneNumber] = useState("00000000000");
 	const [isPhoneNumberEditing, setIsPhoneNumberEditing] = useState(false);
-	const [donorRole, setDonorRole] = useState("Doctor"); // Possible values: Regular, Doctor, Teacher
+	const [donorRole, setDonorRole] = useState("Both"); // Possible values: Regular, Doctor, Teacher, Both
 
-	const [schedule, setSchedule] = useState("");
+	const [schedule, setSchedule] = useState("Monday,Tuesday");
 	const [isScheduleEditing, setIsScheduleEditing] = useState(false);
-	const [specialty, setSpecialty] = useState("");
+	const [specialty, setSpecialty] = useState("Dentist");
 	const [isSpecialtyEditing, setIsSpecialtyEditing] = useState(false);
-	const [subject, setSubject] = useState("");
+	const [subject, setSubject] = useState("Arabic, Math");
 	const [isSubjectEditing, setIsSubjectEditing] = useState(false);
 
 	const toggleUsernameEditing = () => {
@@ -73,8 +73,10 @@ const DonorAccount = () => {
 			setDonorRole("Teacher");
 		} else if (donorRole === "Teacher") {
 			setDonorRole("Doctor");
-		} else {
-			setDonorRole("Regular");
+		} else if(donorRole==="Doctor"){
+			setDonorRole("Both");
+		}else{
+			setDonorRole("Regular")
 		}
 	};
 
@@ -194,8 +196,9 @@ const DonorAccount = () => {
 					</div>
 				</div>
 			);
-		} else {
+		} else if(donorRole==="Teacher" || donorRole==="Doctor"){
 			return (
+				<>				
 				<div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
 					<h2 className="text-lg font-bold mb-4">
 						Volunteer Information
@@ -328,266 +331,507 @@ const DonorAccount = () => {
 						</div>
 					</div>
 				</div>
+
+				<div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
+					<h2 className="text-lg font-bold mb-4">
+						Volunteer Information
+					</h2>
+					<div className="flex justify-center">
+						<button
+							onClick={() => {
+								navigate("/donor/volunteer");
+							}}
+							className="p-2 border-2 w-60 rounded-lg border-primary hover:border-primaryShades-600 text-primary hover:text-primaryShades-600 focus:outline-none"
+						>
+							Volunteer Now!
+						</button>
+					</div>
+				</div>
+			</>
+
+			);
+		} else if(donorRole==="Both"){
+			return (
+				<>
+				<div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
+					<h2 className="text-lg font-bold mb-4">
+						Volunteer Information
+					</h2>
+					<div className="border-b border-gray-400 mb-4 pb-4">
+						<div className="flex justify-between items-center">
+							<div className="flex items-center">
+								<p className="text-gray-600 mr-2">Role:</p>
+								<p className="text-gray-800 font-semibold">
+									Doctor
+								</p>
+							</div>
+						</div>
+					</div>
+					<div className="border-b border-gray-400 mb-4 pb-4">
+						<div className="flex justify-between items-center">
+							<div className="flex items-center">
+								<p className="text-gray-600 mr-2">Schedule:</p>
+								{isScheduleEditing ? (
+									<input
+										type="text"
+										value={schedule}
+										onChange={handleScheduleChange}
+										className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+									/>
+								) : (
+									<p className="text-gray-800 font-semibold">
+										{schedule}
+									</p>
+								)}
+							</div>
+							<button
+								onClick={toggleScheduleEditing}
+								className="text-blue-600 hover:text-blue-700 focus:outline-none"
+							>
+								{isScheduleEditing ? "Save" : "Edit"}
+							</button>
+						</div>
+					</div>
+					<div className="border-b border-gray-400 mb-4 pb-4">
+						<div className="flex justify-between items-center">
+							<div className="flex items-center">
+								<p className="text-gray-600 mr-2">Location:</p>
+								{isLocEditing ? (
+									<input
+										type="text"
+										value={loc}
+										onChange={handleLocChange}
+										className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+									/>
+								) : (
+									<p className="text-gray-800 font-semibold">
+										{loc}
+									</p>
+								)}
+							</div>
+							<button
+								onClick={toggleLocEditing}
+								className="text-blue-600 hover:text-blue-700 focus:outline-none"
+							>
+								{isLocEditing ? "Save" : "Edit"}
+							</button>
+						</div>
+					</div>
+					<div className="mb-4 pb-4">
+						<div className="flex justify-between items-center">
+							<div className="flex items-center">
+								<p className="text-gray-600 mr-2">
+									Specialty:
+								</p>
+									<>
+										{isSpecialtyEditing ? (
+											<input
+												type="text"
+												value={specialty}
+												onChange={handleSpecialtyChange}
+												className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+											/>
+										) : (
+											<p className="text-gray-800 font-semibold">
+												{specialty}
+											</p>
+										)}
+									</>
+							</div>
+							<div>
+								<button
+									onClick={
+										isSpecialtyEditing
+											? handleSaveSpecialty
+											: toggleSpecialtyEditing
+									}
+									className="text-blue-600 hover:text-blue-700 focus:outline-none"
+								>
+									{isSpecialtyEditing ? "Save" : "Edit"}
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
+					<h2 className="text-lg font-bold mb-4">
+						Volunteer Information
+					</h2>
+					<div className="border-b border-gray-400 mb-4 pb-4">
+						<div className="flex justify-between items-center">
+							<div className="flex items-center">
+								<p className="text-gray-600 mr-2">Role:</p>
+								<p className="text-gray-800 font-semibold">
+									Teacher
+								</p>
+							</div>
+						</div>
+					</div>
+					<div className="border-b border-gray-400 mb-4 pb-4">
+						<div className="flex justify-between items-center">
+							<div className="flex items-center">
+								<p className="text-gray-600 mr-2">Schedule:</p>
+								{isScheduleEditing ? (
+									<input
+										type="text"
+										value={schedule}
+										onChange={handleScheduleChange}
+										className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+									/>
+								) : (
+									<p className="text-gray-800 font-semibold">
+										{schedule}
+									</p>
+								)}
+							</div>
+							<button
+								onClick={toggleScheduleEditing}
+								className="text-blue-600 hover:text-blue-700 focus:outline-none"
+							>
+								{isScheduleEditing ? "Save" : "Edit"}
+							</button>
+						</div>
+					</div>
+					<div className="border-b border-gray-400 mb-4 pb-4">
+						<div className="flex justify-between items-center">
+							<div className="flex items-center">
+								<p className="text-gray-600 mr-2">Location:</p>
+								{isLocEditing ? (
+									<input
+										type="text"
+										value={loc}
+										onChange={handleLocChange}
+										className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+									/>
+								) : (
+									<p className="text-gray-800 font-semibold">
+										{loc}
+									</p>
+								)}
+							</div>
+							<button
+								onClick={toggleLocEditing}
+								className="text-blue-600 hover:text-blue-700 focus:outline-none"
+							>
+								{isLocEditing ? "Save" : "Edit"}
+							</button>
+						</div>
+					</div>
+					<div className="mb-4 pb-4">
+						<div className="flex justify-between items-center">
+							<div className="flex items-center">
+								<p className="text-gray-600 mr-2">
+									Subject:
+								</p>
+									<>
+										{isSubjectEditing ? (
+											<input
+												type="text"
+												value={subject}
+												onChange={handleSubjectChange}
+												className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+											/>
+										) : (
+											<p className="text-gray-800 font-semibold">
+												{subject}
+											</p>
+										)}
+									</>
+							</div>
+							<div>
+								<button
+									onClick={
+										isSubjectEditing
+											? handleSaveSubject
+											: toggleSubjectEditing
+									}
+									className="text-blue-600 hover:text-blue-700 focus:outline-none"
+								>
+									{isSubjectEditing ? "Save" : "Edit"}
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				</>
+			);
+		} else{
+			return(
+				<h1>Invalid Role</h1>
 			);
 		}
 	};
+    const renderPersonalInfo = () => {
+        return (
+            <div className="bg-gray-200 p-4 rounded-lg shadow-md w-1/2">
+                <h2 className="text-lg font-bold mb-4">Personal Information</h2>
+                <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">
+                                Account Username:
+                            </p>
+                            {isUsernameEditing ? (
+                                <input
+                                    type="text"
+                                    value={username}
+                                    onChange={handleUsernameChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">
+                                    {username}
+                                </p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleUsernameEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isUsernameEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+                <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">First Name:</p>
+                            {isFirstnameEditing ? (
+                                <input
+                                    type="text"
+                                    value={firstname}
+                                    onChange={handleFirstnameChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold ">
+                                    {firstname}
+                                </p>
+                            )}
+                            <button
+                                onClick={toggleFirstnameEditing}
+                                className=" ml-60 text-blue-600 hover:text-blue-700 focus:outline-none"
+                            >
+                                {isFirstnameEditing ? "Save" : "Edit"}
+                            </button>
+                            <p className="text-gray-600 ml-10 mr-2">
+                                Last Name:
+                            </p>
+                            {isLastnameEditing ? (
+                                <input
+                                    type="text"
+                                    value={lastname}
+                                    onChange={handleLastnameChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">
+                                    {lastname}
+                                </p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleLastnameEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isLastnameEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+                <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">Date of Birth:</p>
+                            {isDobEditing ? (
+                                <input
+                                    type="date"
+                                    value={dob}
+                                    onChange={handleDobChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">
+                                    {dob}
+                                </p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleDobEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isDobEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+                <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">Location:</p>
+                            {isLocEditing ? (
+                                <input
+                                    type="text"
+                                    value={loc}
+                                    onChange={handleLocChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">
+                                    {loc}
+                                </p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleLocEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isLocEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+                <div className="mb-0 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">Gender:</p>
+                            {isGenderEditing ? (
+                                <select
+                                    value={gender}
+                                    onChange={handleGenderChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                >
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            ) : (
+                                <p className="text-gray-800 font-semibold">
+                                    {gender}
+                                </p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleGenderEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isGenderEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        );
+    };
 
-	return (
-		<div className="flex flex-col justify-center items-center w-screen bg-secondary p-10">
-			<h1 className="text-3xl mt-60 font-bold mb-10">
-				Welcome, {username}
-			</h1>
-			<div className="bg-gray-200 p-4 rounded-lg shadow-md w-1/2">
-				<h2 className="text-lg font-bold mb-4">Personal Information</h2>
-				<div className="border-b border-gray-400 mb-4 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">
-								Account Username:
-							</p>
-							{isUsernameEditing ? (
-								<input
-									type="text"
-									value={username}
-									onChange={handleUsernameChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{username}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={toggleUsernameEditing}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isUsernameEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-				<div className="border-b border-gray-400 mb-4 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">First Name:</p>
-							{isFirstnameEditing ? (
-								<input
-									type="text"
-									value={firstname}
-									onChange={handleFirstnameChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold ">
-									{firstname}
-								</p>
-							)}
-							<button
-								onClick={toggleFirstnameEditing}
-								className=" ml-60 text-blue-600 hover:text-blue-700 focus:outline-none"
-							>
-								{isFirstnameEditing ? "Save" : "Edit"}
-							</button>
-							<p className="text-gray-600 ml-10 mr-2">
-								Last Name:
-							</p>
-							{isLastnameEditing ? (
-								<input
-									type="text"
-									value={lastname}
-									onChange={handleLastnameChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{lastname}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={toggleLastnameEditing}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isLastnameEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-				<div className="border-b border-gray-400 mb-4 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">Date of Birth:</p>
-							{isDobEditing ? (
-								<input
-									type="date"
-									value={dob}
-									onChange={handleDobChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{dob}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={toggleDobEditing}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isDobEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-				<div className="border-b border-gray-400 mb-4 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">Location:</p>
-							{isLocEditing ? (
-								<input
-									type="text"
-									value={loc}
-									onChange={handleLocChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{loc}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={toggleLocEditing}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isLocEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-				<div className="mb-0 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">Gender:</p>
-							{isGenderEditing ? (
-								<select
-									value={gender}
-									onChange={handleGenderChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								>
-									<option value="Male">Male</option>
-									<option value="Female">Female</option>
-								</select>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{gender}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={toggleGenderEditing}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isGenderEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-			</div>
+    const renderSecurityInfo = () => {
+        return (
+            <div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
+                <h2 className="text-lg font-bold mb-4">Security Information</h2>
+                <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">Email:</p>
+                            {isEmailEditing ? (
+                                <input
+                                    type="email"
+                                    value={email}
+                                    onChange={handleEmailChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">
+                                    {email}
+                                </p>
+                            )}
+                        </div>
+                        <button
+                            onClick={
+                                isEmailEditing
+                                    ? handleEmailSave
+                                    : toggleEmailEditing
+                            }
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isEmailEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+                <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">Password:</p>
+                            {isPasswordEditing ? (
+                                <input
+                                    type="text"
+                                    value={password}
+                                    onChange={handlePasswordChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">
+                                    ********
+                                </p>
+                            )}
+                        </div>
+                        <button
+                            onClick={
+                                isPasswordEditing
+                                    ? handlePasswordSave
+                                    : togglePasswordEditing
+                            }
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isPasswordEditing ? "Save" : "Edit/View"}
+                        </button>
+                    </div>
+                </div>
+                <div className="pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">Phone Number:</p>
+                            {isPhoneNumberEditing ? (
+                                <input
+                                    type="text"
+                                    value={phoneNumber}
+                                    onChange={handlePhoneNumberChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">
+                                    {phoneNumber}
+                                </p>
+                            )}
+                        </div>
+                        <button
+                            onClick={
+                                isPhoneNumberEditing
+                                    ? handlePhoneNumberSave
+                                    : togglePhoneNumberEditing
+                            }
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isPhoneNumberEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
 
-			<div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
-				<h2 className="text-lg font-bold mb-4">Security Information</h2>
-				<div className="border-b border-gray-400 mb-4 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">Email:</p>
-							{isEmailEditing ? (
-								<input
-									type="email"
-									value={email}
-									onChange={handleEmailChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{email}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={
-								isEmailEditing
-									? handleEmailSave
-									: toggleEmailEditing
-							}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isEmailEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-				<div className="border-b border-gray-400 mb-4 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">Password:</p>
-							{isPasswordEditing ? (
-								<input
-									type="text"
-									value={password}
-									onChange={handlePasswordChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									********
-								</p>
-							)}
-						</div>
-						<button
-							onClick={
-								isPasswordEditing
-									? handlePasswordSave
-									: togglePasswordEditing
-							}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isPasswordEditing ? "Save" : "Edit/View"}
-						</button>
-					</div>
-				</div>
-				<div className="pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">Phone Number:</p>
-							{isPhoneNumberEditing ? (
-								<input
-									type="text"
-									value={phoneNumber}
-									onChange={handlePhoneNumberChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{phoneNumber}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={
-								isPhoneNumberEditing
-									? handlePhoneNumberSave
-									: togglePhoneNumberEditing
-							}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isPhoneNumberEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-				<div className="">
-					<button onClick={toggleDonorRole}></button>
-				</div>
-			</div>
+            </div>
+        );
+    };
 
-			{renderVolunteerInformation()}
-		</div>
-	);
+    return (
+        <div className="flex flex-col justify-center h-screen items-center w-screen bg-secondary p-10">
+            <h1 className="text-3xl mt-4 font-bold mb-10">
+                Welcome, {username}
+            </h1>
+            {renderPersonalInfo()}
+            {renderSecurityInfo()}
+            {renderVolunteerInformation()}
+			<div className=" text-primaryShades-500 rounded-lg p-2 border-2 text-lg m-10 border border-primary">
+                    <button onClick={toggleDonorRole}>Switch Role</button>
+                </div>
+        </div>
+    );
 };
 
 export default DonorAccount;

@@ -349,7 +349,7 @@ const OrganizationAccount = () => {
 							<p className="text-gray-600 mr-2">Password:</p>
 							{isPasswordEditing ? (
 								<input
-									type="password"
+									type="text"
 									value={password}
 									onChange={handlePasswordChange}
 									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
