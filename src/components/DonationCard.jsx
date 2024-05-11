@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
+import LocationPin from '../assets/DonationCardsImages/LocationPin.jfif';
 import HospitalLogo from "../assets/DonationCardsImages/HospitalLogo.png";
 import { useState } from "react";
 
-const OrganizationDonationCard = ({
+const DonationCard = ({
   field1,
   field2,
   field3,
@@ -13,10 +14,10 @@ const OrganizationDonationCard = ({
   field6,
   orgImg,
   itemImg,
+  isBlood,
 }) => {
-	const [viewDonate, setDonate] = useState(false);
-	const [isBlood, setBlood] = useState(false);
-	const [quantity, setQuantity] = useState(0);
+  const [viewDonate, setDonate] = useState(false);
+  const [quantity, setQuantity] = useState(0);
 
   return (
     <>
@@ -33,7 +34,14 @@ const OrganizationDonationCard = ({
             <div className="flex-col flex gap-6 ">
               <h1 className="text-3xl border-b border-gray-500">{field1}</h1>
               <h1 className="text-xl">{field2}</h1>
-              <h1 className="text-lg">{field3}</h1>
+              <div className="flex gap-3">
+                <img
+                  className="rounded-full w-[2rem] h-[2rem]"
+                  src={LocationPin}
+                  alt="Location Pin"
+                />
+                <h1 className="text-lg">{field3}</h1>
+              </div>
             </div>
           </div>
           <div className="flex justify-end pr-5 pb-5 gap-3">
@@ -56,7 +64,22 @@ const OrganizationDonationCard = ({
               <p className="mb-2">{`Urgency: ${field4}`}</p>
               <p className="mb-2">{`Description: ${field5}`}</p>
               <p className="mb-2">{`Quantity Needed: ${field6}`}</p>
-              <img className="rounded-full" src={itemImg} alt="item picture" />
+              {!isBlood && (
+                <img
+                  className="rounded-lg pt-5 w-[14rem] h-[12rem]"
+                  src={itemImg}
+                  alt="item picture"
+                />
+              )}
+              {isBlood && (
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2823.150465912957!2d31.438874664226326!3d29.988423417037883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583d23fc96eed7%3A0x364e0a19bd725939!2sGUC%20gate%203!5e0!3m2!1sen!2seg!4v1715007489098!5m2!1sen!2seg"
+                  className="pt-5 pb-5 w-[30rem] h-[20rem]"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              )}
               <div className="flex justify-between mt-4">
                 <div className="flex gap-3 justify-center items-center">
                   <button
@@ -77,7 +100,7 @@ const OrganizationDonationCard = ({
                 </div>
                 <div>
                   <button
-                    className="px-4 py-2 bg-green-500 text-white rounded-md mr-2 hover:bg-green-700 focus:outline-none focus:ring-1 focus:ring-green-500"
+                    className="px-6 py-2 bg-green-500 text-white rounded-md mr-2 hover:bg-green-700 focus:outline-none focus:ring-1 focus:ring-green-500"
                     onClick={() => {
                       if (quantity > 0) setDonate(false);
                     }}
@@ -100,4 +123,4 @@ const OrganizationDonationCard = ({
   );
 };
 
-export default OrganizationDonationCard;
+export default DonationCard;
