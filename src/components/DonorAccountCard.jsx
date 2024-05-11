@@ -7,6 +7,8 @@ const DonorAccountCard = ({
 	accountName,
 	accountEmail,
 	accountArea,
+	accountPhoneNumber,
+	accountType,
 }) => {
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -23,8 +25,6 @@ const DonorAccountCard = ({
 				/>
 				<div>
 					<p className="text-gray-800 font-medium">{shortName}</p>
-					<p className="text-gray-600">{accountEmail}</p>
-					<p className="text-gray-600">{accountArea}</p>
 				</div>
 			</div>
 			<div className="mt-4 flex justify-between">
@@ -52,6 +52,8 @@ const DonorAccountCard = ({
 
 							<p className="mb-2">Email: {accountEmail}</p>
 							<p className="mb-2">Area: {accountArea}</p>
+							<p className="mb-2">ContactInfo: {accountPhoneNumber}</p>
+							<p className="mb-2">DonorType: {accountType}</p>
 							<button
 								className="block w-full mt-4 px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
 								onClick={() => setIsPopupOpen(false)}
