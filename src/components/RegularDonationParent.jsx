@@ -1,25 +1,22 @@
-import RegularDonationCard from './RegularDonationCard';
+import DonationCard from './DonationCard';
 
 const RegularDonationParent = () => {
   return (
     <div className="flex flex-col w-3/5 justify-center items-center gap-5 mb-3">
-      <RegularDonationCard
-        name="Donation 1"
-        description="This is the first regular donation card"
-        urgency="High"
-        location="New York"
+      <DonationCard
+        field1="Donation 1"
+        field2="This is the first regular donation card"
+        field3="New York"
       />
-      <RegularDonationCard
-        name="Donation 2"
-        description="This is the second regular donation card"
-        urgency="Medium"
-        location="Los Angeles"
+      <DonationCard
+        field1="Donation 2"
+        field2="This is the second regular donation card"
+        field3="Los Angeles"
       />
-      <RegularDonationCard
-        name="Donation 3"
-        description="This is the third regular donation card"
-        urgency="Low"
-        location="Chicago"
+      <DonationCard
+        field1="Donation 3"
+        field2="This is the third regular donation card"
+        field3="Chicago"
       />
     </div>
   );

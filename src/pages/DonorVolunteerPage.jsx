@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
+
+import DonorVolunteerRegister from "../components/DonorVolunteerRegister";
+import { Link } from "react-router-dom";
 import MedicalCases from "../components/MedicalCases";
 import TeachingCases from "../components/TeachingCases";
-import DonorVolunteerRegister from "../components/DonorVolunteerRegister";
 import { useState } from "react";
 
 const DonorVolunteerPage = () => {
 	const [isDoctor, setIsDoctor] = useState(true);
-	const [isTeacher, setIsTeacher] = useState(true);
+	const [isTeacher, setIsTeacher] = useState(false);
 
 	const [viewDoctor, setDoctor] = useState(isDoctor);
 	const [viewTeacher, setTeacher] = useState(isTeacher);
