@@ -7,8 +7,8 @@ import TeachingCases from '../components/TeachingCases';
 import { useState } from 'react';
 
 const DonorVolunteerPage = () => {
-  const [isDoctor, setIsDoctor] = useState(false);
-  const [isTeacher, setIsTeacher] = useState(false);
+  const [isDoctor, setIsDoctor] = useState(true);
+  const [isTeacher, setIsTeacher] = useState(true);
 
   const [viewDoctor, setDoctor] = useState(isDoctor);
   const [viewTeacher, setTeacher] = useState(isTeacher);
@@ -39,10 +39,8 @@ const DonorVolunteerPage = () => {
           </button>
         )}
       </div>
-
       {viewDoctor && <MedicalCases />}
       {viewTeacher && <TeachingCases />}
-
       {!viewDoctor && !viewTeacher && (
         <p>
           Click{' '}

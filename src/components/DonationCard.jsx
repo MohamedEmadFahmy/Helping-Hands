@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 
-import HospitalLogo from '../assets/DonationCardsImages/HospitalLogo.png';
 import { useState } from 'react';
 
 const OrganizationDonationCard = ({
@@ -9,6 +8,9 @@ const OrganizationDonationCard = ({
   field3,
   field4,
   field5,
+  field6,
+  orgImg,
+  itemImg,
 }) => {
   const [viewDonate, setDonate] = useState(false);
   const [isBlood, setBlood] = useState(false);
@@ -16,18 +18,14 @@ const OrganizationDonationCard = ({
 
   return (
     <>
-      <div className="flex bg-white w-full shadow-md transition-transform transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
+      <div className="flex bg-white w-full shadow-md transition-transform transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100 rounded-lg">
         <div className="flex flex-col w-full ">
-          <div className="flex gap-7 mt-5 ml-5 w-full">
+          <div className="flex gap-7 pt-5 pl-5 w-full">
             <div>
               <img
-                className="rounded-full"
-                src={HospitalLogo}
-                alt="hospital logo"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                }}
+                className="rounded-full w-[4rem] h-[4rem]"
+                src={orgImg}
+                alt="Profile Icon"
               />
             </div>
             <div className="flex-col flex gap-6 ">
@@ -38,7 +36,7 @@ const OrganizationDonationCard = ({
           </div>
           <div className="flex justify-end pr-5 pb-5 gap-3">
             <button
-              className="bg-primaryShades-500 round-sm px-8 "
+              className="bg-primaryShades-500 rounded-md px-8 "
               onClick={() => setDonate(true)}
             >
               Donate
@@ -54,8 +52,9 @@ const OrganizationDonationCard = ({
             <div className="bg-white rounded-3xl shadow-2xl p-6 w-1/3 h-3/12">
               <h1 className="text-lg font-semibold mb-4 underline">{field1}</h1>
               <p className="mb-2">{`Urgency: ${field4}`}</p>
-              <p className="mb-2">{`Description: ${field2}`}</p>
-              <p className="mb-2">{`Location: ${field3}`}</p>
+              <p className="mb-2">{`Description: ${field5}`}</p>
+              <p className="mb-2">{`Quantity Needed: ${field6}`}</p>
+              <img className="rounded-full" src={itemImg} alt="item picture" />
               <div className="flex justify-between mt-4">
                 <div className="flex gap-3 justify-center items-center">
                   <button
