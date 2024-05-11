@@ -13,6 +13,7 @@ const DonorVolunteerPage = () => {
 	const [viewDoctor, setDoctor] = useState(isDoctor);
 	const [viewTeacher, setTeacher] = useState(isTeacher);
 
+<<<<<<< HEAD
 	return (
 		<div className="h-[90vh] w-full bg-secondaryShades-500 flex flex-col  items-center gap-10 ">
 			<div className="flex justify-start gap-5 mt-5 ">
@@ -46,6 +47,39 @@ const DonorVolunteerPage = () => {
 			{!viewDoctor && !viewTeacher && <DonorVolunteerRegister />}
 		</div>
 	);
+=======
+  return (
+    <div className="h-[90vh] w-screen bg-secondaryShades-500 flex flex-col  items-center gap-10 overflow-y-scroll ">
+      <div className="flex justify-start gap-5 mt-5 ">
+        {isDoctor && (
+          <button
+            className="bg-primaryShades-500 rounded-lg px-10 py-2"
+            onClick={() => {
+              setDoctor(true);
+              setTeacher(false);
+            }}
+          >
+            Medical Cases
+          </button>
+        )}
+        {isTeacher && (
+          <button
+            className="bg-primaryShades-500 rounded-lg px-10 py-2"
+            onClick={() => {
+              setDoctor(false);
+              setTeacher(true);
+            }}
+          >
+            Teaching Cases
+          </button>
+        )}
+      </div>
+      {viewDoctor && <MedicalCases />}
+      {viewTeacher && <TeachingCases />}
+      {!viewDoctor && !viewTeacher && <DonorVolunteerRegister />}
+    </div>
+  );
+>>>>>>> @{-1}
 };
 
 export default DonorVolunteerPage;
