@@ -310,7 +310,7 @@ const OrganizationDonationCreation = () => {
 				<div className="w-1/3">{renderExtraFields()}</div>
 
 				{/* Button */}
-				<button className="bg-primary w-1/2 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
+				<button className="bg-primary w-1/5 h-10 rounded-xl self-center flex flex-row items-center justify-center gap-x-6">
 					Post Request
 				</button>
 			</form>

@@ -2,13 +2,30 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { FaCheck } from "react-icons/fa";
 
 const RegisterOrg = ({ setRegister }) => {
 	const navigate = useNavigate();
 
+	const [selectedFile, setSelectedFile] = useState(null);
+	const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+	const handleFileChange = (event) => {
+		const file = event.target.files[0];
+		setSelectedFile(file);
+	};
+
 	const submitForm = (e) => {
 		e.preventDefault();
-		navigate("/organisation-home");
+
+		if (e.currentTarget.id === "submitButton") {
+			if (selectedFile === null) {
+				alert("Please upload a document for verification");
+				return;
+			}
+			navigate("/organization/account");
+		}
 	};
 
 	return (
@@ -21,8 +38,8 @@ const RegisterOrg = ({ setRegister }) => {
 				Register as an Organisation
 			</h1>
 			<form
-				onSubmit={submitForm}
-				className="w-full flex flex-col items-start pr-10 pl-10 gap-2"
+				onSubmit={(e) => e.preventDefault()}
+				className="w-full flex flex-col items-start pr-10 pl-10 gap-1"
 			>
 				<div className="">
 					<label
@@ -215,8 +232,8 @@ const RegisterOrg = ({ setRegister }) => {
 					/>
 				</div>
 
-				<div className="flex flex-wrap gap-[4rem] w-full">
-					<div className="">
+				<div className="flex h-[5rem] flex-wrap items-center justi gap-[1rem] w-full">
+					<div className="h-full">
 						<label
 							className="uppercase w-auto text-gray-700 text-xs font-bold mb-2"
 							htmlFor="grid-organisation-name"
@@ -230,7 +247,7 @@ const RegisterOrg = ({ setRegister }) => {
 							placeholder="Organisation name"
 						/>
 					</div>
-					<div className="">
+					<div className="h-full">
 						<label
 							className=" uppercase text-gray-700 text-xs font-bold mb-2"
 							htmlFor="grid-organisation-type"
@@ -290,7 +307,43 @@ const RegisterOrg = ({ setRegister }) => {
 					</div>
 				</div>
 
-				<button className="bg-white w-1/4 h-10 mt-3 rounded-xl self-center flex flex-row items-center justify-center gap-x-6 hover:bg-neutral-200 hover:drop-shadow-lg hover:scale-105">
+				<div className="flex w-full justify-center items-center gap-2">
+					<label
+						htmlFor="file-upload"
+						className="hover:scale-105 hover:bg-gray-200 bg-white text-blue-500 font-bold rounded-md cursor-pointer p-1 w-1/3 text-center"
+					>
+						<input
+							id="file-upload"
+							type="file"
+							className="hidden"
+							onChange={handleFileChange}
+						/>
+						<p className="w-full flex gap-5 items-center justify-center ">
+							{selectedFile ? (
+								<>
+									{selectedFile.name}
+									<FaCheck className="text-green-500 inline" />
+								</>
+							) : (
+								"Upload Documents for Verification"
+							)}
+						</p>
+					</label>
+					<div className="h-full flex items-center justify-center">
+						<button
+							onClick={() => setIsPopupOpen(true)}
+							className="hover:scale-105 hover:bg-gray-200 bg-white text-blue-500 font-bold rounded-md cursor-pointer p-1 px-1 w-2/3 text-center"
+						>
+							Choose Your Location
+						</button>
+					</div>
+				</div>
+
+				<button
+					id="submitButton"
+					className="bg-white w-1/4 h-10 mt-3 rounded-xl self-center flex flex-row items-center justify-center gap-x-6 hover:bg-neutral-200 hover:drop-shadow-lg hover:scale-105"
+					onClick={submitForm}
+				>
 					Register
 				</button>
 			</form>
@@ -309,6 +362,35 @@ const RegisterOrg = ({ setRegister }) => {
 					Register as an individual
 				</Link>
 			</div>
+
+			{isPopupOpen && (
+				<>
+					<div className="fixed top-0 left-0 h-full w-full bg-black opacity-40 z-[60]"></div>
+					<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-grey-800 bg-opacity-50 z-[70]">
+						<div className=" rounded-3xl shadow-2xl p-6 w-1/3 h-2/3 flex flex-col items-center justify-center gap-5 bg-seconadryGrey">
+							<h1 className="text-2xl font-bold h-1//4">
+								Choose Your Location
+							</h1>
+
+							<iframe
+								className="h-3/4 w-full rounded-lg"
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2823.150465912957!2d31.438874664226326!3d29.988423417037883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583d23fc96eed7%3A0x364e0a19bd725939!2sGUC%20gate%203!5e0!3m2!1sen!2seg!4v1715007489098!5m2!1sen!2seg"
+								style={{ border: 0 }}
+								allowFullScreen=""
+								loading="lazy"
+								referrerPolicy="no-referrer-when-downgrade"
+							></iframe>
+
+							<button
+								className="hover:scale-105 block w-1/3 mt-4 px-4 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+								onClick={() => setIsPopupOpen(false)}
+							>
+								Close
+							</button>
+						</div>
+					</div>
+				</>
+			)}
 		</div>
 	);
 };

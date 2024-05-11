@@ -7,43 +7,36 @@ import TeachingCases from "../components/TeachingCases";
 import { useState } from "react";
 
 const DonorVolunteerPage = () => {
-	const [isDoctor, setIsDoctor] = useState(true);
-	const [isTeacher, setIsTeacher] = useState(true);
+	const [isDoctor, setDoctor] = useState(false);
+	const [isTeacher, setTeacher] = useState(false);
 
-	const [viewDoctor, setDoctor] = useState(isDoctor);
-	const [viewTeacher, setTeacher] = useState(isTeacher);
+	// const [viewDoctor, setDoctor] = useState(isDoctor);
+	// const [viewTeacher, setTeacher] = useState(isTeacher);
 
 	return (
 		<div className=" min-h-[90vh] w-full bg-secondaryShades-500 flex flex-col items-center gap-10 ">
 			<div className="flex justify-start gap-5 mt-5 ">
 				{isDoctor && (
-					<button
-						className="bg-primaryShades-500 rounded-lg px-10 py-2"
-						onClick={() => {
-							setDoctor(true);
-							setTeacher(false);
-						}}
-					>
+					<button className="bg-primaryShades-500 rounded-lg px-10 py-2">
 						Medical Cases
 					</button>
 				)}
 				{isTeacher && (
-					<button
-						className="bg-primaryShades-500 rounded-lg px-10 py-2"
-						onClick={() => {
-							setDoctor(false);
-							setTeacher(true);
-						}}
-					>
+					<button className="bg-primaryShades-500 rounded-lg px-10 py-2">
 						Teaching Cases
 					</button>
 				)}
 			</div>
 
-			{viewDoctor && <MedicalCases />}
-			{viewTeacher && <TeachingCases />}
+			{isDoctor && <MedicalCases />}
+			{isTeacher && <TeachingCases />}
 
-			{!viewDoctor && !viewTeacher && <DonorVolunteerRegister />}
+			{!isDoctor && !isTeacher && (
+				<DonorVolunteerRegister
+					setDoctor={setDoctor}
+					setTeacher={setTeacher}
+				/>
+			)}
 		</div>
 	);
 };

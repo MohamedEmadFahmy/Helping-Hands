@@ -17,7 +17,11 @@ const SelectDonorTypePage = () => {
 		if (!clickedDiv) {
 			alert("Please select a donor type");
 		} else {
-			navigate("/donor/home");
+			if (clickedDiv == 2 || clickedDiv == 3) {
+				navigate("/donor/volunteer");
+			} else {
+				navigate("/donor/home");
+			}
 		}
 	};
 
@@ -27,38 +31,29 @@ const SelectDonorTypePage = () => {
 				What type of donations do you want to do?
 			</h1>
 
-			<div className="grid grid-cols-2 grid-rows-2 gap-10">
+			<div className="flex flex-col gap-10 items-center">
 				<DonorTypeCard
-					className="col-span-1 row-span-1"
 					imageLink="/src/assets/images/items.png"
 					description="Donate items you don't need"
 					onClick={() => handleClick(1)} // pass index or identifier
 					isClicked={clickedDiv === 1} // Check if this card is clicked
 				/>
 
-				<DonorTypeCard
-					className="col-span-2 row-span-1"
-					imageLink="/src/assets/images/delivery.png"
-					description="Deliver items"
-					onClick={() => handleClick(2)}
-					isClicked={clickedDiv === 2} // Check if this card is clicked
-				/>
+				<div className="flex gap-10">
+					<DonorTypeCard
+						imageLink="/src/assets/images/doctor.png"
+						description="Help patients in need"
+						onClick={() => handleClick(2)}
+						isClicked={clickedDiv === 2}
+					/>
 
-				<DonorTypeCard
-					className="col-span-1 row-span-2"
-					imageLink="/src/assets/images/doctor.png"
-					description="Help patients in need"
-					onClick={() => handleClick(3)}
-					isClicked={clickedDiv === 3}
-				/>
-
-				<DonorTypeCard
-					className="col-span-2 row-span-2"
-					imageLink="/src/assets/images/teacher.png"
-					description="Help teach students in need"
-					onClick={() => handleClick(4)}
-					isClicked={clickedDiv === 4}
-				/>
+					<DonorTypeCard
+						imageLink="/src/assets/images/teacher.png"
+						description="Help teach students in need"
+						onClick={() => handleClick(3)}
+						isClicked={clickedDiv === 3}
+					/>
+				</div>
 			</div>
 
 			<button

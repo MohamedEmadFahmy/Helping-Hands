@@ -16,7 +16,7 @@ const OrganizationNavbar = () => {
 				src={logo}
 				alt=""
 				className="h-[80%] object-contain cursor-pointer"
-				onClick={() => navigate("/organization/donation-create")}
+				onClick={() => navigate("/organization/account")}
 			/>
 			<div
 				id="nav-links"
