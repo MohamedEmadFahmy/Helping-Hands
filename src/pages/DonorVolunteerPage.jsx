@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 
-import DonorVolunteerRegister from '../components/DonorVolunteerRegister';
-import { Link } from 'react-router-dom';
-import MedicalCases from '../components/MedicalCases';
-import TeachingCases from '../components/TeachingCases';
-import { useState } from 'react';
+import DonorVolunteerRegister from "../components/DonorVolunteerRegister";
+import { Link } from "react-router-dom";
+import MedicalCases from "../components/MedicalCases";
+import TeachingCases from "../components/TeachingCases";
+import { useState } from "react";
 
 const DonorVolunteerPage = () => {
-  const [isDoctor, setIsDoctor] = useState(true);
-  const [isTeacher, setIsTeacher] = useState(true);
+  const [isDoctor, setIsDoctor] = useState(false);
+  const [isTeacher, setIsTeacher] = useState(false);
 
   const [viewDoctor, setDoctor] = useState(isDoctor);
   const [viewTeacher, setTeacher] = useState(isTeacher);
@@ -41,15 +41,7 @@ const DonorVolunteerPage = () => {
       </div>
       {viewDoctor && <MedicalCases />}
       {viewTeacher && <TeachingCases />}
-      {!viewDoctor && !viewTeacher && (
-        <p>
-          Click{' '}
-          <Link className="italic" to="/other-page">
-            here
-          </Link>{' '}
-          to go register as a volunteer.
-        </p>
-      )}
+      {!viewDoctor && !viewTeacher && <DonorVolunteerRegister />}
     </div>
   );
 };
