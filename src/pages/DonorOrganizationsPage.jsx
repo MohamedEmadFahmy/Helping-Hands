@@ -1,9 +1,8 @@
+import Organizations from "../components/Organizations";
 const DonorOrganizationsPage = () => {
 	return (
-		<div className="h-[90vh] w-screen bg-red-100 pt-[10vh]">
-			<div>hello</div>
-			<div>hello</div>
-			<div>hello</div>
+		<div className="h-screen w-screen bg-secondary pt-[10vh]">
+			<Organizations/>
 		</div>
 	);
 };

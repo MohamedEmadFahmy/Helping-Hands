@@ -820,7 +820,7 @@ const DonorAccount = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center h-screen items-center w-screen bg-secondary p-10">
+        <div className="flex flex-col justify-center h-full items-center w-full bg-secondary p-10">
             <h1 className="text-3xl mt-4 font-bold mb-10">
                 Welcome, {username}
             </h1>
