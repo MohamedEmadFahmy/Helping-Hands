@@ -22,7 +22,7 @@ const OrganizationRegister = () => {
 		<div className="bg-gradient-to-tr from-primaryShades-300 to-primaryShades-500 rounded-lg flex flex-col items-center justify-center pt-8 pb-8 gap-5 w-1/2 ">
 			<div className="flex flex-col items-center justify-center">
 				<h1 className="text-3xl font-semibold text-white mb-4">
-					Registration
+					Register as a volunteer
 				</h1>
 				<div className="flex ml-4 mb-4">
 					<button

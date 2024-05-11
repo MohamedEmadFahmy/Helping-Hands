@@ -1,29 +1,67 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import DonorAccountCards from "../components/DonorAccountCards";
-
 import filterIcon from "../assets/images/gand/filterr.jpeg"; // Assuming the image path is correct
 
+// const [showFilterOptions, toggleFilterOptions] = useState(false);
 const DonorAccounts = () => {
-	const [showFilterOptions, setShowFilterOptions] = useState(false);
-	const filterOptions = ["Regular Donors", "Doctors", "Teachers"]; // Array of filter labels
+	const [activeFilters, setActiveFilters] = useState([]);
 
-	const toggleFilterOptions = () => {
-		setShowFilterOptions(!showFilterOptions); // Toggle visibility on click
+	const filters = ["Doctors", "Teachers", "Students"];
+
+	const handleFilterChange = (e) => {
+		const filter = e.target.name;
+		const isChecked = e.target.checked;
+
+		if (isChecked) {
+			// If checkbox is checked, add the filter to activeFilters
+			setActiveFilters([...activeFilters, filter]);
+		} else {
+			// If checkbox is unchecked, remove the filter from activeFilters
+			setActiveFilters(
+				activeFilters.filter((option) => option !== filter)
+			);
+		}
 	};
 
 	return (
-		<div className=" bg-primaryShades-200 p-10 gap-10 w-full flex flex-col items-center justify-center">
+		<div className=" bg-primaryShades-200 p-10 gap-10 min-h-[90vh] w-full flex flex-col items-center justify-center">
 			<h1 className="text-5xl font-bold text-center font-mono text-white">
 				Donor Accounts
 			</h1>
+			<div className="w-full flex bg-red-200 justify-between">
+				<div className="flex flex-col">
+					<h1>Filters</h1>
+					<div>
+						<input
+							type="checkbox"
+							name="Doctors"
+							onChange={handleFilterChange}
+						/>
+						<label htmlFor="Doctors">Doctors</label>
+					</div>
+				</div>
 
-			{/* Filter button with options */}
-			<div className="">
+				<DonorAccountCards
+					activeFilters={activeFilters}
+					setActiveFilters={setActiveFilters}
+				/>
+			</div>
+		</div>
+	);
+};
+
+export default DonorAccounts;
+
+{
+	/* Filter button with options */
+}
+{
+	/* <div className="">
 				<button
 					className="flex items-center px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
 					onClick={toggleFilterOptions}
 				>
-					{/* Filter icon inside the button */}
 					<img
 						src={filterIcon}
 						alt="Filter"
@@ -34,12 +72,9 @@ const DonorAccounts = () => {
 						className="w-4 h-4 fill-current"
 						viewBox="0 0 20 20"
 						xmlns="http://www.w3.org/2000/svg"
-					>
-						{/* Add your SVG icon here */}
-					</svg>
+					></svg>
 				</button>
 
-				{/* Filter options */}
 				{showFilterOptions && (
 					<div className="absolute mt-2 w-40 bg-white rounded-md shadow-md z-10">
 						{filterOptions.map((filter) => (
@@ -56,10 +91,5 @@ const DonorAccounts = () => {
 						))}
 					</div>
 				)}
-			</div>
-			<DonorAccountCards />
-		</div>
-	);
-};
-
-export default DonorAccounts;
+			</div> */
+}
