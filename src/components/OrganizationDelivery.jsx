@@ -44,7 +44,7 @@ const OrganizationDelivery = () => {
 	return (
 		<div className="p-4 w-full h-screen flex flex-col justify-center items-center">
 			{!hasOrderedDonations ? (
-				<div className="flex shadow-md bg-gray-200 w-3/4 items-center justify-center">
+				<div className="flex flex-col shadow-md bg-gray-200 w-3/4 items-center justify-center">
 					<form className="p-8">
 						<h1 className="text-4xl font-bold mb-8">
 							Order Donations Delivery
@@ -89,14 +89,24 @@ const OrganizationDelivery = () => {
 								className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
 							/>
 						</div>
-						<button
-							type="button"
-							onClick={handleOrderDonations}
-							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-						>
-							Order Delivery
-						</button>
 					</form>
+						<div className="flex w-full ">
+
+							<button
+							type="Button"
+							className="h-10 justify-start bg-red-500 ml-10 mb-4 mr-20 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+							onClick={() => {
+								navigate("/organization/donations");}}>
+							Back to Donations
+							</button>
+							<button
+								type="button"
+								onClick={handleOrderDonations}
+								className="bg-blue-500  mb-4 ml-72 w-60 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+								>
+								Order Delivery
+							</button>
+						</div>
 				</div>
 			) : (
 				<>
@@ -164,14 +174,6 @@ const OrganizationDelivery = () => {
 					</div>
 				</>
 			)}
-			<button
-				className="text-5xl bg-red-500"
-				onClick={() => {
-					navigate("/organization/donations");
-				}}
-			>
-				Back
-			</button>
 		</div>
 	);
 };

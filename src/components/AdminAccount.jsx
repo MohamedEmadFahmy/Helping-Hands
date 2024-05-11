@@ -1,34 +1,34 @@
 import { useState } from "react";
 
 const AdminAccount = () => {
-	const [username, setUsername] = useState("Abso");
-	const [firstname, setFirstname] = useState("Youssof");
-	const [lastname, setLastname] = useState("Ahmed");
-	const [isUsernameEditing, setIsUsernameEditing] = useState(false);
-	const [isFirstnameEditing, setIsFirstnameEditing] = useState(false);
-	const [isLastnameEditing, setIsLastnameEditing] = useState(false);
-	const [dob, setDob] = useState("1990-01-01");
-	const [isDobEditing, setIsDobEditing] = useState(false);
-	const [loc, setLoc] = useState("6th October City, Giza, Egypt");
-	const [isLocEditing, setIsLocEditing] = useState(false);
-	const [gender, setGender] = useState("Male");
-	const [isGenderEditing, setIsGenderEditing] = useState(false);
-	const [email, setEmail] = useState("example@example.com");
-	const [isEmailEditing, setIsEmailEditing] = useState(false);
-	const [password, setPassword] = useState("12345678");
-	const [isPasswordEditing, setIsPasswordEditing] = useState(false);
-	const [phoneNumber, setPhoneNumber] = useState("00000000000");
-	const [isPhoneNumberEditing, setIsPhoneNumberEditing] = useState(false);
+    const [username, setUsername] = useState("Admin#09120201");
+    // const [firstname, setFirstname] = useState("Youssof");
+    // const [lastname, setLastname] = useState("Ahmed");
+    const [isUsernameEditing, setIsUsernameEditing] = useState(false);
+    // const [isFirstnameEditing, setIsFirstnameEditing] = useState(false);
+    // const [isLastnameEditing, setIsLastnameEditing] = useState(false);
+    const [dob, setDob] = useState("1990-01-01");
+    const [isDobEditing, setIsDobEditing] = useState(false);
+    const [loc, setLoc] = useState("6th October City, Giza, Egypt");
+    const [isLocEditing, setIsLocEditing] = useState(false);
+    const [gender, setGender] = useState("Male");
+    const [isGenderEditing, setIsGenderEditing] = useState(false);
+    const [email, setEmail] = useState("example@example.com");
+    const [isEmailEditing, setIsEmailEditing] = useState(false);
+    const [password, setPassword] = useState("12345678");
+    const [isPasswordEditing, setIsPasswordEditing] = useState(false);
+    const [phoneNumber, setPhoneNumber] = useState("00000000000");
+    const [isPhoneNumberEditing, setIsPhoneNumberEditing] = useState(false);
 
-	const toggleUsernameEditing = () => {
-		setIsUsernameEditing(!isUsernameEditing);
-	};
-	const toggleFirstnameEditing = () => {
-		setIsFirstnameEditing(!isFirstnameEditing);
-	};
-	const toggleLastnameEditing = () => {
-		setIsLastnameEditing(!isLastnameEditing);
-	};
+    const toggleUsernameEditing = () => {
+        setIsUsernameEditing(!isUsernameEditing);
+    };
+    // const toggleFirstnameEditing = () => {
+    //     setIsFirstnameEditing(!isFirstnameEditing);
+    // };
+    // const toggleLastnameEditing = () => {
+    //     setIsLastnameEditing(!isLastnameEditing);
+    // };
 
 	const toggleDobEditing = () => {
 		setIsDobEditing(!isDobEditing);
@@ -54,15 +54,15 @@ const AdminAccount = () => {
 		setIsPhoneNumberEditing(!isPhoneNumberEditing);
 	};
 
-	const handleUsernameChange = (e) => {
-		setUsername(e.target.value);
-	};
-	const handleFirstnameChange = (e) => {
-		setFirstname(e.target.value);
-	};
-	const handleLastnameChange = (e) => {
-		setLastname(e.target.value);
-	};
+    const handleUsernameChange = (e) => {
+        setUsername(e.target.value);
+    };
+    // const handleFirstnameChange = (e) => {
+    //     setFirstname(e.target.value);
+    // };
+    // const handleLastnameChange = (e) => {
+    //     setLastname(e.target.value);
+    // };
 
 	const handleDobChange = (e) => {
 		setDob(e.target.value);
@@ -119,164 +119,146 @@ const AdminAccount = () => {
 		setIsPasswordEditing(false);
 	};
 
-	return (
-		<div className="flex flex-col justify-center items-center bg-secondary p-10">
-			<h1 className="text-3xl mt-60 font-bold mb-10">
-				Welcome, {username}
-			</h1>
-			<div className="bg-gray-200 p-4 rounded-lg shadow-md w-1/2">
-				<h2 className="text-lg font-bold mb-4">Personal Information</h2>
-				<div className="border-b border-gray-400 mb-4 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">
-								Account Username:
-							</p>
-							{isUsernameEditing ? (
-								<input
-									type="text"
-									value={username}
-									onChange={handleUsernameChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{username}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={toggleUsernameEditing}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isUsernameEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-				<div className="border-b border-gray-400 mb-4 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">First Name:</p>
-							{isFirstnameEditing ? (
-								<input
-									type="text"
-									value={firstname}
-									onChange={handleFirstnameChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold ">
-									{firstname}
-								</p>
-							)}
-							<button
-								onClick={toggleFirstnameEditing}
-								className=" ml-60 text-blue-600 hover:text-blue-700 focus:outline-none"
-							>
-								{isFirstnameEditing ? "Save" : "Edit"}
-							</button>
-							<p className="text-gray-600 ml-10 mr-2">
-								Last Name:
-							</p>
-							{isLastnameEditing ? (
-								<input
-									type="text"
-									value={lastname}
-									onChange={handleLastnameChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{lastname}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={toggleLastnameEditing}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isLastnameEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-				<div className="border-b border-gray-400 mb-4 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">Date of Birth:</p>
-							{isDobEditing ? (
-								<input
-									type="date"
-									value={dob}
-									onChange={handleDobChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{dob}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={toggleDobEditing}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isDobEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-				<div className="border-b border-gray-400 mb-4 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">Location:</p>
-							{isLocEditing ? (
-								<input
-									type="text"
-									value={loc}
-									onChange={handleLocChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								/>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{loc}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={toggleLocEditing}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isLocEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-				<div className="mb-0 pb-4">
-					<div className="flex justify-between items-center">
-						<div className="flex items-center">
-							<p className="text-gray-600 mr-2">Gender:</p>
-							{isGenderEditing ? (
-								<select
-									value={gender}
-									onChange={handleGenderChange}
-									className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
-								>
-									<option value="Male">Male</option>
-									<option value="Female">Female</option>
-								</select>
-							) : (
-								<p className="text-gray-800 font-semibold">
-									{gender}
-								</p>
-							)}
-						</div>
-						<button
-							onClick={toggleGenderEditing}
-							className="text-blue-600 hover:text-blue-700 focus:outline-none"
-						>
-							{isGenderEditing ? "Save" : "Edit"}
-						</button>
-					</div>
-				</div>
-			</div>
+    return (
+        <div className="flex flex-col justify-center items-center w-screen bg-secondary p-10">
+            <h1 className="text-3xl mt-10 font-bold mb-10">Welcome, {username}</h1>
+            <div className="bg-gray-200 p-4 rounded-lg shadow-md w-1/2">
+                <h2 className="text-lg font-bold mb-4">Personal Information</h2>
+                <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">Account Username:</p>
+                            {isUsernameEditing ? (
+                                <input
+                                    type="text"
+                                    value={username}
+                                    onChange={handleUsernameChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">{username}</p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleUsernameEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isUsernameEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+                {/* <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">First Name:</p>
+                            {isFirstnameEditing ? (
+                                <input
+                                    type="text"
+                                    value={firstname}
+                                    onChange={handleFirstnameChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold ">{firstname}</p>
+                            )}
+                            <button
+                            onClick={toggleFirstnameEditing}
+                            className=" ml-60 text-blue-600 hover:text-blue-700 focus:outline-none"
+                            >
+                                {isFirstnameEditing ? "Save" : "Edit"}
+                            </button>
+                            <p className="text-gray-600 ml-10 mr-2">Last Name:</p>
+                            {isLastnameEditing ? (
+                                <input
+                                    type="text"
+                                    value={lastname}
+                                    onChange={handleLastnameChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">{lastname}</p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleLastnameEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isLastnameEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div> */}
+                <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">Date of Birth:</p>
+                            {isDobEditing ? (
+                                <input
+                                    type="date"
+                                    value={dob}
+                                    onChange={handleDobChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">{dob}</p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleDobEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isDobEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+                <div className="border-b border-gray-400 mb-4 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">Location:</p>
+                            {isLocEditing ? (
+                                <input
+                                    type="text"
+                                    value={loc}
+                                    onChange={handleLocChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                />
+                            ) : (
+                                <p className="text-gray-800 font-semibold">{loc}</p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleLocEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isLocEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+                <div className="mb-0 pb-4">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <p className="text-gray-600 mr-2">Gender:</p>
+                            {isGenderEditing ? (
+                                <select
+                                    value={gender}
+                                    onChange={handleGenderChange}
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                                >
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            ) : (
+                                <p className="text-gray-800 font-semibold">{gender}</p>
+                            )}
+                        </div>
+                        <button
+                            onClick={toggleGenderEditing}
+                            className="text-blue-600 hover:text-blue-700 focus:outline-none"
+                        >
+                            {isGenderEditing ? "Save" : "Edit"}
+                        </button>
+                    </div>
+                </div>
+            </div>
 
 			<div className="bg-gray-200 p-4 rounded-lg shadow-md mt-12 w-1/2">
 				<h2 className="text-lg font-bold mb-4">Security Information</h2>
