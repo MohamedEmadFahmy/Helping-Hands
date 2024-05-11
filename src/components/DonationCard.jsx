@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 
+import LocationPin from '../assets/DonationCardsImages/LocationPin.jfif';
 import { useState } from 'react';
 
 const DonationCard = ({
@@ -31,7 +32,14 @@ const DonationCard = ({
             <div className="flex-col flex gap-6 ">
               <h1 className="text-3xl border-b border-gray-500">{field1}</h1>
               <h1 className="text-xl">{field2}</h1>
-              <h1 className="text-lg">{field3}</h1>
+              <div className="flex gap-3">
+                <img
+                  className="rounded-full w-[2rem] h-[2rem]"
+                  src={LocationPin}
+                  alt="Location Pin"
+                />
+                <h1 className="text-lg">{field3}</h1>
+              </div>
             </div>
           </div>
           <div className="flex justify-end pr-5 pb-5 gap-3">
