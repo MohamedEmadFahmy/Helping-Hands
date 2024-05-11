@@ -11,20 +11,17 @@ const OrganizationNavbar = () => {
 			: "text-2xl font-semibold text-white transition duration-200 ";
 
 	return (
-		<nav className="sticky top-0 z-50 w-full h-[10vh] bg-primary flex items-center pl-10 pr-10 gap-[10rem]">
+		<nav className="sticky top-0 z-50 w-full h-[10vh] bg-primary flex items-center pl-10 pr-10 gap-[5rem]">
 			<img
 				src={logo}
 				alt=""
 				className="h-[80%] object-contain cursor-pointer"
-				onClick={() => navigate("/organization/home")}
+				onClick={() => navigate("/organization/donation-create")}
 			/>
 			<div
 				id="nav-links"
 				className="flex items-center justify-center gap-[5vw] h-full w-3/4"
 			>
-				<NavLink to="/organization/home" className={navLinkStyling}>
-					Home
-				</NavLink>
 				<NavLink
 					to="/organization/donation-create"
 					className={navLinkStyling}

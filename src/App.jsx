@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 
 import {
-  Route,
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
+	Route,
+	RouterProvider,
+	createBrowserRouter,
+	createRoutesFromElements,
 } from "react-router-dom";
 
 import DonorPageLayout from "./layouts/DonorPageLayout";
@@ -20,13 +20,9 @@ import DonorVolunteerPage from "./pages/DonorVolunteerPage";
 import LoginPage from "./pages/LoginPage";
 import SelectDonorTypePage from "./pages/SelectDonorTypePage";
 
-
-
 import AdminAccountPage from "./pages/AdminAccountPage";
 import AdminDonorAccounts from "./pages/AdminDonorAccounts";
 import AdminOrganizationAccounts from "./pages/AdminOrganizationAccounts";
-
-
 
 import OrganizationDonationsPage from "./pages/OrganizationDonationsPage";
 import OrganizationDeliveryPage from "./pages/OrganizationDeliveryPage";
@@ -34,17 +30,19 @@ import OrganizationAccountPage from "./pages/OrganizationAccountPage";
 import OrganizationDonationCreationPage from "./pages/OrganizationDonationCreationPage";
 import OrganizationHomePage from "./pages/OrganizationHomePage";
 import AdminViewSubmissions from "./pages/AdminViewSubmissions";
+import PageNotFound from "./pages/PageNotFound";
 
 // Import your components
 
 const App = () => {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      // <Route path="/" element={<DonorPageLayout />}>
-      <>
-        <Route path="/" index element={<LoginPage />} />
+	const router = createBrowserRouter(
+		createRoutesFromElements(
+			// <Route path="/" element={<DonorPageLayout />}>
+			<>
+				<Route path="/" index element={<LoginPage />} />
 
-        <Route path="/select-type" element={<SelectDonorTypePage />} />
+				<Route path="/select-type" element={<SelectDonorTypePage />} />
+				<Route path="*" element={<PageNotFound />} />
 
 				<Route element={<DonorPageLayout />}>
 					<Route
@@ -80,15 +78,13 @@ const App = () => {
 						path="/admin/organization-accounts"
 						element={<AdminOrganizationAccounts />}
 					/>
-
+					<Route
+						path="/admin/view-submissions"
+						element={<AdminViewSubmissions />}
+					/>
 				</Route>
 
-				
 				<Route element={<OrganizationPageLayout />}>
-					<Route
-						path="/organization/home"
-						element={<OrganizationHomePage />}
-					/>
 					<Route
 						path="/organization/donations"
 						element={<OrganizationDonationsPage />}
@@ -110,7 +106,7 @@ const App = () => {
 		)
 	);
 
-  return <RouterProvider router={router} />;
+	return <RouterProvider router={router} />;
 };
 
 export default App;

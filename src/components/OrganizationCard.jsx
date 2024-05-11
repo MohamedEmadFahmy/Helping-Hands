@@ -3,12 +3,11 @@
 import { useState } from "react";
 
 const OrganizationCard = ({
-     OrganizationImage,
-     OrganizationName,
-     OrganizationType,
-	 OrganizationArea,
-     OrganizationPhoneNumber,
-
+	OrganizationImage,
+	OrganizationName,
+	OrganizationType,
+	OrganizationArea,
+	OrganizationPhoneNumber,
 }) => {
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -46,12 +45,14 @@ const OrganizationCard = ({
 					<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-grey-800 bg-opacity-50 z-[70]">
 						<div className="bg-white rounded-3xl shadow-2xl p-6 w-1/3 h-3/12">
 							<h1 className="text-lg font-semibold mb-4 underline">
-								{	OrganizationName}
+								{OrganizationName}
 							</h1>
 
 							<p className="mb-2">Type: {OrganizationType}</p>
 							<p className="mb-2">Area: {OrganizationArea}</p>
-                            <p className="mb-2">OrganizationPhone: {OrganizationPhoneNumber}</p>
+							<p className="mb-2">
+								Organization Phone: {OrganizationPhoneNumber}
+							</p>
 							<button
 								className="block w-full mt-4 px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
 								onClick={() => setIsPopupOpen(false)}
@@ -67,4 +68,3 @@ const OrganizationCard = ({
 };
 
 export default OrganizationCard;
-
