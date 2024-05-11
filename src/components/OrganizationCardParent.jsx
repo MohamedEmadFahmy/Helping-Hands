@@ -1,3 +1,4 @@
+import Blankets from '../assets/DonationCardsImages/MedicalBlankets.jfif';
 import DonationCard from './DonationCard';
 import HospitalLogo from '../assets/DonationCardsImages/HospitalLogo.png';
 
@@ -12,6 +13,8 @@ const OrganizationCardParent = () => {
         field5="Need blankets for patients"
         field6="100"
         orgImg={HospitalLogo}
+        itemImg={Blankets}
+        isBlood={false}
       />
       <DonationCard
         field1="Organization 2"

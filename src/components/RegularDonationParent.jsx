@@ -10,6 +10,7 @@ const RegularDonationParent = () => {
         field4="High"
         field5="i need clothes please"
         field6="1 month ago"
+        isBlood={false}
       />
       <DonationCard
         field1="Kr"

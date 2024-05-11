@@ -51,7 +51,10 @@ const CaseCard = ({ field1, field2, field3, field4, field5, field6 }) => {
               <div className="flex justify-between mt-4">
                 <div className="flex gap-3 justify-center items-center"></div>
                 <div>
-                  <button className="px-4 py-2 bg-green-500 text-white rounded-md mr-2 hover:bg-green-700 focus:outline-none focus:ring-1 focus:ring-green-500">
+                  <button
+                    className="px-4 py-2 bg-green-500 text-white rounded-md mr-2 hover:bg-green-700 focus:outline-none focus:ring-1 focus:ring-green-500"
+                    onClick={() => setVolunteer(false)}
+                  >
                     Volunteer
                   </button>
                 </div>
