@@ -9,28 +9,32 @@ const OrganizationCards = () => {
 	return (
 		<div className="flex flex-col items-center justify-center w-10/12 h-full gap-5">
 			<OrganizationCard
-				accountName={"57357 hospital"}
+				OrganizationName={"57357 hospital"}
 				OrganizationType={"medical research hospital"}
 				OrganizationArea={"Cairo"}
-				accountImage={image}
+				OrganizationImage={image}
+				OrganizationPhoneNumber={"01004441910"}
 			/>
 			<OrganizationCard
-				accountName={"اهل مصر"}
+				OrganizationName={"اهل مصر"}
 				OrganizationType={"medical research hospital"}
 				OrganizationArea={"Cairo"}
-				accountImage={image2}
+				OrganizationImage={image2}
+				OrganizationPhoneNumber={"01005551910"}
 			/>
 			<OrganizationCard
-				accountName={"CCCPA"}
+				OrganizationName={"CCCPA"}
 				OrganizationType={"Center for Conflict Resolations"}
 				OrganizationArea={"Cairo"}
-				accountImage={image3}
+				OrganizationImage={image3}
+				OrganizationPhoneNumber={"01006661910"}
 			/>
 			<OrganizationCard
-				accountName={"الاورمان"}
+				OrganizationName={"الاورمان"}
 				OrganizationType={"medical research hospital"}
 				OrganizationArea={"Suhag"}
-				accountImage={image4}
+				OrganizationImage={image4}
+				OrganizationPhoneNumber={"01007771910"}
 			/>
 		</div>
 	);

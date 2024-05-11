@@ -8,6 +8,9 @@ const DonorAccountCard = ({
 	accountEmail,
 	accountArea,
 	accountType,
+	accountPhoneNumber,
+	accountId,
+	deleteAccount,
 }) => {
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -32,9 +35,11 @@ const DonorAccountCard = ({
 					className="w-10 h-10 rounded-full"
 				/>
 				<div>
-					<p className="text-gray-800 font-medium">{shortName}</p>
-					<p className="text-gray-600">{accountEmail}</p>
-					<p className="text-gray-600">{accountArea}</p>
+					<p className="text-gray-800 font-medium text-xl">
+						{shortName}
+					</p>
+					{/* <p className="text-gray-600">{accountEmail}</p> */}
+					{/* <p className="text-gray-600">{accountArea}</p> */}
 				</div>
 			</div>
 			<div className="mt-4 flex justify-between">
@@ -46,7 +51,12 @@ const DonorAccountCard = ({
 				>
 					View Details
 				</button>
-				<button className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500">
+				<button
+					onClick={() => {
+						deleteAccount(accountId);
+					}}
+					className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500"
+				>
 					Delete Account
 				</button>
 			</div>
@@ -62,6 +72,10 @@ const DonorAccountCard = ({
 
 							<p className="mb-2">Email: {accountEmail}</p>
 							<p className="mb-2">Area: {accountArea}</p>
+							<p className="mb-2">
+								ContactInfo: {accountPhoneNumber}
+							</p>
+							<p className="mb-2">DonorType: {accountType}</p>
 							<button
 								className="block w-full mt-4 px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
 								onClick={() => setIsPopupOpen(false)}
