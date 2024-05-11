@@ -8,13 +8,13 @@ import { useState } from "react";
 
 const DonorVolunteerPage = () => {
 	const [isDoctor, setIsDoctor] = useState(true);
-	const [isTeacher, setIsTeacher] = useState(false);
+	const [isTeacher, setIsTeacher] = useState(true);
 
 	const [viewDoctor, setDoctor] = useState(isDoctor);
 	const [viewTeacher, setTeacher] = useState(isTeacher);
 
 	return (
-		<div className="h-[90vh] w-full bg-secondaryShades-500 flex flex-col  items-center gap-10 ">
+		<div className=" min-h-[90vh] w-full bg-secondaryShades-500 flex flex-col items-center gap-10 ">
 			<div className="flex justify-start gap-5 mt-5 ">
 				{isDoctor && (
 					<button
