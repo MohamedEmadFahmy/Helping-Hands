@@ -4,7 +4,6 @@ import AdminAccount from "../components/AdminAccount";
 const AdminAccountPage = () => {
 	return (
 		<>
-			<AdminNavbar />
 			<div className="h-screen w-screen flex justify-center items-center bg-secondary">
 				<AdminAccount />
 			</div>

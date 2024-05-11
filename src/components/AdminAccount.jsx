@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 const AdminAccount = () => {
-    const [username, setUsername] = useState("Abso");
-    const [firstname, setFirstname] = useState("Youssof");
-    const [lastname, setLastname] = useState("Ahmed");
+    const [username, setUsername] = useState("Admin#09120201");
+    // const [firstname, setFirstname] = useState("Youssof");
+    // const [lastname, setLastname] = useState("Ahmed");
     const [isUsernameEditing, setIsUsernameEditing] = useState(false);
-    const [isFirstnameEditing, setIsFirstnameEditing] = useState(false);
-    const [isLastnameEditing, setIsLastnameEditing] = useState(false);
+    // const [isFirstnameEditing, setIsFirstnameEditing] = useState(false);
+    // const [isLastnameEditing, setIsLastnameEditing] = useState(false);
     const [dob, setDob] = useState("1990-01-01");
     const [isDobEditing, setIsDobEditing] = useState(false);
     const [loc, setLoc] = useState("6th October City, Giza, Egypt");
@@ -23,12 +23,12 @@ const AdminAccount = () => {
     const toggleUsernameEditing = () => {
         setIsUsernameEditing(!isUsernameEditing);
     };
-    const toggleFirstnameEditing = () => {
-        setIsFirstnameEditing(!isFirstnameEditing);
-    };
-    const toggleLastnameEditing = () => {
-        setIsLastnameEditing(!isLastnameEditing);
-    };
+    // const toggleFirstnameEditing = () => {
+    //     setIsFirstnameEditing(!isFirstnameEditing);
+    // };
+    // const toggleLastnameEditing = () => {
+    //     setIsLastnameEditing(!isLastnameEditing);
+    // };
 
     const toggleDobEditing = () => {
         setIsDobEditing(!isDobEditing);
@@ -57,12 +57,12 @@ const AdminAccount = () => {
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
     };
-    const handleFirstnameChange = (e) => {
-        setFirstname(e.target.value);
-    };
-    const handleLastnameChange = (e) => {
-        setLastname(e.target.value);
-    };
+    // const handleFirstnameChange = (e) => {
+    //     setFirstname(e.target.value);
+    // };
+    // const handleLastnameChange = (e) => {
+    //     setLastname(e.target.value);
+    // };
 
     const handleDobChange = (e) => {
         setDob(e.target.value);
@@ -121,7 +121,7 @@ const AdminAccount = () => {
 
     return (
         <div className="flex flex-col justify-center items-center w-screen bg-secondary p-10">
-            <h1 className="text-3xl mt-60 font-bold mb-10">Welcome, {username}</h1>
+            <h1 className="text-3xl mt-10 font-bold mb-10">Welcome, {username}</h1>
             <div className="bg-gray-200 p-4 rounded-lg shadow-md w-1/2">
                 <h2 className="text-lg font-bold mb-4">Personal Information</h2>
                 <div className="border-b border-gray-400 mb-4 pb-4">
@@ -147,7 +147,7 @@ const AdminAccount = () => {
                         </button>
                     </div>
                 </div>
-                <div className="border-b border-gray-400 mb-4 pb-4">
+                {/* <div className="border-b border-gray-400 mb-4 pb-4">
                     <div className="flex justify-between items-center">
                         <div className="flex items-center">
                             <p className="text-gray-600 mr-2">First Name:</p>
@@ -186,7 +186,7 @@ const AdminAccount = () => {
                             {isLastnameEditing ? "Save" : "Edit"}
                         </button>
                     </div>
-                </div>
+                </div> */}
                 <div className="border-b border-gray-400 mb-4 pb-4">
                     <div className="flex justify-between items-center">
                         <div className="flex items-center">

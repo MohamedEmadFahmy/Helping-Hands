@@ -8,10 +8,9 @@ import {
 } from "react-router-dom";
 
 import DonorPageLayout from "./layouts/DonorPageLayout";
+import AdminPageLayout from "./layouts/AdminPageLayout";
 import OrganizationPageLayout from "./layouts/OrganizationPageLayout";
 
-import AdminDonorAccounts from "./pages/AdminDonorAccounts";
-import AdminOrganizationAccounts from "./pages/AdminOrganizationAccounts";
 import DonorAccount from "./components/DonorAccount";
 import DonorDeliveriesPage from "./pages/DonorDeliveriesPage";
 import DonorDonatePage from "./pages/DonorDonatePage";
@@ -20,6 +19,14 @@ import DonorOrganizationsPage from "./pages/DonorOrganizationsPage";
 import DonorVolunteerPage from "./pages/DonorVolunteerPage";
 import LoginPage from "./pages/LoginPage";
 import SelectDonorTypePage from "./pages/SelectDonorTypePage";
+
+
+
+import AdminAccountPage from "./pages/AdminAccountPage";
+import AdminDonorAccounts from "./pages/AdminDonorAccounts";
+import AdminOrganizationAccounts from "./pages/AdminOrganizationAccounts";
+
+
 
 import OrganizationDonationsPage from "./pages/OrganizationDonationsPage";
 import OrganizationDeliveryPage from "./pages/OrganizationDeliveryPage";
@@ -60,7 +67,7 @@ const App = () => {
 					<Route path="/donor/account" element={<DonorAccount />} />
 				</Route>
 
-				<Route element={<DonorPageLayout />}>
+				<Route element={<AdminPageLayout />}>
 					<Route
 						path="/admin/donor-accounts"
 						element={<AdminDonorAccounts />}
