@@ -14,7 +14,7 @@ const DonorVolunteerPage = () => {
 	const [viewTeacher, setTeacher] = useState(isTeacher);
 
 	return (
-		<div className="h-[90vh] w-screen bg-secondaryShades-500 flex flex-col  items-center gap-10 overflow-y-scroll ">
+		<div className="h-[90vh] w-full bg-secondaryShades-500 flex flex-col  items-center gap-10 ">
 			<div className="flex justify-start gap-5 mt-5 ">
 				{isDoctor && (
 					<button

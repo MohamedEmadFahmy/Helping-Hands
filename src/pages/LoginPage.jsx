@@ -10,7 +10,7 @@ const LoginPage = () => {
 	const [isRegister, setRegister] = useState("login");
 
 	return (
-		<div className="h-screen w-screen md:flex">
+		<div className="h-screen w-full md:flex">
 			<div className="relative overflow-hidden md:flex w-1/3 bg-primaryShades-200 justify-around items-center hidden">
 				<div>
 					<img src={logo} alt="" />

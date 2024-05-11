@@ -2,7 +2,7 @@
 import DonorDelivery from "../components/DonorDelivery";
 const DonorDeliveriesPage = () => {
 	return (
-		<div className="h-[90vh] w-screen flex flex-col flex-justify-center items-center">
+		<div className="h-[90vh] w-full flex flex-col flex-justify-center items-center">
 			<DonorDelivery />
 		</div>
 	);

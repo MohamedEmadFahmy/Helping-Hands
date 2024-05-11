@@ -22,7 +22,7 @@ const SelectDonorTypePage = () => {
 	};
 
 	return (
-		<div className="w-screen h-screen bg-slate-100 flex flex-col items-center justify-around">
+		<div className="w-full h-screen bg-slate-100 flex flex-col items-center justify-around">
 			<h1 className="text-4xl font-bold text-slate-900 mt-5">
 				What type of donations do you want to do?
 			</h1>

@@ -5,7 +5,7 @@ const DonorAccountPage = () => {
 	return (
 		<>
 			{/* <DonorNavbar /> */}
-			<div className="h-screen w-screen flex justify-center items-center bg-secondary">
+			<div className="h-screen w-full flex justify-center items-center bg-secondary">
 				<DonorAccount />
 			</div>
 		</>

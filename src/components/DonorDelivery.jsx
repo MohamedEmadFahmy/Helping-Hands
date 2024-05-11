@@ -47,7 +47,7 @@ const DonorDelivery = () => {
 	};
 
 	return (
-		<div className="p-4 w-screen h-screen flex flex-col justify-center items-center">
+		<div className="p-4 w-full h-screen flex flex-col justify-center items-center">
 			{deliveryState === "NoDonation" && (
 				<div className="flex shadow-md bg-gray-200 w-3/4 items-center justify-center">
 					<h1 className="text-4xl font-bold m-8">

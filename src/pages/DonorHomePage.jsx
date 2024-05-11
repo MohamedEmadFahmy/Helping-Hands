@@ -4,7 +4,7 @@ import poorChildrenPhoto from "../assets/images/poor-children.jpg";
 
 const DonorHomePage = () => {
 	return (
-		<div className="w-screen flex flex-col justify-center items-center">
+		<div className="w-full flex flex-col justify-center items-center">
 			<div
 				className="h-[90vh] w-full bg-cover bg-no-repeat flex flex-col justify-center items-center"
 				style={{

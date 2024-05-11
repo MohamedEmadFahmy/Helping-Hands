@@ -11,7 +11,7 @@ const OrganizationNavbar = () => {
 			: "text-2xl font-semibold text-white transition duration-200 ";
 
 	return (
-		<nav className="sticky top-0 z-50 w-screen h-[10vh] bg-primary flex items-center pl-10 pr-10 gap-[10rem]">
+		<nav className="sticky top-0 z-50 w-full h-[10vh] bg-primary flex items-center pl-10 pr-10 gap-[10rem]">
 			<img
 				src={logo}
 				alt=""

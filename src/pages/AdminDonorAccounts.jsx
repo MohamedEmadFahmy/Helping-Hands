@@ -2,50 +2,26 @@
 import { useState } from "react";
 import DonorAccountCards from "../components/DonorAccountCards";
 import filterIcon from "../assets/images/gand/filterr.jpeg"; // Assuming the image path is correct
+import Filter from "../components/Filter";
 
 // const [showFilterOptions, toggleFilterOptions] = useState(false);
 const DonorAccounts = () => {
-	const [activeFilters, setActiveFilters] = useState([]);
-
-	const filters = ["Doctors", "Teachers", "Students"];
-
-	const handleFilterChange = (e) => {
-		const filter = e.target.name;
-		const isChecked = e.target.checked;
-
-		if (isChecked) {
-			// If checkbox is checked, add the filter to activeFilters
-			setActiveFilters([...activeFilters, filter]);
-		} else {
-			// If checkbox is unchecked, remove the filter from activeFilters
-			setActiveFilters(
-				activeFilters.filter((option) => option !== filter)
-			);
-		}
-	};
+	const allFilters = ["Regular Donors", "Teachers", "Doctors"];
+	const [activeFilters, setActiveFilters] = useState(allFilters);
 
 	return (
 		<div className=" bg-primaryShades-200 p-10 gap-10 min-h-[90vh] w-full flex flex-col items-center justify-center">
 			<h1 className="text-5xl font-bold text-center font-mono text-white">
 				Donor Accounts
 			</h1>
-			<div className="w-full flex bg-red-200 justify-between">
-				<div className="flex flex-col">
-					<h1>Filters</h1>
-					<div>
-						<input
-							type="checkbox"
-							name="Doctors"
-							onChange={handleFilterChange}
-						/>
-						<label htmlFor="Doctors">Doctors</label>
-					</div>
-				</div>
-
-				<DonorAccountCards
+			<div className="w-full flex bg-red-200 justify-between p-10 pt-0">
+				<Filter
+					allFilters={allFilters}
 					activeFilters={activeFilters}
 					setActiveFilters={setActiveFilters}
 				/>
+
+				<DonorAccountCards activeFilters={activeFilters} />
 			</div>
 		</div>
 	);

@@ -7,14 +7,24 @@ const DonorAccountCard = ({
 	accountName,
 	accountEmail,
 	accountArea,
+	accountType,
 }) => {
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 
 	const shortName =
 		accountName.split(" ")[0] + " " + accountName.split(" ")[1];
 
+	const cardColor =
+		accountType === "Regular Donors"
+			? "bg-blue-200"
+			: accountType === "Teachers"
+			? "bg-yellow-200"
+			: "bg-green-200";
+
 	return (
-		<div className="bg-gray-200 p-4 rounded-md w-2/3 flex flex-col justify-center">
+		<div
+			className={`${cardColor} p-4 rounded-md w-2/3 flex flex-col justify-center`}
+		>
 			<div className="flex items-center gap-2">
 				<img
 					src={accountImage}

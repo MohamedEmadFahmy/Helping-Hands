@@ -4,7 +4,7 @@ import DonorAccountCard from "../components/DonorAccountCard";
 import image from "../assets/images/gand/G157357.jpeg";
 import image2 from "../assets/images/gand/ahl.jpeg";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import data from "../donor-accounts.json";
 
@@ -15,6 +15,7 @@ const DonorAccountCards = ({ activeFilters }) => {
 	// 	const randomIndex = Math.floor(Math.random() * images.length);
 	// 	return images[randomIndex];
 	// };
+	console.log(data);
 
 	const [accounts, setAccounts] = useState(data);
 
@@ -23,7 +24,7 @@ const DonorAccountCards = ({ activeFilters }) => {
 	});
 
 	return (
-		<div className="flex flex-col items-center justify-center w-10/12 h-full gap-5">
+		<div className="flex flex-col items-center justify-center w-10/12 h-full gap-5 ">
 			{filteredAccounts.map((account) => (
 				<DonorAccountCard
 					key={account.id}
@@ -31,6 +32,7 @@ const DonorAccountCards = ({ activeFilters }) => {
 					accountEmail={account.email}
 					accountArea={account.area}
 					accountImage={account.id % 2 === 0 ? image : image2}
+					accountType={account.accountType}
 				/>
 			))}
 		</div>
