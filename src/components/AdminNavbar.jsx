@@ -22,20 +22,11 @@ const AdminNavbar = () => {
 				id="nav-links"
 				className="flex items-center justify-center gap-[5vw] h-full w-3/4"
 			>
-				<NavLink to="/Admin/home" className={navLinkStyling}>
-					Home
+				<NavLink to="/admin/donor-accounts" className={navLinkStyling}>
+					Donor Accounts
 				</NavLink>
-				<NavLink
-					to="/Admin/donation-create"
-					className={navLinkStyling}
-				>
-					Donation Creation
-				</NavLink>
-				<NavLink
-					to="/Admin/donations"
-					className={navLinkStyling}
-				>
-					Donations
+				<NavLink to="/admin/organization-accounts" className={navLinkStyling}>
+					Organization Accounts
 				</NavLink>
 			</div>
 			<div className="flex items-center justify-center gap-3 w-1/7 h-full ">

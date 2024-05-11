@@ -26,6 +26,7 @@ import OrganizationDeliveryPage from "./pages/OrganizationDeliveryPage";
 import OrganizationAccountPage from "./pages/OrganizationAccountPage";
 import OrganizationDonationCreationPage from "./pages/OrganizationDonationCreationPage";
 import OrganizationHomePage from "./pages/OrganizationHomePage";
+import AdminAccount from "./components/AdminAccount";
 
 // Import your components
 
@@ -57,15 +58,25 @@ const App = () => {
 						element={<DonorVolunteerPage />}
 					/>
 					<Route path="/donor/account" element={<DonorAccount />} />
+				</Route>
+
+				<Route element={<DonorPageLayout />}>
 					<Route
 						path="/admin/donor-accounts"
 						element={<AdminDonorAccounts />}
 					/>
 					<Route
+						path="/admin/account"
+						element={<AdminAccountPage />}
+					/>
+					<Route
 						path="/admin/organization-accounts"
 						element={<AdminOrganizationAccounts />}
 					/>
+
 				</Route>
+
+				
 				<Route element={<OrganizationPageLayout />}>
 					<Route
 						path="/organization/home"
