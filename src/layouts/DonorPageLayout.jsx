@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import DonorNavbar from "../components/DonorNavbar";
+import Footer from "../components/Footer";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -35,6 +36,7 @@ const DonorPageLayout = () => {
 		<>
 			<DonorNavbar />
 			<Outlet />
+			<Footer />
 			<ToastContainer />
 		</>
 	);
