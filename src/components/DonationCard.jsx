@@ -109,7 +109,7 @@ const DonationCard = ({
                       className="px-6 py-2 bg-green-500 text-white rounded-md mr-2 hover:bg-green-700 focus:outline-none focus:ring-1 focus:ring-green-500"
                       onClick={() => {
                         if (quantity > 0) setDonate(false);
-                        navigate('/donor/deliveries');
+                        navigate('/donor/deliveries?isDonate=true');
                       }}
                     >
                       Donate
