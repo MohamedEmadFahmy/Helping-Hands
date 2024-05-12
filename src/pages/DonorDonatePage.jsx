@@ -105,7 +105,7 @@ const DonorDonatePage = () => {
 	return (
 		<div className="min-h-[90vh] w-full bg-secondaryShades-500 flex flex-col  items-center gap-10">
 			<div className="flex justify-start gap-8 mt-5 ">
-				<button
+				{/* <button
 					className={`${
 						activeButton === "General Donations" &&
 						"scale-110 drop-shadow-lg"
@@ -146,7 +146,7 @@ const DonorDonatePage = () => {
 					}}
 				>
 					Organization Donations
-				</button>
+				</button> */}
 			</div>
 			<div className="bg-red-200 w-4/5 flex justify-around gap-10">
 				<div className="w-2/5 h-screen bg-orange-200 flex flex-col items-center">

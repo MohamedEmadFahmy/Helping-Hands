@@ -3,7 +3,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 import logo from "../assets/images/logo_white.png";
 import reactLogo from "../assets/images/react.png";
-
 const DonorNavbar = () => {
 	const navigate = useNavigate();
 
