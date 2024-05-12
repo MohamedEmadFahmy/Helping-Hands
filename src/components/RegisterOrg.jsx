@@ -22,17 +22,15 @@ const RegisterOrg = ({ setRegister }) => {
 	const submitForm = (e) => {
 		e.preventDefault();
 
-		if (e.currentTarget.id === "submitButton") {
-			if (selectedFile === null) {
-				alert("Please upload a document for verification");
-				return;
-			}
-			if (selectedLocation === false) {
-				alert("Please choose your location");
-				return;
-			}
-			navigate("/organization/account?registrationSuccess=true");
+		if (selectedFile === null) {
+			alert("Please upload a document for verification");
+			return;
 		}
+		if (selectedLocation === false) {
+			alert("Please choose your location");
+			return;
+		}
+		navigate("/organization/account?registrationSuccess=true");
 	};
 
 	return (
@@ -45,7 +43,7 @@ const RegisterOrg = ({ setRegister }) => {
 				Register as an Organisation
 			</h1>
 			<form
-				onSubmit={(e) => e.preventDefault()}
+				onSubmit={submitForm}
 				className="w-full flex flex-col items-start pr-10 pl-10 gap-1"
 			>
 				<div className="">
@@ -56,6 +54,8 @@ const RegisterOrg = ({ setRegister }) => {
 						username
 					</label>
 					<input
+						required
+						name="grid-username"
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 						id="grid-username"
 						type="text"
@@ -75,6 +75,8 @@ const RegisterOrg = ({ setRegister }) => {
 							password
 						</label>
 						<input
+							required
+							name="grid-password"
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 							id="grid-password"
 							type="password"
@@ -92,6 +94,8 @@ const RegisterOrg = ({ setRegister }) => {
 							Retype Password
 						</label>
 						<input
+							required
+							name="grid-retype-password"
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 							id="grid-retype-password"
 							type="password"
@@ -109,6 +113,8 @@ const RegisterOrg = ({ setRegister }) => {
 							First Name
 						</label>
 						<input
+							required
+							name="grid-first-name"
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 							id="grid-first-name"
 							type="text"
@@ -126,6 +132,8 @@ const RegisterOrg = ({ setRegister }) => {
 							Last Name
 						</label>
 						<input
+							required
+							name="grid-last-name"
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 							id="grid-last-name"
 							type="text"
@@ -141,6 +149,8 @@ const RegisterOrg = ({ setRegister }) => {
 						email
 					</label>
 					<input
+						required
+						name="grid-email"
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 						id="grid-email"
 						type="email"
@@ -159,6 +169,7 @@ const RegisterOrg = ({ setRegister }) => {
 							htmlFor="male"
 						>
 							<input
+								required
 								name="type"
 								type="radio"
 								className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
@@ -195,6 +206,7 @@ const RegisterOrg = ({ setRegister }) => {
 							htmlFor="female"
 						>
 							<input
+								required
 								name="type"
 								type="radio"
 								className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
@@ -232,6 +244,7 @@ const RegisterOrg = ({ setRegister }) => {
 						contact number
 					</label>
 					<input
+						required
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 						id="grid-organisation-phone"
 						type="phone"
@@ -248,6 +261,7 @@ const RegisterOrg = ({ setRegister }) => {
 							Organisation name
 						</label>
 						<input
+							required
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 							id="grid-organisation-name"
 							type="text"
@@ -262,6 +276,7 @@ const RegisterOrg = ({ setRegister }) => {
 							Organisation Type
 						</label>
 						<input
+							required
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 							id="grid-organisation-type"
 							type="text"
@@ -278,6 +293,7 @@ const RegisterOrg = ({ setRegister }) => {
 							Organisation Address
 						</label>
 						<input
+							required
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 							id="grid-organisation-address"
 							type="text"
@@ -292,6 +308,7 @@ const RegisterOrg = ({ setRegister }) => {
 							Organisation Area
 						</label>
 						<input
+							required
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 							id="grid-organisation-area"
 							type="text"
@@ -306,6 +323,7 @@ const RegisterOrg = ({ setRegister }) => {
 							Organisation Governate
 						</label>
 						<input
+							required
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 							id="grid-organisation-governate"
 							type="text"
@@ -320,6 +338,7 @@ const RegisterOrg = ({ setRegister }) => {
 						className="hover:scale-105 hover:bg-gray-200 bg-white text-blue-500 font-bold rounded-md cursor-pointer p-1 w-1/3 text-center"
 					>
 						<input
+							name="file-upload"
 							id="file-upload"
 							type="file"
 							className="hidden"
@@ -337,7 +356,7 @@ const RegisterOrg = ({ setRegister }) => {
 						</p>
 					</label>
 					<div className="h-full flex items-center justify-center">
-						<button
+						<div
 							onClick={() => {
 								setIsPopupOpen(true);
 								setSelectedLocation(true);
@@ -345,14 +364,13 @@ const RegisterOrg = ({ setRegister }) => {
 							className="hover:scale-105 hover:bg-gray-200 bg-white text-blue-500 font-bold rounded-md cursor-pointer p-1 px-1 w-2/3 text-center"
 						>
 							Choose Your Location
-						</button>
+						</div>
 					</div>
 				</div>
 
 				<button
 					id="submitButton"
 					className="bg-white w-1/4 h-10 mt-3 rounded-xl self-center flex flex-row items-center justify-center gap-x-6 hover:bg-neutral-200 hover:drop-shadow-lg hover:scale-105"
-					onClick={submitForm}
 				>
 					Register
 				</button>
@@ -391,12 +409,12 @@ const RegisterOrg = ({ setRegister }) => {
 								referrerPolicy="no-referrer-when-downgrade"
 							></iframe>
 
-							<button
+							<div
 								className="hover:scale-105 block w-1/3 mt-4 px-4 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
 								onClick={() => setIsPopupOpen(false)}
 							>
 								Close
-							</button>
+							</div>
 						</div>
 					</div>
 				</>

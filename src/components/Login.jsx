@@ -1,11 +1,26 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setRegister }) => {
+	const navigate = useNavigate();
+
 	const submitForm = (e) => {
 		e.preventDefault();
-		console.log("Form Submitted");
+		if (e.target[0].value === "admin" && e.target[1].value === "admin") {
+			navigate("/admin/account");
+		} else if (
+			e.target[0].value === "donor" &&
+			e.target[1].value === "donor"
+		) {
+			navigate("/donor/home");
+		} else if (
+			e.target[0].value === "organization" &&
+			e.target[1].value === "organization"
+		) {
+			navigate("/organization/account");
+		}
 	};
 
 	return (
@@ -27,6 +42,7 @@ const Login = ({ setRegister }) => {
 						username
 					</label>
 					<input
+						required
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 						id="grid-username"
 						type="text"
@@ -42,6 +58,7 @@ const Login = ({ setRegister }) => {
 						password
 					</label>
 					<input
+						required
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 mb-3 leading-tight focus:outline-none focus:bg-white p-4"
 						id="grid-password"
 						type="password"
