@@ -1,0 +1,24 @@
+[
+	{
+		"title": "Warm Winter Coats for Kids",
+		"subtitle": "Sunshine Shelter",
+		"description": "Sunshine Shelter is seeking warm winter coats for kids in need. With the cold weather approaching, many children in our community lack proper outerwear to stay warm. Your donations will help ensure every child can stay cozy this winter.",
+		"tags": {
+			"Category": "Clothes",
+			"Age": "Kids",
+			"Gender": "Unisex",
+			"Season": "Winter"
+		}
+	},
+	{
+		"title": "Professional Attire for Adult Women",
+		"subtitle": "CareerAdvantage",
+		"description": "CareerAdvantage is dedicated to empowering women by providing them with professional attire for job interviews and employment opportunities. Your donations of gently used or new clothing items will help boost confidence and pave the way to success for women in need.",
+		"tags": {
+			"Category": "Clothes",
+			"Age": "Adults",
+			"Gender": "Women",
+			"Season": "Year-round"
+		}
+	}
+]
