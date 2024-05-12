@@ -61,13 +61,250 @@ const DonorDonatePage = () => {
 				],
 			},
 		];
+		let schoolOptions = [
+			{
+				label: "Donation Type",
+				values: ["books", "stationary"],
+			},
+		];
+		let medicalOptions = [
+			{
+				label: "Donation Type",
+				values: ["medical devices", "medical equipment", "medication"],
+			},
+		];
+		let medicationOptions = [
+			{
+				label: "Donation Type",
+				values: [
+					"Cancer",
+					"Terminal Illness",
+					"Respiratory Illness",
+					"Anaesthetics",
+					"Other",
+				],
+			},
+		];
 
-		let options = toysOptions;
+		// donations by hospital, governorate, area blood
+		let bloodOptions = [
+			{
+				label: "Blood Type",
+				values: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"],
+			},
+			{
+				label: "Hospital",
+				values: [
+					"Dar-ElFoad",
+					"El Nada Hospital",
+					"AirForce Hospital",
+					"Ain Shams Hospital",
+				],
+			},
+			{
+				label: "Governorate",
+				values: [
+					"Cairo",
+					"Alexandria",
+					"Giza",
+					"Suez",
+					"Luxor",
+					"Mansoura",
+					"El-Mahalla",
+					"Tanta",
+				],
+			},
+			{
+				label: "Area",
+				values: [
+					"Zamalek",
+					"Maadi",
+					"Heliopolis",
+					"Dokki",
+					"Mohandessin",
+					"Nasr City",
+					"6th of October City",
+					"Agouza",
+					"Garden City",
+					"Mohandessin",
+				],
+			},
+		];
+		let foodOptions = [
+			{
+				label: "Food Type",
+				values: [
+					"Fruits & Vegetables",
+					"Canned Foods",
+					"Fresh Meals",
+					"Baked Goods",
+				],
+			},
+		];
+		let teachingOptions = [
+			{
+				label: "Subject",
+				values: [
+					"Mathematics",
+					"History",
+					"Physics",
+					"Literature",
+					"Biology",
+					"Chemistry",
+					"Computer Science",
+					"Psychology",
+					"Economics",
+					"Sociology",
+				],
+			},
+			{
+				label: "Governorate",
+				values: [
+					"Cairo",
+					"Alexandria",
+					"Giza",
+					"Suez",
+					"Luxor",
+					"Mansoura",
+					"El-Mahalla",
+					"Tanta",
+				],
+			},
+			{
+				label: "Area",
+				values: [
+					"Zamalek",
+					"Maadi",
+					"Heliopolis",
+					"Dokki",
+					"Mohandessin",
+					"Nasr City",
+					"6th of October City",
+					"Agouza",
+					"Garden City",
+					"Mohandessin",
+				],
+			},
+		];
+		let doctorOptions = [
+			{
+				label: "Specialty",
+				values: [
+					"Cardiology",
+					"Dermatology",
+					"Endocrinology",
+					"Gastroenterology",
+					"Hematology",
+					"Infectious Disease",
+					"Nephrology",
+					"Neurology",
+					"Oncology",
+					"Orthopedics",
+				],
+			},
+			{
+				label: "Governorate",
+				values: [
+					"Cairo",
+					"Alexandria",
+					"Giza",
+					"Suez",
+					"Luxor",
+					"Mansoura",
+					"El-Mahalla",
+					"Tanta",
+				],
+			},
+			{
+				label: "Area",
+				values: [
+					"Zamalek",
+					"Maadi",
+					"Heliopolis",
+					"Dokki",
+					"Mohandessin",
+					"Nasr City",
+					"6th of October City",
+					"Agouza",
+					"Garden City",
+					"Mohandessin",
+				],
+			},
+		];
+		let organizationOptions = [
+			{
+				label: "Organization Type",
+				values: [
+					"school",
+					"hospital",
+					"church",
+					"mosque",
+					"non-profit",
+				],
+			},
+			{
+				label: "Governorate",
+				values: [
+					"Cairo",
+					"Alexandria",
+					"Giza",
+					"Suez",
+					"Luxor",
+					"Mansoura",
+					"El-Mahalla",
+					"Tanta",
+				],
+			},
+			{
+				label: "Area",
+				values: [
+					"Zamalek",
+					"Maadi",
+					"Heliopolis",
+					"Dokki",
+					"Mohandessin",
+					"Nasr City",
+					"6th of October City",
+					"Agouza",
+					"Garden City",
+					"Mohandessin",
+				],
+			},
+		];
+
+		let options;
+
+		switch (category) {
+			case "Clothes":
+				options = clothesOptions;
+				break;
+			case "Toys":
+				options = toysOptions;
+				break;
+			case "School Supplies":
+				options = schoolOptions;
+				break;
+			case "Medical Supplies":
+				options = medicalOptions;
+				break;
+			case "Medication":
+				options = medicationOptions;
+				break;
+			case "Blood Donation":
+				options = bloodOptions;
+				break;
+			case "Food":
+				options = foodOptions;
+				break;
+			case "Organization":
+				options = organizationOptions;
+				break;
+		}
 
 		return options.map((option, index) => (
 			<div
 				key={index}
-				className="mt-3 mb-3 bg-red-200 flex flex-col items-center justify-center"
+				className="mt-3 mb-3 flex flex-col items-center justify-center"
 			>
 				<label>{option.label}</label>
 				<div className="flex gap-2">
@@ -148,8 +385,8 @@ const DonorDonatePage = () => {
 					Organization Donations
 				</button> */}
 			</div>
-			<div className="bg-red-200 w-4/5 flex justify-around gap-10">
-				<div className="w-2/5 h-screen bg-orange-200 flex flex-col items-center">
+			<div className="w-4/5 flex justify-around gap-10">
+				<div className="w-2/5 h-screen flex flex-col items-center">
 					<div className="h-auto bg-gray-200 w-2/3 flex flex-col items-center justify-center gap-10 rounded-lg p-10">
 						<h1 className="text-black text-5xl">Filter</h1>
 						<div className="flex flex-col items-center justify-center">
@@ -175,9 +412,7 @@ const DonorDonatePage = () => {
 					</div>
 				</div>
 				<div className="w-3/5 h-auto">
-					{viewOrganization && <OrganizationCardParent />}
-					{viewBlood && <BloodCardParent />}
-					{viewGeneral && <RegularDonationParent />}
+					<RegularDonationParent />
 				</div>
 			</div>
 		</div>

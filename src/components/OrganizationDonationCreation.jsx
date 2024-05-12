@@ -218,7 +218,7 @@ const OrganizationDonationCreation = () => {
 	return (
 		<div className="bg-gradient-to-tr from-secondaryshades-800 to-secondaryshades-900 rounded-lg flex flex-col items-center justify-center pt-8 pb-8 gap-5 w-full h-full">
 			<h1 className="text-primary font-bold text-4xl font-sans">
-				Create Donation
+				Create/Update Donation
 			</h1>
 			<form
 				onSubmit={submitForm}

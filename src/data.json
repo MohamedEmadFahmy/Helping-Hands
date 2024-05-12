@@ -1,24 +1,84 @@
 [
 	{
-		"title": "Warm Winter Coats for Kids",
-		"subtitle": "Sunshine Shelter",
-		"description": "Sunshine Shelter is seeking warm winter coats for kids in need. With the cold weather approaching, many children in our community lack proper outerwear to stay warm. Your donations will help ensure every child can stay cozy this winter.",
-		"tags": {
-			"Category": "Clothes",
-			"Age": "Kids",
-			"Gender": "Unisex",
-			"Season": "Winter"
-		}
+		"field1": "57357",
+		"field2": "Category: Medical Supplies",
+		"field3": "New Cairo",
+		"field4": "Low",
+		"field5": "As an organization committed to providing compassionate healthcare services, having medical blankets is essential for ensuring the comfort and well-being of our patients. These blankets serve a vital role in maintaining optimal body temperature, offering warmth and comfort during recovery periods and medical procedures. With medical blankets readily available, we can enhance the overall patient experience, promoting a sense of security and dignity while they receive care. Additionally, these blankets play a crucial role in infection control protocols, providing a barrier against environmental contaminants and promoting a hygienic healthcare environment for our patients and staff alike.",
+		"field6": "100",
+		"orgImg": "Org57357",
+		"itemImg": "Blankets",
+		"isBlood": false
 	},
 	{
-		"title": "Professional Attire for Adult Women",
-		"subtitle": "CareerAdvantage",
-		"description": "CareerAdvantage is dedicated to empowering women by providing them with professional attire for job interviews and employment opportunities. Your donations of gently used or new clothing items will help boost confidence and pave the way to success for women in need.",
-		"tags": {
-			"Category": "Clothes",
-			"Age": "Adults",
-			"Gender": "Women",
-			"Season": "Year-round"
-		}
+		"field1": "57357",
+		"field2": "Category: Medical Supplies",
+		"field3": "New Cairo",
+		"field4": "Medium",
+		"field5": "Possessing blood pressure monitors enables us to provide essential health screenings, empowering individuals to monitor and manage their cardiovascular well-being proactively. By having these monitors on hand, we can facilitate preventive care initiatives, ensuring early detection of hypertension and fostering healthier lifestyles within our community. Incorporating blood pressure monitoring into our programs strengthens our commitment to promoting long-term health outcomes and reducing the burden of cardiovascular diseases.",
+		"field6": "20",
+		"orgImg": "Org57357",
+		"itemImg": "BloodPressure",
+		"isBlood": false
+	},
+	{
+		"field1": "Alnas Hospital",
+		"field2": "Blood Donations",
+		"field3": "Nasr City",
+		"field4": "Medium",
+		"field5": "Blood Type: O+",
+		"field6": "100 Liters",
+		"orgImg": "Alnas",
+		"isBlood": true
+	},
+	{
+		"field1": "Alnas Hospital",
+		"field2": "Blood Donations",
+		"field3": "Nasr City",
+		"field4": "Medium",
+		"field5": "Blood Type: O-",
+		"field6": "100 Liters",
+		"orgImg": "Alnas",
+		"isBlood": true
+	},
+	{
+		"field1": "Alnas Hospital",
+		"field2": "Blood Donations",
+		"field3": "Nasr City",
+		"field4": "Medium",
+		"field5": "Blood Type: B+",
+		"field6": "100 Liters",
+		"orgImg": "Alnas",
+		"isBlood": true
+	},
+	{
+		"field1": "Alnas Hospital",
+		"field2": "Blood Donations",
+		"field3": "New Cairo",
+		"field4": "Medium",
+		"field5": "Blood Type: AB+",
+		"field6": "100 Liters",
+		"orgImg": "Alnas",
+		"isBlood": true
+	},
+	{
+		"field1": "Alnas Hospital",
+		"field2": "Blood Donations",
+		"field3": "New Cairo",
+		"field4": "Medium",
+		"field5": "Blood Type: A-",
+		"field6": "100 Liters",
+		"orgImg": "Alnas",
+		"isBlood": true
+	},
+	{
+		"field1": "Alnas Hospital",
+		"field2": "Blood Donations",
+		"field3": "New Cairo",
+		"field4": "Medium",
+		"field5": "Blood Type: O",
+		"field6": "100 Liters",
+		"orgImg": "Alnas",
+		"isBlood": true
 	}
 ]
