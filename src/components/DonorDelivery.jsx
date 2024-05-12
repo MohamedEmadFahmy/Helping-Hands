@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const DonorDelivery = () => {
     const [deliveryState, setDeliveryState] = useState("");
-    const [hasOrderedDonations, setHasOrderedDonations] = useState(true);
+    const [hasOrderedDonations, setHasOrderedDonations] = useState(false);
     const [deliveryDate, setDeliveryDate] = useState("");
     const [deliveryTime, setDeliveryTime] = useState("");
     const [deliveryVehicle, setDeliveryVehicle] = useState("");
@@ -32,15 +32,6 @@ const DonorDelivery = () => {
 		calculateETA();
 	}, [deliveryDate, deliveryTime]); // Recalculate ETA when delivery date or time changes
 	
-	// Add the new useEffect here
-	useEffect(() => {
-		const pathname = window.location.pathname;
-		if (pathname === "/donor/donate") {
-			setDeliveryState("UpcomingDelivery"); // or setDeliveryState("DeliveryOnTheWay");
-		} else {
-			setDeliveryState("NoDonation");
-		}
-	}, []);
 	
     const handleSwitchState = () => {
         switch (deliveryState) {

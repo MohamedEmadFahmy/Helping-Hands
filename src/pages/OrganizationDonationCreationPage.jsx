@@ -1,4 +1,5 @@
 import DonationCreation from "../components/OrganizationDonationCreation";
+import Footer from "../components/Footer";
 
 const DonationCreationPage = () => {
 	return (
@@ -6,6 +7,7 @@ const DonationCreationPage = () => {
 			<div className="h-[90vh] w-full flex justify-center items-center bg-secondary">
 				<DonationCreation />
 			</div>
+			<Footer/>
 		</>
 	);
 };
