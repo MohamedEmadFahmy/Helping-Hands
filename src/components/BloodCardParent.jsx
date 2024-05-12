@@ -5,7 +5,7 @@ const BloodCardParent = () => {
   return (
     <div className="flex flex-col w-3/5 justify-center items-center gap-5 mb-3">
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="New Cairo"
         field4="High"
@@ -15,7 +15,7 @@ const BloodCardParent = () => {
         isBlood={true}
       />
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="New Cairo"
         field4="Low"
@@ -26,7 +26,7 @@ const BloodCardParent = () => {
       />
 
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="Giza"
         field4="Medium"
@@ -36,7 +36,7 @@ const BloodCardParent = () => {
         isBlood={true}
       />
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="Giza"
         field4="Medium"
@@ -46,7 +46,7 @@ const BloodCardParent = () => {
         isBlood={true}
       />
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="Maadi"
         field4="Medium"
@@ -56,7 +56,7 @@ const BloodCardParent = () => {
         isBlood={true}
       />
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="Maadi"
         field4="Medium"
@@ -66,7 +66,7 @@ const BloodCardParent = () => {
         isBlood={true}
       />
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="Nasr City"
         field4="Medium"
@@ -76,7 +76,7 @@ const BloodCardParent = () => {
         isBlood={true}
       />
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="Nasr City"
         field4="Medium"
@@ -86,7 +86,7 @@ const BloodCardParent = () => {
         isBlood={true}
       />
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="Nasr City"
         field4="Medium"
@@ -96,7 +96,7 @@ const BloodCardParent = () => {
         isBlood={true}
       />
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="New Cairo"
         field4="Medium"
@@ -106,7 +106,7 @@ const BloodCardParent = () => {
         isBlood={true}
       />
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="New Cairo"
         field4="Medium"
@@ -116,7 +116,7 @@ const BloodCardParent = () => {
         isBlood={true}
       />
       <DonationCard
-        field1="57357"
+        field1="Alnas Hospital"
         field2="Blood Donations"
         field3="New Cairo"
         field4="Medium"
