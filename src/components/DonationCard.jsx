@@ -4,6 +4,7 @@
 import LocationPin from "../assets/DonationCardsImages/LocationPin.jfif";
 import HospitalLogo from "../assets/DonationCardsImages/HospitalLogo.png";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 const DonationCard = ({
 	field1,
@@ -49,7 +50,11 @@ const DonationCard = ({
 					<div className="flex justify-end pr-5 pb-5 gap-3">
 						<button
 							className="bg-primaryShades-500 rounded-md px-8 "
-							onClick={() => setDonate(true)}
+							onClick={() => {
+								setDonate(true);
+								navigate("/donor/delivery");
+							}}
+							
 						>
 							Donate
 						</button>
