@@ -24,7 +24,9 @@ const DonorDelivery = () => {
 	const [deliveryState, setDeliveryState] = useState(
 		allDeliveryStates[Math.random() * allDeliveryStates.length]
 	);
-	const [hasOrderedDonations, setHasOrderedDonations] = useState(false);
+	const [hasOrderedDonations, setHasOrderedDonations] = useState(
+		Math.random() > 0.8 ? true : false
+	);
 	const [deliveryDate, setDeliveryDate] = useState("");
 	const [deliveryTime, setDeliveryTime] = useState("");
 	const [deliveryVehicle, setDeliveryVehicle] = useState("");
