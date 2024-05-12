@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 const OrganizationCard = ({
+	isAdmin,
 	OrganizationIndex,
 	OrganizationImage,
 	OrganizationName,
@@ -16,7 +17,11 @@ const OrganizationCard = ({
 	const shortName = OrganizationName;
 
 	return (
-		<div className="bg-gray-200 p-4 rounded-md w-2/3 flex flex-col justify-center">
+		<div
+			className={`bg-gray-200 p-4 rounded-md flex flex-col justify-center ${
+				isAdmin ? "w-2/3" : "w-1/2"
+			}`}
+		>
 			<div className="flex items-center gap-2">
 				<img
 					src={OrganizationImage}
@@ -36,12 +41,14 @@ const OrganizationCard = ({
 				>
 					View Details
 				</button>
-				<button
-					onClick={() => handleDelete(OrganizationIndex)}
-					className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500"
-				>
-					Delete Account
-				</button>
+				{isAdmin && (
+					<button
+						onClick={() => handleDelete(OrganizationIndex)}
+						className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500"
+					>
+						Delete Account
+					</button>
+				)}
 			</div>
 
 			{isPopupOpen && (

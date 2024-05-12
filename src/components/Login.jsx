@@ -20,6 +20,8 @@ const Login = ({ setRegister }) => {
 			e.target[1].value === "organization"
 		) {
 			navigate("/organization/account");
+		} else {
+			alert("Invalid username or password");
 		}
 	};
 

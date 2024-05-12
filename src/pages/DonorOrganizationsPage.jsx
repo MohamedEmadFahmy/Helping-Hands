@@ -1,8 +1,49 @@
-import Organizations from "../components/Organizations";
+/* eslint-disable no-unused-vars */
+import OrganizationCards from "../components/OrganizationCards";
+import organizationInfo from "../organization-accounts.json";
+import { useState } from "react";
+
 const DonorOrganizationsPage = () => {
+	const [organizationsList, setOrganizationsList] =
+		useState(organizationInfo);
+
+	const handleSearchChange = (e) => {
+		const searchValue = e.target.value;
+		const filteredOrganizationInfo = organizationInfo.filter(
+			(organization) =>
+				organization.OrganizationName.toLowerCase().includes(
+					searchValue.toLowerCase()
+				)
+		);
+
+		setOrganizationsList(filteredOrganizationInfo);
+	};
+
+	const handleDelete = (id) => {
+		const updatedOrganizationsList = [...organizationsList];
+		updatedOrganizationsList.pop(id);
+
+		setOrganizationsList(updatedOrganizationsList);
+	};
+
 	return (
-		<div className="h-screen w-full bg-secondary pt-[10vh]">
-			<Organizations />
+		<div className=" bg-primaryShades-200 p-10 gap-10 w-full min-h-[90vh] flex flex-col items-center justify-center">
+			<h1 className="text-5xl font-bold text-center font-mono text-white">
+				Organization Accounts
+			</h1>
+
+			<input
+				type="text"
+				placeholder="Search"
+				className="w-1/3 p-3 rounded-lg"
+				onChange={handleSearchChange}
+			/>
+			<OrganizationCards
+				isAdmin={false}
+				organizationsList={organizationsList}
+				handleSearchChange={handleSearchChange}
+				handleDelete={handleDelete}
+			/>
 		</div>
 	);
 };
