@@ -3,11 +3,13 @@
 import { useState } from "react";
 
 const OrganizationCard = ({
+	OrganizationIndex,
 	OrganizationImage,
 	OrganizationName,
 	OrganizationType,
 	OrganizationArea,
 	OrganizationPhoneNumber,
+	handleDelete,
 }) => {
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -34,7 +36,10 @@ const OrganizationCard = ({
 				>
 					View Details
 				</button>
-				<button className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500">
+				<button
+					onClick={() => handleDelete(OrganizationIndex)}
+					className="px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-1 focus:ring-red-500"
+				>
 					Delete Account
 				</button>
 			</div>

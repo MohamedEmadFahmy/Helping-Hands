@@ -19,6 +19,13 @@ const AdminOrganizationAccounts = () => {
 		setOrganizationsList(filteredOrganizationInfo);
 	};
 
+	const handleDelete = (id) => {
+		const updatedOrganizationsList = [...organizationsList];
+		updatedOrganizationsList.pop(id);
+
+		setOrganizationsList(updatedOrganizationsList);
+	};
+
 	return (
 		<div className=" bg-primaryShades-200 p-10 gap-10 w-full min-h-[90vh] flex flex-col items-center justify-center">
 			<h1 className="text-5xl font-bold text-center font-mono text-white">
@@ -34,6 +41,7 @@ const AdminOrganizationAccounts = () => {
 			<OrganizationCards
 				organizationsList={organizationsList}
 				handleSearchChange={handleSearchChange}
+				handleDelete={handleDelete}
 			/>
 		</div>
 	);
