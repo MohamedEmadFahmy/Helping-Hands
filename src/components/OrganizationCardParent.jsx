@@ -41,6 +41,116 @@ const OrganizationCardParent = () => {
         itemImg={Syringe}
         isBlood={false}
       />
+      <DonationCard
+        field1="Orman"
+        field2="Medical Syringes"
+        field3="Nasr City"
+        field4="High"
+        field5="As an organization dedicated to healthcare excellence, access to medical syringes is indispensable for delivering precise medication dosages and lifesaving treatments to our patients. These syringes serve as indispensable tools in administering vaccines, medications, and therapeutic interventions, ensuring the safety and efficacy of our medical procedures. By maintaining a reliable supply of medical syringes, we uphold the highest standards of patient care, empowering our healthcare professionals to provide accurate and compassionate treatment tailored to each patient's needs."
+        field6="300"
+        orgImg={Orman}
+        itemImg={Syringe}
+        isBlood={false}
+      />
+      <DonationCard
+        field1="Orman"
+        field2="Medical Syringes"
+        field3="Nasr City"
+        field4="High"
+        field5="As an organization dedicated to healthcare excellence, access to medical syringes is indispensable for delivering precise medication dosages and lifesaving treatments to our patients. These syringes serve as indispensable tools in administering vaccines, medications, and therapeutic interventions, ensuring the safety and efficacy of our medical procedures. By maintaining a reliable supply of medical syringes, we uphold the highest standards of patient care, empowering our healthcare professionals to provide accurate and compassionate treatment tailored to each patient's needs."
+        field6="300"
+        orgImg={Orman}
+        itemImg={Syringe}
+        isBlood={false}
+      />
+      <DonationCard
+        field1="Orman"
+        field2="Medical Syringes"
+        field3="Nasr City"
+        field4="High"
+        field5="As an organization dedicated to healthcare excellence, access to medical syringes is indispensable for delivering precise medication dosages and lifesaving treatments to our patients. These syringes serve as indispensable tools in administering vaccines, medications, and therapeutic interventions, ensuring the safety and efficacy of our medical procedures. By maintaining a reliable supply of medical syringes, we uphold the highest standards of patient care, empowering our healthcare professionals to provide accurate and compassionate treatment tailored to each patient's needs."
+        field6="300"
+        orgImg={Orman}
+        itemImg={Syringe}
+        isBlood={false}
+      />
+      <DonationCard
+        field1="Orman"
+        field2="Medical Syringes"
+        field3="Nasr City"
+        field4="High"
+        field5="As an organization dedicated to healthcare excellence, access to medical syringes is indispensable for delivering precise medication dosages and lifesaving treatments to our patients. These syringes serve as indispensable tools in administering vaccines, medications, and therapeutic interventions, ensuring the safety and efficacy of our medical procedures. By maintaining a reliable supply of medical syringes, we uphold the highest standards of patient care, empowering our healthcare professionals to provide accurate and compassionate treatment tailored to each patient's needs."
+        field6="300"
+        orgImg={Orman}
+        itemImg={Syringe}
+        isBlood={false}
+      />
+      <DonationCard
+        field1="Orman"
+        field2="Medical Syringes"
+        field3="Nasr City"
+        field4="High"
+        field5="As an organization dedicated to healthcare excellence, access to medical syringes is indispensable for delivering precise medication dosages and lifesaving treatments to our patients. These syringes serve as indispensable tools in administering vaccines, medications, and therapeutic interventions, ensuring the safety and efficacy of our medical procedures. By maintaining a reliable supply of medical syringes, we uphold the highest standards of patient care, empowering our healthcare professionals to provide accurate and compassionate treatment tailored to each patient's needs."
+        field6="300"
+        orgImg={Orman}
+        itemImg={Syringe}
+        isBlood={false}
+      />
+      <DonationCard
+        field1="Orman"
+        field2="Medical Syringes"
+        field3="Nasr City"
+        field4="High"
+        field5="As an organization dedicated to healthcare excellence, access to medical syringes is indispensable for delivering precise medication dosages and lifesaving treatments to our patients. These syringes serve as indispensable tools in administering vaccines, medications, and therapeutic interventions, ensuring the safety and efficacy of our medical procedures. By maintaining a reliable supply of medical syringes, we uphold the highest standards of patient care, empowering our healthcare professionals to provide accurate and compassionate treatment tailored to each patient's needs."
+        field6="300"
+        orgImg={Orman}
+        itemImg={Syringe}
+        isBlood={false}
+      />
+      <DonationCard
+        field1="Orman"
+        field2="Medical Syringes"
+        field3="Nasr City"
+        field4="High"
+        field5="As an organization dedicated to healthcare excellence, access to medical syringes is indispensable for delivering precise medication dosages and lifesaving treatments to our patients. These syringes serve as indispensable tools in administering vaccines, medications, and therapeutic interventions, ensuring the safety and efficacy of our medical procedures. By maintaining a reliable supply of medical syringes, we uphold the highest standards of patient care, empowering our healthcare professionals to provide accurate and compassionate treatment tailored to each patient's needs."
+        field6="300"
+        orgImg={Orman}
+        itemImg={Syringe}
+        isBlood={false}
+      />
+      <DonationCard
+        field1="Orman"
+        field2="Medical Syringes"
+        field3="Nasr City"
+        field4="High"
+        field5="As an organization dedicated to healthcare excellence, access to medical syringes is indispensable for delivering precise medication dosages and lifesaving treatments to our patients. These syringes serve as indispensable tools in administering vaccines, medications, and therapeutic interventions, ensuring the safety and efficacy of our medical procedures. By maintaining a reliable supply of medical syringes, we uphold the highest standards of patient care, empowering our healthcare professionals to provide accurate and compassionate treatment tailored to each patient's needs."
+        field6="300"
+        orgImg={Orman}
+        itemImg={Syringe}
+        isBlood={false}
+      />
+      <DonationCard
+        field1="Orman"
+        field2="Medical Syringes"
+        field3="Nasr City"
+        field4="High"
+        field5="As an organization dedicated to healthcare excellence, access to medical syringes is indispensable for delivering precise medication dosages and lifesaving treatments to our patients. These syringes serve as indispensable tools in administering vaccines, medications, and therapeutic interventions, ensuring the safety and efficacy of our medical procedures. By maintaining a reliable supply of medical syringes, we uphold the highest standards of patient care, empowering our healthcare professionals to provide accurate and compassionate treatment tailored to each patient's needs."
+        field6="300"
+        orgImg={Orman}
+        itemImg={Syringe}
+        isBlood={false}
+      />
+      <DonationCard
+        field1="Orman"
+        field2="Medical Syringes"
+        field3="Nasr City"
+        field4="High"
+        field5="As an organization dedicated to healthcare excellence, access to medical syringes is indispensable for delivering precise medication dosages and lifesaving treatments to our patients. These syringes serve as indispensable tools in administering vaccines, medications, and therapeutic interventions, ensuring the safety and efficacy of our medical procedures. By maintaining a reliable supply of medical syringes, we uphold the highest standards of patient care, empowering our healthcare professionals to provide accurate and compassionate treatment tailored to each patient's needs."
+        field6="300"
+        orgImg={Orman}
+        itemImg={Syringe}
+        isBlood={false}
+      />
     </div>
   );
 };

@@ -41,29 +41,30 @@ const OrganizationDonorDonationsCard = ({
               marginTop: '20 px',
             }}
           />
-          {isFulfilled && (
-            <div className="flex gap-5">
+
+          <div className="flex gap-5">
+            {!isFulfilled && (
+              <button
+                className="bg-primaryShades-500 rounded-lg px-6 text-s"
+                onClick={() => {
+                  navigate('/organization/donation-create');
+                }}
+              >
+                Update
+              </button>
+            )}
+            {isFulfilled && (
               <button
                 onClick={() => navigate('/organization/delivery')}
-                className="bg-primaryShades-500 rounded-lg px-6 text-s"
+                className="bg-primaryShades-500 rounded-lg px-7 text-s"
               >
                 Track
               </button>
-              <button className="bg-red-500 rounded-lg px-6 text-s">
-                Delete
-              </button>
-            </div>
-          )}
-          {!isFulfilled && (
-            <button
-              className="bg-primaryShades-500 rounded-lg px-6 text-s"
-              onClick={() => {
-                navigate('/organization/donation-create');
-              }}
-            >
-              Update
+            )}
+            <button className="bg-red-500 rounded-lg px-6 text-s">
+              Delete
             </button>
-          )}
+          </div>
         </div>
       </div>
 
