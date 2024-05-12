@@ -1,8 +1,22 @@
 import PopularCauseCard from "../components/PopularCauseCard";
 import TestimonialCard from "../components/TestimonialCard";
 import poorChildrenPhoto from "../assets/images/poor-children.jpg";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const DonorHomePage = () => {
+	const location = useLocation();
+	const searchParams = new URLSearchParams(location.search);
+	const registrationSuccess = searchParams.get("registrationSuccess");
+
+	useEffect(() => {
+		if (registrationSuccess === "true") {
+			toast.success("Registration Successful");
+		}
+	}, [registrationSuccess]);
+
 	return (
 		<div className="w-full flex flex-col justify-center items-center">
 			<div

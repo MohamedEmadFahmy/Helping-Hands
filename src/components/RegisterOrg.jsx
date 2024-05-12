@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RegisterOrg = ({ setRegister }) => {
 	const navigate = useNavigate();
 
 	const [selectedFile, setSelectedFile] = useState(null);
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
+	const [selectedLocation, setSelectedLocation] = useState(false);
 
 	const handleFileChange = (event) => {
 		const file = event.target.files[0];
@@ -24,7 +27,11 @@ const RegisterOrg = ({ setRegister }) => {
 				alert("Please upload a document for verification");
 				return;
 			}
-			navigate("/organization/account");
+			if (selectedLocation === false) {
+				alert("Please choose your location");
+				return;
+			}
+			navigate("/organization/account?registrationSuccess=true");
 		}
 	};
 
@@ -331,7 +338,10 @@ const RegisterOrg = ({ setRegister }) => {
 					</label>
 					<div className="h-full flex items-center justify-center">
 						<button
-							onClick={() => setIsPopupOpen(true)}
+							onClick={() => {
+								setIsPopupOpen(true);
+								setSelectedLocation(true);
+							}}
 							className="hover:scale-105 hover:bg-gray-200 bg-white text-blue-500 font-bold rounded-md cursor-pointer p-1 px-1 w-2/3 text-center"
 						>
 							Choose Your Location

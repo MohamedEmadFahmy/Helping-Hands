@@ -18,9 +18,9 @@ const SelectDonorTypePage = () => {
 			alert("Please select a donor type");
 		} else {
 			if (clickedDiv == 2 || clickedDiv == 3) {
-				navigate("/donor/volunteer");
+				navigate("/donor/volunteer?registrationSuccess=true");
 			} else {
-				navigate("/donor/home");
+				navigate("/donor/home?registrationSuccess=true");
 			}
 		}
 	};

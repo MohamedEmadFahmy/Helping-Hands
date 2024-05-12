@@ -1,14 +1,26 @@
 /* eslint-disable no-unused-vars */
 
 import DonorVolunteerRegister from "../components/DonorVolunteerRegister";
-import { Link } from "react-router-dom";
 import MedicalCases from "../components/MedicalCases";
 import TeachingCases from "../components/TeachingCases";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const DonorVolunteerPage = () => {
 	const [isDoctor, setDoctor] = useState(false);
 	const [isTeacher, setTeacher] = useState(false);
+
+	const location = useLocation();
+	const searchParams = new URLSearchParams(location.search);
+	const registrationSuccess = searchParams.get("registrationSuccess");
+
+	useEffect(() => {
+		if (registrationSuccess === "true") {
+			toast.success("Registration Successful");
+		}
+	}, [registrationSuccess]);
 
 	// const [viewDoctor, setDoctor] = useState(isDoctor);
 	// const [viewTeacher, setTeacher] = useState(isTeacher);
