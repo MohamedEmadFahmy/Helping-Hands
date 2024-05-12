@@ -1,0 +1,30 @@
+[
+	{
+		"OrganizationName": "57357 hospital",
+		"OrganizationType": "medical research hospital",
+		"OrganizationArea": "Cairo",
+		"OrganizationImage": "../src/assets/images/gand/57357.jpeg",
+		"OrganizationPhoneNumber": "01004441910"
+	},
+	{
+		"OrganizationName": "اهل مصر",
+		"OrganizationType": "medical research hospital",
+		"OrganizationArea": "Cairo",
+		"OrganizationImage": "../src/assets/images/gand/ahl.jpeg",
+		"OrganizationPhoneNumber": "01005551910"
+	},
+	{
+		"OrganizationName": "CCCPA",
+		"OrganizationType": "Center for Conflict Resolations",
+		"OrganizationArea": "Cairo",
+		"OrganizationImage": "../src/assets/images/gand/cccpa.jpeg",
+		"OrganizationPhoneNumber": "01006661910"
+	},
+	{
+		"OrganizationName": "الاورمان",
+		"OrganizationType": "medical research hospital",
+		"OrganizationArea": "Suhag",
+		"OrganizationImage": "../src/assets/images/gand/rman1.jpg",
+		"OrganizationPhoneNumber": "01007771910"
+	}
+]

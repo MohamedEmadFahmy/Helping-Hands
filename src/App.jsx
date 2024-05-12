@@ -32,6 +32,8 @@ import OrganizationHomePage from "./pages/OrganizationHomePage";
 import AdminViewSubmissions from "./pages/AdminViewSubmissions";
 import PageNotFound from "./pages/PageNotFound";
 
+import FilterTest from "./pages/FilterTest";
+
 // Import your components
 
 const App = () => {
@@ -102,6 +104,7 @@ const App = () => {
 						element={<OrganizationDonationCreationPage />}
 					/>
 				</Route>
+				<Route path="/filter-test" element={<FilterTest />} />
 			</>
 		)
 	);

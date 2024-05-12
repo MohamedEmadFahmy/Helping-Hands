@@ -9,6 +9,24 @@ const DonorAccounts = () => {
 	const allFilters = ["Regular Donors", "Teachers", "Doctors"];
 	const [activeFilters, setActiveFilters] = useState(allFilters);
 
+	const filters = {
+		Gender: {
+			options: ["Male", "Female"],
+		},
+		Age: {
+			options: ["Under 18", "18-30", "31-45", "Over 45"],
+		},
+		Location: {
+			options: ["North", "South", "East", "West"],
+			subcategories: {
+				North: ["City A", "City B"],
+				South: ["City C", "City D"],
+				East: ["City E", "City F"],
+				West: ["City G", "City H"],
+			},
+		},
+	};
+
 	return (
 		<div className=" bg-primaryShades-200 p-10 gap-10 min-h-[90vh] w-full flex flex-col items-center justify-center">
 			<h1 className="text-5xl font-bold text-center font-mono text-white">
@@ -16,7 +34,7 @@ const DonorAccounts = () => {
 			</h1>
 			<div className="w-full flex bg-red-200 justify-between p-10 pt-0">
 				<Filter
-					allFilters={allFilters}
+					filters={filters}
 					activeFilters={activeFilters}
 					setActiveFilters={setActiveFilters}
 				/>
