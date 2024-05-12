@@ -28,7 +28,67 @@ const BloodCardParent = () => {
       <DonationCard
         field1="57357"
         field2="Blood Donations"
-        field3="New Cairo"
+        field3="Giza"
+        field4="Medium"
+        field5="Blood Type: AB+"
+        field6="100 Liters"
+        orgImg={Alnas}
+        isBlood={true}
+      />
+      <DonationCard
+        field1="57357"
+        field2="Blood Donations"
+        field3="Giza"
+        field4="Medium"
+        field5="Blood Type: B-"
+        field6="100 Liters"
+        orgImg={Alnas}
+        isBlood={true}
+      />
+      <DonationCard
+        field1="57357"
+        field2="Blood Donations"
+        field3="Maadi"
+        field4="Medium"
+        field5="Blood Type: AB"
+        field6="100 Liters"
+        orgImg={Alnas}
+        isBlood={true}
+      />
+      <DonationCard
+        field1="57357"
+        field2="Blood Donations"
+        field3="Maadi"
+        field4="Medium"
+        field5="Blood Type: B"
+        field6="100 Liters"
+        orgImg={Alnas}
+        isBlood={true}
+      />
+      <DonationCard
+        field1="57357"
+        field2="Blood Donations"
+        field3="Nasr City"
+        field4="Medium"
+        field5="Blood Type: O+"
+        field6="100 Liters"
+        orgImg={Alnas}
+        isBlood={true}
+      />
+      <DonationCard
+        field1="57357"
+        field2="Blood Donations"
+        field3="Nasr City"
+        field4="Medium"
+        field5="Blood Type: O-"
+        field6="100 Liters"
+        orgImg={Alnas}
+        isBlood={true}
+      />
+      <DonationCard
+        field1="57357"
+        field2="Blood Donations"
+        field3="Nasr City"
         field4="Medium"
         field5="Blood Type: B+"
         field6="100 Liters"
@@ -40,7 +100,7 @@ const BloodCardParent = () => {
         field2="Blood Donations"
         field3="New Cairo"
         field4="Medium"
-        field5="Blood Type: B+"
+        field5="Blood Type: AB+"
         field6="100 Liters"
         orgImg={Alnas}
         isBlood={true}
@@ -50,7 +110,7 @@ const BloodCardParent = () => {
         field2="Blood Donations"
         field3="New Cairo"
         field4="Medium"
-        field5="Blood Type: B+"
+        field5="Blood Type: A-"
         field6="100 Liters"
         orgImg={Alnas}
         isBlood={true}
@@ -60,67 +120,7 @@ const BloodCardParent = () => {
         field2="Blood Donations"
         field3="New Cairo"
         field4="Medium"
-        field5="Blood Type: B+"
-        field6="100 Liters"
-        orgImg={Alnas}
-        isBlood={true}
-      />
-      <DonationCard
-        field1="57357"
-        field2="Blood Donations"
-        field3="New Cairo"
-        field4="Medium"
-        field5="Blood Type: B+"
-        field6="100 Liters"
-        orgImg={Alnas}
-        isBlood={true}
-      />
-      <DonationCard
-        field1="57357"
-        field2="Blood Donations"
-        field3="New Cairo"
-        field4="Medium"
-        field5="Blood Type: B+"
-        field6="100 Liters"
-        orgImg={Alnas}
-        isBlood={true}
-      />
-      <DonationCard
-        field1="57357"
-        field2="Blood Donations"
-        field3="New Cairo"
-        field4="Medium"
-        field5="Blood Type: B+"
-        field6="100 Liters"
-        orgImg={Alnas}
-        isBlood={true}
-      />
-      <DonationCard
-        field1="57357"
-        field2="Blood Donations"
-        field3="New Cairo"
-        field4="Medium"
-        field5="Blood Type: B+"
-        field6="100 Liters"
-        orgImg={Alnas}
-        isBlood={true}
-      />
-      <DonationCard
-        field1="57357"
-        field2="Blood Donations"
-        field3="New Cairo"
-        field4="Medium"
-        field5="Blood Type: B+"
-        field6="100 Liters"
-        orgImg={Alnas}
-        isBlood={true}
-      />
-      <DonationCard
-        field1="57357"
-        field2="Blood Donations"
-        field3="New Cairo"
-        field4="Medium"
-        field5="Blood Type: B+"
+        field5="Blood Type: O"
         field6="100 Liters"
         orgImg={Alnas}
         isBlood={true}
