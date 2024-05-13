@@ -27,13 +27,13 @@ const DonorAccountCards = ({ activeFilters }) => {
 		console.log("Deleted", id);
 	};
 
-	const filteredAccounts = accounts.filter((account) => {
-		return activeFilters.includes(account.accountType);
-	});
+	// const filteredAccounts = accounts.filter((account) => {
+	// 	return activeFilters.includes(account.accountType);
+	// });
 
 	return (
 		<div className="flex flex-col items-center justify-center w-10/12 h-full gap-5 ">
-			{filteredAccounts.map((account) => (
+			{data.map((account) => (
 				<DonorAccountCard
 					key={account.id}
 					accountId={account.id}

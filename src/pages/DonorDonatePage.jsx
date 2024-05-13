@@ -388,6 +388,7 @@ const DonorDonatePage = () => {
 			<div className="w-4/5 flex justify-around gap-10">
 				<div className="w-2/5 h-screen flex flex-col items-center">
 					<div className="h-auto bg-gray-200 w-2/3 flex flex-col items-center justify-center gap-10 rounded-lg p-10">
+						<input type="text" placeholder="Search" />
 						<h1 className="text-black text-5xl">Filter</h1>
 						<div className="flex flex-col items-center justify-center">
 							{donationTypes.map((request, index) => (
