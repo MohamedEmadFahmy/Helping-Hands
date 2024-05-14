@@ -5,26 +5,38 @@ import filterIcon from "../assets/images/gand/filterr.jpeg"; // Assuming the ima
 import Filter from "../components/Filter";
 
 const DonorAccounts = () => {
+	const [showFilterOptions, toggleFilterOptions] = useState(false);
 	const allFilters = ["Regular Donors", "Teachers", "Doctors"];
 	const [activeFilters, setActiveFilters] = useState(allFilters);
 
-	const [showFilterOptions, toggleFilterOptions] = useState(false);
+	const filters = {
+		Gender: {
+			options: ["Male", "Female"],
+		},
+		Age: {
+			options: ["Under 18", "18-30", "31-45", "Over 45"],
+		},
+		Location: {
+			options: ["North", "South", "East", "West"],
+			subcategories: {
+				North: ["City A", "City B"],
+				South: ["City C", "City D"],
+				East: ["City E", "City F"],
+				West: ["City G", "City H"],
+			},
+		},
+	};
 
 	return (
 		<div className=" bg-primaryShades-200 p-10 gap-10 min-h-[90vh] w-full flex flex-col items-center justify-center">
 			<h1 className="text-5xl font-bold text-center font-mono text-white">
 				Donor Accounts
 			</h1>
-			<div className="w-full flex justify-between p-10 pt-0">
-				{/* <Filter
-					filters={filters}
-					activeFilters={activeFilters}
-					setActiveFilters={setActiveFilters}
-				/> */}
+			<div className="w-full flex bg-red-200 justify-between p-10 pt-0">
 				<div className="">
 					<button
 						className="flex items-center px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
-						onClick={() => toggleFilterOptions(!showFilterOptions)}
+						onClick={toggleFilterOptions}
 					>
 						<img
 							src={filterIcon}
@@ -47,7 +59,9 @@ const DonorAccounts = () => {
 									className="block w-full px-4 py-2 text-sm text-left hover:bg-gray-100 rounded-md"
 									onClick={() => {
 										// Handle filter option click
-										toggleFilterOptions(false);
+										console.log(
+											`Filter clicked: ${filter}`
+										);
 									}}
 								>
 									{filter}
@@ -56,7 +70,8 @@ const DonorAccounts = () => {
 						</div>
 					)}
 				</div>
-				<DonorAccountCards allFilters={allFilters} />
+
+				<DonorAccountCards activeFilters={activeFilters} />
 			</div>
 		</div>
 	);
