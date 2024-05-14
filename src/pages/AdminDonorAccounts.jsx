@@ -32,7 +32,7 @@ const DonorAccounts = () => {
 			<h1 className="text-5xl font-bold text-center font-mono text-white">
 				Donor Accounts
 			</h1>
-			<div className="w-full flex bg-red-200 justify-between p-10 pt-0">
+			<div className="w-full flex justify-between p-10 pt-0">
 				<div className="">
 					<button
 						className="flex items-center px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
