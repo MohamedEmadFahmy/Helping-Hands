@@ -16,8 +16,9 @@ const DonorDelivery = () => {
 			alert("Fill in the proper information");
 			return;
 		}
-		setHasOrderedDonations(true);
-		handleOrderDonations();
+		setComingFromDonate(false);
+		setDeliveryState("DeliveryOnTheWay");
+		calculateETA();
 	};
 
 	const navigate = useNavigate();
