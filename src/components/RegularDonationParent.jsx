@@ -41,7 +41,7 @@ const RegularDonationParent = () => {
 					field5={donation.field5}
 					field6={donation.field6}
 					orgImg={donation.orgImg}
-					itemImg={donation.itemImg}
+					itemImg={Shirt}
 					isBlood={donation.isBlood}
 				/>
 			))}

@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 const DonorDelivery = () => {
 	const allDeliveryStates = [
@@ -23,13 +23,13 @@ const DonorDelivery = () => {
 	const navigate = useNavigate();
 
 	// const [deliveryState, setDeliveryState] = useState(() => {
-    //     const randomIndex = Math.floor(Math.random() * allDeliveryStates.length);
-    //     return allDeliveryStates[randomIndex];
-    // });
+	//     const randomIndex = Math.floor(Math.random() * allDeliveryStates.length);
+	//     return allDeliveryStates[randomIndex];
+	// });
 
-    // const [hasOrderedDonations, setHasOrderedDonations] = useState(() => {
-    //     return Math.random() >= 0.5;
-    // });
+	// const [hasOrderedDonations, setHasOrderedDonations] = useState(() => {
+	//     return Math.random() >= 0.5;
+	// });
 
 	const [deliveryState, setDeliveryState] = useState();
 	const [hasOrderedDonations, setHasOrderedDonations] = useState(false);
@@ -39,7 +39,6 @@ const DonorDelivery = () => {
 	const [eta, setETA] = useState("");
 	const [daysToDelivery, setdaysToDelivery] = useState("");
 	const [comingFromDonate, setComingFromDonate] = useState(false);
-
 
 	const handleOrderDonations = () => {
 		setHasOrderedDonations(true);
@@ -60,43 +59,45 @@ const DonorDelivery = () => {
 		setDeliveryVehicle(e.target.value);
 	};
 
-	const location = useLocation();     
-	const searchParams = new URLSearchParams(location.search);     
+	const location = useLocation();
+	const searchParams = new URLSearchParams(location.search);
 	const registrationSuccess = searchParams.get("isDonate");
 
-	useEffect(() => {if (registrationSuccess === "true") {
-		setComingFromDonate(true)}}, [registrationSuccess]);
+	useEffect(() => {
+		if (registrationSuccess === "true") {
+			setComingFromDonate(true);
+		}
+	}, [registrationSuccess]);
 
 	useEffect(() => {
 		calculateETA();
 	}, [deliveryDate, deliveryTime]); // Recalculate ETA when delivery date or time changes
 
-
-
 	useEffect(() => {
-		if(!comingFromDonate){
-			const randomIndex = Math.floor(Math.random() * allDeliveryStates.length);
+		if (!comingFromDonate) {
+			const randomIndex = Math.floor(
+				Math.random() * allDeliveryStates.length
+			);
 			setDeliveryState(allDeliveryStates[randomIndex]);
 		}
-    }, []);
+	}, []);
 
+	useEffect(() => {
+		// Set initial delivery date to one day after today
+		const tomorrow = new Date();
+		tomorrow.setDate(tomorrow.getDate() + 1);
+		const tomorrowDateString = tomorrow.toISOString().split("T")[0];
+		setDeliveryDate(tomorrowDateString);
 
-    useEffect(() => {
-        // Set initial delivery date to one day after today
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        const tomorrowDateString = tomorrow.toISOString().split("T")[0];
-        setDeliveryDate(tomorrowDateString);
-
-        // Set initial delivery time to three hours earlier than now
-        const threeHoursEarlier = new Date();
-        threeHoursEarlier.setHours(threeHoursEarlier.getHours() - 3);
-        const threeHoursEarlierTimeString = threeHoursEarlier
-            .toISOString()
-            .split("T")[1]
-            .slice(0, 5);
-        setDeliveryTime(threeHoursEarlierTimeString);
-    }, []);
+		// Set initial delivery time to three hours earlier than now
+		const threeHoursEarlier = new Date();
+		threeHoursEarlier.setHours(threeHoursEarlier.getHours() - 3);
+		const threeHoursEarlierTimeString = threeHoursEarlier
+			.toISOString()
+			.split("T")[1]
+			.slice(0, 5);
+		setDeliveryTime(threeHoursEarlierTimeString);
+	}, []);
 
 	const handleSwitchState = () => {
 		switch (deliveryState) {
@@ -135,7 +136,7 @@ const DonorDelivery = () => {
 
 		setETA(formattedETA);
 
-		if ((deliveryState != "NoDonation")) {
+		if (deliveryState != "NoDonation") {
 			if (isWithin24Hours) {
 				setDeliveryState("DeliveryOnTheWay");
 			} else {
@@ -230,9 +231,9 @@ const DonorDelivery = () => {
 							Back to Donations
 						</button>
 						<button
-						onClick={() => {
-							handleFormSubmission();
-						}}
+							onClick={() => {
+								handleFormSubmission();
+							}}
 							type="button"
 							className="bg-blue-500 mb-4 ml-72 w-60 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
 						>

@@ -8,6 +8,9 @@ import LocationPin from "../assets/DonationCardsImages/LocationPin.jfif";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+import image from "../assets/images/gand/gando.jpg";
+import image2 from "../assets/images/gand/ghrz.jpg";
+
 const DonationCard = ({
 	field1,
 	field2,
@@ -19,6 +22,13 @@ const DonationCard = ({
 	itemImg,
 	isBlood,
 }) => {
+	const imgs = [image, image2];
+
+	const randomImage = () => {
+		const randomIndex = Math.floor(Math.random() * imgs.length);
+		return imgs[randomIndex];
+	};
+
 	const [viewDonate, setDonate] = useState(false);
 	const [quantity, setQuantity] = useState(0);
 	const navigate = useNavigate();
@@ -31,7 +41,7 @@ const DonationCard = ({
 						<div>
 							<img
 								className="rounded-full w-[4rem] h-[4rem]"
-								src={Alnas}
+								src={orgImg === "Alnas" ? Alnas : randomImage()}
 								alt="Profile Icon"
 							/>
 						</div>
@@ -116,11 +126,12 @@ const DonationCard = ({
 										<button
 											className="px-6 py-2 bg-green-500 text-white rounded-md mr-2 hover:bg-green-700 focus:outline-none focus:ring-1 focus:ring-green-500"
 											onClick={() => {
-												if (quantity > 0)
+												if (quantity > 0) {
 													setDonate(false);
-												navigate(
-													"/donor/deliveries?isDonate=true"
-												);
+													navigate(
+														"/donor/deliveries?isDonate=true"
+													);
+												}
 											}}
 										>
 											Donate

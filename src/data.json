@@ -1,23 +1,56 @@
 [
 	{
+		"field1": "John Doe",
+		"field2": "Item Donations",
+		"field3": "Cairo",
+		"field4": "Medium",
+		"field5": "I am in need of gently used clothes. If you have any clothes that you no longer need and are in good condition, I would greatly appreciate your donation. Your contribution will help me improve my quality of life and provide me with essential clothing items. Thank you for your generosity.",
+		"field6": "50",
+		"orgImg": "none",
+		"itemImg": "Clothes",
+		"isBlood": false
+	},
+	{
+		"field1": "Jane Smith",
+		"field2": "Item Donations",
+		"field3": "Alexandria",
+		"field4": "High",
+		"field5": "I am looking for books to expand my knowledge and imagination. If you have any books that you no longer need and are willing to donate, I would be grateful to receive them. Your donation will help me explore new worlds and gain valuable insights. Thank you for your support.",
+		"field6": "30",
+		"orgImg": "none",
+		"itemImg": "Books",
+		"isBlood": false
+	},
+	{
+		"field1": "Michael Johnson",
+		"field2": "Item Donations",
+		"field3": "Giza",
+		"field4": "Low",
+		"field5": "I am in need of toys to bring joy to my life. If you have any toys that you no longer use and are in good condition, I would be thrilled to receive them. Your donation will make a positive impact on my childhood and bring happiness to my days. Thank you for your kindness.",
+		"field6": "20",
+		"orgImg": "none",
+		"itemImg": "Toys",
+		"isBlood": false
+	},
+	{
 		"field1": "57357",
-		"field2": "Category: Medical Supplies",
+		"field2": "Medical Supplies",
 		"field3": "New Cairo",
 		"field4": "Low",
 		"field5": "As an organization committed to providing compassionate healthcare services, having medical blankets is essential for ensuring the comfort and well-being of our patients. These blankets serve a vital role in maintaining optimal body temperature, offering warmth and comfort during recovery periods and medical procedures. With medical blankets readily available, we can enhance the overall patient experience, promoting a sense of security and dignity while they receive care. Additionally, these blankets play a crucial role in infection control protocols, providing a barrier against environmental contaminants and promoting a hygienic healthcare environment for our patients and staff alike.",
 		"field6": "100",
-		"orgImg": "Org57357",
+		"orgImg": "Alnas",
 		"itemImg": "Blankets",
 		"isBlood": false
 	},
 	{
 		"field1": "57357",
-		"field2": "Category: Medical Supplies",
+		"field2": "Medical Supplies",
 		"field3": "New Cairo",
 		"field4": "Medium",
 		"field5": "Possessing blood pressure monitors enables us to provide essential health screenings, empowering individuals to monitor and manage their cardiovascular well-being proactively. By having these monitors on hand, we can facilitate preventive care initiatives, ensuring early detection of hypertension and fostering healthier lifestyles within our community. Incorporating blood pressure monitoring into our programs strengthens our commitment to promoting long-term health outcomes and reducing the burden of cardiovascular diseases.",
 		"field6": "20",
-		"orgImg": "Org57357",
+		"orgImg": "Alnas",
 		"itemImg": "BloodPressure",
 		"isBlood": false
 	},
@@ -80,5 +113,36 @@
 		"field6": "100 Liters",
 		"orgImg": "Alnas",
 		"isBlood": true
+	},
+	{
+		"field1": "Gando",
+		"field2": "Clothes",
+		"field3": "New Cairo",
+		"field4": "Low",
+		"field5": "As an organization committed to providing compassionate healthcare services, having medical blankets is essential for ensuring the comfort and well-being of our patients. These blankets serve a vital role in maintaining optimal body temperature, offering warmth and comfort during recovery periods and medical procedures. With medical blankets readily available, we can enhance the overall patient experience, promoting a sense of security and dignity while they receive care. Additionally, these blankets play a crucial role in infection control protocols, providing a barrier against environmental contaminants and promoting a hygienic healthcare environment for our patients and staff alike.",
+		"field6": "100",
+		"orgImg": "none",
+		"itemImg": "Blankets",
+		"isBlood": false
+	},
+	{
+		"field1": "Charity Organization",
+		"field2": "Food Donations",
+		"field3": "Cairo",
+		"field4": "High",
+		"field5": "With your generous food donations, we can provide nutritious meals to individuals and families in need. These donations play a crucial role in addressing food insecurity and ensuring that everyone has access to healthy and balanced meals. By supporting our food donation program, you are making a direct impact on the lives of those facing hunger and helping us build a stronger and more resilient community.",
+		"field6": "500",
+		"orgImg": "Alnas",
+		"isBlood": false
+	},
+	{
+		"field1": "Animal Shelter",
+		"field2": "Pet Supplies",
+		"field3": "Giza",
+		"field4": "Low",
+		"field5": "Your donation of pet supplies will greatly benefit the animals in our shelter. These supplies include food, toys, bedding, and other essential items that contribute to the well-being and happiness of our furry friends. By providing these supplies, you are helping us create a safe and comfortable environment for the animals, promoting their physical and emotional health. Your support is invaluable in our mission to rescue and care for abandoned and neglected animals.",
+		"field6": "50",
+		"orgImg": "Alnas",
+		"isBlood": false
 	}
 ]

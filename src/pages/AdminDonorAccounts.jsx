@@ -15,7 +15,7 @@ const DonorAccounts = () => {
 			<h1 className="text-5xl font-bold text-center font-mono text-white">
 				Donor Accounts
 			</h1>
-			<div className="w-full flex bg-red-200 justify-between p-10 pt-0">
+			<div className="w-full flex justify-between p-10 pt-0">
 				{/* <Filter
 					filters={filters}
 					activeFilters={activeFilters}
@@ -55,7 +55,7 @@ const DonorAccounts = () => {
 							))}
 						</div>
 					)}
-				</div>{" "}
+				</div>
 				<DonorAccountCards allFilters={allFilters} />
 			</div>
 		</div>

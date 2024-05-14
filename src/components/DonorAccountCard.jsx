@@ -26,7 +26,7 @@ const DonorAccountCard = ({
 
 	return (
 		<div
-			className={`${cardColor} p-4 rounded-md w-2/3 flex flex-col justify-center`}
+			className={`bg-gray-200 p-4 rounded-md w-2/3 flex flex-col justify-center`}
 		>
 			<div className="flex items-center gap-2">
 				<img
@@ -37,6 +37,10 @@ const DonorAccountCard = ({
 				<div>
 					<p className="text-gray-800 font-medium text-xl">
 						{shortName}
+					</p>
+					<p>
+						Account Type:{" "}
+						{accountType.substring(0, accountType.length - 1)}
 					</p>
 					{/* <p className="text-gray-600">{accountEmail}</p> */}
 					{/* <p className="text-gray-600">{accountArea}</p> */}
@@ -73,9 +77,15 @@ const DonorAccountCard = ({
 							<p className="mb-2">Email: {accountEmail}</p>
 							<p className="mb-2">Area: {accountArea}</p>
 							<p className="mb-2">
-								ContactInfo: {accountPhoneNumber}
+								Contact Info: {accountPhoneNumber}
 							</p>
-							<p className="mb-2">DonorType: {accountType}</p>
+							<p className="mb-2">
+								Donor Type:{" "}
+								{accountType.substring(
+									0,
+									accountType.length - 1
+								)}
+							</p>
 							<button
 								className="block w-full mt-4 px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
 								onClick={() => setIsPopupOpen(false)}
