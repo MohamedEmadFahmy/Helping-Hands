@@ -1,8 +1,51 @@
-# React + Vite
+# Helping Hands ReadMe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Helping Hands! This application is designed to streamline the process of donating, volunteering, and managing accounts for donors, organization representatives, and admins. Built with Vite, React, and Tailwind CSS.
 
-Currently, two official plugins are available:
+<img src="./imgs/LoginPage.png" alt="App screenshot 2" width="100%">
+<img src="./imgs/DonorHomePage.png" alt="App screenshot 1" width="100%">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+- [Features](#features)
+  - [User Roles](#user-roles)
+  - [Donations](#donations)
+  - [Volunteering](#volunteering)
+  - [Account Management](#account-management)
+- [Tech Stack](#tech-stack)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+### User Roles
+
+Helping Hands supports multiple user roles, each with unique capabilities:
+
+- **Regular Donor**: Donors, including regular donors, doctors, and teachers, can donate funds to various causes and manage their personal donation history.
+- **Organization Representative**: Representatives of organizations can add donation posts, manage volunteers, and organize events.
+- **Admin**: Admins are responsible for managing users, overseeing donations, approving submissions, and ensuring the smooth operation of the platform.
+
+### Donations
+
+- **Make a Donation**: Easily donate funds to various causes supported by Helping Hands.
+- **Track Donations**: View your donation history and manage your contributions.
+
+### Volunteering
+
+- **Volunteer Opportunities**: Browse and sign up for volunteer opportunities.
+- **Manage Volunteering**: Track your volunteer hours and view upcoming volunteer events.
+
+### Account Management
+
+- **Profile Management**: Update your personal information and preferences.
+- **Security Settings**: Manage your password and security settings.
+
+## Tech Stack
+
+- **Vite**: Fast and optimized build tool for modern web projects.
+- **React**: JavaScript library for building user interfaces.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
